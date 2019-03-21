@@ -1,6 +1,6 @@
 public abstract class Tile {
     private int pos;
-    private Player landedP;
+    private Player landedPlayer;
 
     public int getPos(){
         return this.pos;
@@ -10,12 +10,16 @@ public abstract class Tile {
         this.pos = pos;
     }
 
-    public Player getLandedP(){
-        return this.landedP;
+    public Player getLandedPlayer(){
+        return this.landedPlayer;
+    }
+
+    public void setLandedPlayerNull(){
+        this.landedPlayer = null;
     }
 
     public void setLandedP(Player p){
-        this.landedP = p;
+        this.landedPlayer = p;
     }
 
     public Tile(int pos){

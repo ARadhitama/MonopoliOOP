@@ -1,17 +1,17 @@
 public abstract class Property extends Tile {
     private String name;
-    private Player owner;
+    private Player owner = null;
     private int harga;
 
     public String getName(){
         return this.name;
     }
 
-    public void setName(String owner){
-        this.owner = owner;
+    public void setName(String name){
+        this.name = name;
     }
 
-    public String getOwner(){
+    public Player getOwner(){
         return this.owner;
     }
 
@@ -27,13 +27,11 @@ public abstract class Property extends Tile {
         this.harga = harga;
     }
 
-    public Property(String name, Player owner, int harga){
+    public Property(int pos, String name, int harga){
+        super(pos);
         setName(name);
-        setOwner(owner);
         setHarga(harga);
     }
 
     public abstract void beli();
-
-
 }
