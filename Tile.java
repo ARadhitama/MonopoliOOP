@@ -17,4 +17,8 @@ public abstract class Tile {
     public void setLandedP(Player p){
         this.landedP = p;
     }
+
+    public Tile(int pos){
+        setPos(pos);
+    }
 }
