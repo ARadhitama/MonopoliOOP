@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+import java.util.arrays;
+
 public class Player {
     private String name;
     private int money;
@@ -20,4 +21,22 @@ public class Player {
     public Boolean getJail () {
         return this.inJail;
     }
+
+    public void addMoney (int money) {
+            this.money = this.money + money;
+    }
+
+    public void rdcMoney (int money) {
+        this.money = this.money - money;
+    }
+
+    public void getPos () {
+        return this.pos;
+    }
+
+    public int setPos (int pos) {
+        this.pos = pos;
+    }
+
+    
 }
