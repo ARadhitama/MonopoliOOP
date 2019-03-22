@@ -37,6 +37,4 @@ public class Player {
     public int setPos (int pos) {
         this.pos = pos;
     }
-
-
 }
