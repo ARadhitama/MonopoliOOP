@@ -12,6 +12,7 @@ public class Player {
         this.money = 0;
         this.inJail = false;
         this.pos = 0;
+        ownProp = new ArrayList<Property>();
     }
 
     public int getMoney() {
@@ -36,5 +37,9 @@ public class Player {
 
     public int setPos (int pos) {
         this.pos = pos;
+    }
+
+    public String getName () {
+        return this.name;
     }
 }
