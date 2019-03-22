@@ -30,7 +30,7 @@ public class Player {
         this.money = this.money - money;
     }
 
-    public void getPos () {
+    public int getPos () {
         return this.pos;
     }
 
@@ -38,5 +38,5 @@ public class Player {
         this.pos = pos;
     }
 
-    
+
 }
