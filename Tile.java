@@ -1,6 +1,10 @@
 public abstract class Tile {
     private int pos;
 
+    public Tile(int pos){
+        setPos(pos);
+    }
+
     public int getPos(){
         return this.pos;
     }
@@ -10,8 +14,4 @@ public abstract class Tile {
     }
 
     public abstract void landedMethod(Player p);
-
-    public Tile(int pos){
-        setPos(pos);
-    }
 }

@@ -6,6 +6,12 @@ public abstract class Property extends Tile {
         /* 1 = Lot
         2 = Utilities
         3 = Railroad*/
+    public Property(int pos, String name, int harga, int type){
+        super(pos);
+        setName(name);
+        setHarga(harga);
+        setType(type);
+    }
 
     public String getName(){
         return this.name;
@@ -37,12 +43,5 @@ public abstract class Property extends Tile {
 
     public void setType(int type){
         this.type = type;
-    }
-
-    public Property(int pos, String name, int harga, int type){
-        super(pos);
-        setName(name);
-        setHarga(harga);
-        setType(type);
-    }
+    }  
 }
