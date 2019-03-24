@@ -5,7 +5,6 @@ import java.util.Scanner;
 class Timer extends Thread {
     private int time = 1;
     private boolean setting = false;
-    private int playerTurn = 0;
 
     public void run() {
         while (true) {
@@ -31,42 +30,44 @@ class Timer extends Thread {
         return time;
     }
 
-    public synchronized int getPlayerTurn() {
-        while (setting) {
-            try {
-                wait(); //This will only be run on the off-chance that setTime is being run at the same time.
-            } catch (InterruptedException e) {  }
-        }
-
-        return this.playerTurn;
-    }
-
     public synchronized void setTime (int t) {
         setting = true;
         this.time = t;
         setting = false;
         notifyAll();
     }
-
-    public synchronized void nextPlayerTurn (int jumlahPemain) {
-        setting = true;
-        this.playerTurn = (this.playerTurn + 1) % jumlahPemain;
-        setting = false;
-        notifyAll();
-    }
 }
 
-class Timestamp extends Thread {
-    Timer timer;
+class Turn extends Thread {
+	private Timer timer;
+	private int totalPlayer;
+	private int turn = 1;
+	private int player = 0;		// Index dimulai dari 0
 
-    public Timestamp (Timer t) {
-        this.timer = t;
-    }
+	public Turn(Timer t, int totalPlayer) {
+		this.timer = t;
+		this.totalPlayer = totalPlayer;
+	}
 
-    public void run() {
+	public int getTurn() {
+		return this.turn;
+	}
+
+	public int getPlayer() {
+		return this.player;
+	}
+
+	public void setTurn(int turn) {
+		this.turn = turn;
+	}
+
+	public void nextPlayer() {
+		this.player = (this.player + 1) % this.totalPlayer;
+	}
+
+	public void run() {
         synchronized (timer) {
             while (true) {
-
                 try {
                     timer.wait();
                 } catch (InterruptedException e) {
@@ -74,9 +75,8 @@ class Timestamp extends Thread {
                 }
 
                 if (timer.getTime() % 30 == 0) {
-                    System.out.println("Time : " + timer.getTime() + " | Time limit, next player turn");
+                    System.out.println("Time limit, next player turn!");
                 }
-
             }
         }
     }
@@ -87,17 +87,17 @@ public class Main {
     	Scanner sc = new Scanner(System.in);
     	List<Player> players = new ArrayList<Player>();
     	String playerName, command;
+    	int i, totalPlayer;
     	boolean play = true;
     	boolean nextTurn = false;
 
     	System.out.println("Berapa orang yang main?");
     	System.out.print(">> ");
-    	int jumlahPemain = sc.nextInt();
-    	int totalTime = jumlahPemain * 30;
+    	totalPlayer = sc.nextInt();
 
     	System.out.println("Masukkan nama pemain");
 
-    	for (int i = 1; i <= jumlahPemain; i++) {
+    	for (i = 1; i <= totalPlayer; i++) {
     		System.out.print("Player " + i + " : ");
     		playerName = sc.next();
     		players.add(new Player(playerName));
@@ -105,23 +105,51 @@ public class Main {
 
     	// Timer ga perlu di stop, biarkan mengalir aja~
     	Timer timer = new Timer();
-        Timestamp timestamp = new Timestamp(timer);
+        Turn turn = new Turn(timer, totalPlayer);
 	    timer.start();
-        timestamp.start();
+        turn.start();
+
+        // Dadu
+        Dice dice1 = new Dice();
+        Dice dice2 = new Dice();
 
         while (play) {
-	        
+	        // Next player turn
         	if (timer.getTime() == 1) {
+        		// New turn (setiap player sudah bermain)
+        		if (turn.getPlayer() == 1) {
+        			turn.setTurn(turn.getTurn() + 1);
+        		}
+
+        		turn.nextPlayer();
+
+        		// Ubah posisi player
+        		players.get(turn.getPlayer()).setPos(
+        			players.get(turn.getPlayer()).getPos() + dice1.roll() + dice2.roll()
+        		);
+
+        		// Ngejalanin landed method property / space
+        		/*tiles.get(players.get(turn.getPlayer()).getPos()).landedMethod();*/
+
+        		// Command harusnya di dalam landed method kah??
         		System.out.println("Masukkan commandmu");
         		System.out.print(">> ");
         		command = sc.next();
+
+
+        		// ... jalanin command ...
+        		// nextTurn = true;
+
+
+        		if (dice1.getValue() == dice2.getValue()) {
+        			
+        		}
         	}
 
         	if ((timer.getTime() == 30) || (nextTurn)) {
         		nextTurn = false;
         		timer.setTime(1);
-        		timer.nextPlayerTurn(jumlahPemain);
-        		System.out.println("Giliran player " + (timer.getPlayerTurn() + 1) + "!");
+        		System.out.println("Giliran player " + (turn.getPlayer() + 1) + "!");
         	}
 
 
@@ -132,10 +160,7 @@ public class Main {
 
         }
 
-        /*timer.setIsTerminating(true); // tell the thread to stop
-		timer.join(); // wait for the thread to stop
-		timestamp.setIsTerminating(true); // tell the thread to stop
-		timestamp.join(); // wait for the thread to stop*/
+        System.out.println("Yee menang");
 
     }
 }
