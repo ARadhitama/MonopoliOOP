@@ -1,4 +1,6 @@
-import java.util.arrays;
+import java.util.List;
+import java.util.ArrayList;
+// import java.util.arrays;
 
 public class Player {
     private String name;
@@ -24,7 +26,7 @@ public class Player {
     }
 
     public void addMoney (int money) {
-            this.money = this.money + money;
+        this.money = this.money + money;
     }
 
     public void rdcMoney (int money) {
@@ -35,7 +37,7 @@ public class Player {
         return this.pos;
     }
 
-    public int setPos (int pos) {
+    public void setPos (int pos) {
         this.pos = pos;
     }
 
