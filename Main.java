@@ -161,6 +161,7 @@ public class Main {
         }
 
         System.out.println("Yee menang");
+        sc.close();
 
     }
 }
