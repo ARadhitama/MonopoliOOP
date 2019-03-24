@@ -136,6 +136,6 @@ public class Main {
 		timer.join(); // wait for the thread to stop
 		timestamp.setIsTerminating(true); // tell the thread to stop
 		timestamp.join(); // wait for the thread to stop*/
-
+        sc.close();
     }
 }
