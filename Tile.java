@@ -22,6 +22,8 @@ public abstract class Tile {
         this.landedPlayer = p;
     }
 
+    //public abstract void landedMethod(); masih bingung
+
     public Tile(int pos){
         setPos(pos);
     }
