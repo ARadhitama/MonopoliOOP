@@ -44,4 +44,16 @@ public class Player {
     public String getName () {
         return this.name;
     }
+
+    public Property getProp () {
+        // return
+    }
+
+    public void buyProp () {
+        // ngurangin money, nambah ownProp
+    }
+
+    public void sellProp () {
+        // ngurangin ownProp, nambah money
+    }
 }
