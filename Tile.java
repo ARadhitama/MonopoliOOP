@@ -9,7 +9,7 @@ public abstract class Tile {
         this.pos = pos;
     }
 
-    public abstract void landedMethod(Player player);
+    public abstract void landedMethod(Player p);
 
     public Tile(int pos){
         setPos(pos);
