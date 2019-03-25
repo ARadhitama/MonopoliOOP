@@ -43,5 +43,9 @@ public abstract class Property extends Tile {
 
     public void setType(int type){
         this.type = type;
-    }  
+    }
+
+    public void landedMethod(Player p){
+        
+    }
 }
