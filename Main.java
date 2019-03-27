@@ -2,88 +2,9 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class Timer extends Thread {
-    private int time = 1;
-    private boolean setting = false;
-
-    public void run() {
-        while (true) {
-            try {
-                sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-            System.out.print(time + " ");
-            setTime(time + 1);
-            //Switching the order of these 2 ^^^ statements and initializing time to 0 will give an output that is more accurate to the time.
-        }
-    }
-
-    public synchronized int getTime() {
-        while (setting) {
-            try {
-                wait(); //This will only be run on the off-chance that setTime is being run at the same time.
-            } catch (InterruptedException e) {  }
-        }
-
-        return time;
-    }
-
-    public synchronized void setTime (int t) {
-        setting = true;
-        this.time = t;
-        setting = false;
-        notifyAll();
-    }
-}
-
-class Turn extends Thread {
-	private Timer timer;
-	private int totalPlayer;
-	private int turn = 1;
-	private int player = 0;		// Index dimulai dari 0
-
-	public Turn(Timer t, int totalPlayer) {
-		this.timer = t;
-		this.totalPlayer = totalPlayer;
-	}
-
-	public int getTurn() {
-		return this.turn;
-	}
-
-	public int getPlayer() {
-		return this.player;
-	}
-
-	public void setTurn(int turn) {
-		this.turn = turn;
-	}
-
-	public void nextPlayer() {
-		this.player = (this.player + 1) % this.totalPlayer;
-	}
-
-	public void run() {
-        synchronized (timer) {
-            while (true) {
-                try {
-                    timer.wait();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-                if (timer.getTime() % 30 == 0) {
-                    System.out.println("Time limit, next player turn!");
-                }
-            }
-        }
-    }
-}
-
 public class Main {
     public static synchronized void main(String[] args) {
+    	// Local variable
     	Scanner sc = new Scanner(System.in);
     	List<Player> players = new ArrayList<Player>();
     	String playerName, command;
