@@ -50,23 +50,72 @@ public class Property extends Tile {
     public boolean landedMethod(Player p) {
         String command;
         Scanner sc = new Scanner(System.in);
+        
+        if (getOwner() == null) {
+            System.out.println("Masukkan commandmu (Beli | Diam)");
+            System.out.print(">> ");
+            command = sc.next();
 
-        System.out.println("Masukkan commandmu (Beli | Diam)");
-        System.out.print(">> ");
-        command = sc.next();
+            if (command.equals("Beli")) {
+                p.buyProp();
+                this.setOwner(p);
+                this.getOwner().rdcMoney(harga);
+                System.out.println(p.getName() + " telah membeli " + this.getName() + " berharga " + this.getHarga());
+                System.out.println("Uang " + p.getName() + " tinggal " + p.getMoney());
 
-        if (command.equals("Beli")) {
-            p.buyProp();
-            this.setOwner(p);
-            this.getOwner().rdcMoney(harga);
-            System.out.println(p.getName() + " telah membeli " + this.getName() + " berharga " + this.getHarga());
-            System.out.println("Uang " + p.getName() + " tinggal " + p.getMoney());
-        } else if (command.equals("Diam")) {
+            } else if (command.equals("Diam")) {
 
-        } else if (command.isEmpty()) {
+            } else if (command.isEmpty()) {
             
+            }
+<<<<<<< HEAD
+        } else {
+           if (getType() == 1) {
+                if (/*komplek*/) {
+                    if (/*1rumah*/) {
+                        p.rdcMoney(getHarga()/2);
+                        this.owner.addMoney(getHarga()/2);  
+                    } else if (/*2rumah*/) {
+                        p.rdcMoney(getHarga());
+                        this.owner.addMoney(getHarga());
+                    } else if (/*3rumah*/) {
+                        p.rdcMoney(getHarga()*2);
+                        this.owner.addMoney(getHarga()*2);
+                    } else {
+                        p.rdcMoney(getHarga()*4);
+                        this.owner.addMoney(getHarga()*4);
+                    }
+                } else { // ga komplek
+                    p.rdcMoney(getHarga()/8);
+                    this.owner.addMoney(getHarga()/8);
+                }
+           } else if (getType() == 2) {
+                if (/*1*/) {
+                    p.rdcMoney(getHarga()/8);
+                    this.owner.addMoney(getHarga()/8);
+                } else { // 2
+                    p.rdcMoney(getHarga()/2);
+                    this.owner.addMoney(getHarga()/2);
+                }
+           } else {
+                if (/*1*/) {
+                    p.rdcMoney(getHarga()/8);
+                    this.owner.addMoney(getHarga()/8);
+                } else if (/*2*/) {
+                    p.rdcMoney(getHarga()/4);
+                    this.owner.addMoney(getHarga()/4);
+                } else if (/*3*/) {
+                    p.rdcMoney(getHarga()/2);
+                    this.owner.addMoney(getHarga()/2);
+                } else {
+                    p.rdcMoney(getHarga());
+                    this.owner.addMoney(getHarga());
+                }
+           }
         }
-
+=======
+>>>>>>> 1d9d79a505425a645116fe532b4ea1133ae392df
         return true;
+        }
     }
 }
