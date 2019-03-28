@@ -1,4 +1,9 @@
+import java.util.Random;
+
 public class Space extends Tile {
+    Random randomGen = new Random;
+    private int sides;
+
     
     public void startTile(int pos){                                //jika posisi pada startTile 
                                                                    //akan menambahkna 2x uang start
@@ -25,7 +30,11 @@ public class Space extends Tile {
     }
 
     public void communityChestCard(){
-
+        int result = randomGen.nextInt(sides);
+        switch(sides) {
+            case 
+        } 
+            
     }
 
     public void chanceCard(){
