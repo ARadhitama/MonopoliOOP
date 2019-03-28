@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class Space extends Tile {
     Random randomGen = new Random();
@@ -19,7 +20,7 @@ public class Space extends Tile {
     }
 
     public void freeParkingTile(Player P){
-        
+        Scanner sc = new Scanner(System.in);
         if (P.getPos()==20) {
             System.out.println("mau mendarat dimana? : ");
             P.setPos(sc.nextInt());
@@ -82,13 +83,12 @@ public class Space extends Tile {
                 break;
             case 5 : 
                 System.out.println("Mundur 3 langkah");
-                getPos(P);
-                setPos(getPos(P)-3);
+                P.setPos(P.getPos()-3);
                 break;
         }
     }
 
-    public boolean landedMethod(Player p){
+    public boolean landedMethod(Player P){
         if (P.getPos() == 0){
             this.startTile(P);
         } else if (P.getPos()==30){
