@@ -60,7 +60,7 @@ public class Property extends Tile {
                 p.buyProp();
                 this.setOwner(p);
                 this.getOwner().rdcMoney(harga);
-                System.out.println(p.getName() + " telah membeli " + this.getName() + " berharga " + this.getHarga());
+                System.out.println(p.getName() + " telah membeli " + this.getName() + " seharga " + this.getHarga());
                 System.out.println("Uang " + p.getName() + " tinggal " + p.getMoney());
 
             } else if (command.equals("Diam")) {
@@ -89,7 +89,7 @@ public class Property extends Tile {
                     this.owner.addMoney(getHarga()/8);
                 }
            } else if (getType() == 2) {
-                if (/*1*/) {
+                if (this.getOwner().countProp(2) == 1) {
                     p.rdcMoney(getHarga()/8);
                     this.owner.addMoney(getHarga()/8);
                 } else { // 2
@@ -97,16 +97,16 @@ public class Property extends Tile {
                     this.owner.addMoney(getHarga()/2);
                 }
            } else {
-                if (/*1*/) {
+                if (this.getOwner().countProp(3) == 1) {
                     p.rdcMoney(getHarga()/8);
                     this.owner.addMoney(getHarga()/8);
-                } else if (/*2*/) {
+                } else if (this.getOwner().countProp(3) == 2) {
                     p.rdcMoney(getHarga()/4);
                     this.owner.addMoney(getHarga()/4);
-                } else if (/*3*/) {
+                } else if (this.getOwner().countProp(3) == 3) {
                     p.rdcMoney(getHarga()/2);
                     this.owner.addMoney(getHarga()/2);
-                } else {
+                } else { //4
                     p.rdcMoney(getHarga());
                     this.owner.addMoney(getHarga());
                 }
