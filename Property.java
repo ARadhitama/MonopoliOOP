@@ -60,6 +60,8 @@ public class Property extends Tile {
             this.setOwner(p);
         } else if (command.equals("Diam")) {
 
+        } else if (command.isEmpty()) {
+            
         }
 
         return true;
