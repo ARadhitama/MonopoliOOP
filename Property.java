@@ -50,20 +50,29 @@ public class Property extends Tile {
     public boolean landedMethod(Player p) {
         String command;
         Scanner sc = new Scanner(System.in);
+        
+        if (getOwner() == null) {
+            System.out.println("Masukkan commandmu (Beli | Diam)");
+            System.out.print(">> ");
+            command = sc.next();
 
-        System.out.println("Masukkan commandmu (Beli | Diam)");
-        System.out.print(">> ");
-        command = sc.next();
+            if (command.equals("Beli")) {
+                p.buyProp();
+                this.setOwner(p);
+            } else if (command.equals("Diam")) {
 
-        if (command.equals("Beli")) {
-            p.buyProp();
-            this.setOwner(p);
-        } else if (command.equals("Diam")) {
-
-        } else if (command.isEmpty()) {
-            
+            } else if (command.isEmpty()) {
+                
+            }
+        } else {
+            if (getType() == 1) {
+                
+            } else if (getType() == 2) {
+                
+            } else {
+                
+            }
         }
-
         return true;
     }
 }
