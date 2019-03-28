@@ -24,6 +24,10 @@ public class Player {
     public Boolean getJail () {
         return this.inJail;
     }
+    
+    public void setJail (boolean inJail) {
+        this.inJail = inJail;
+    }
 
     public void addMoney (int money) {
         this.money = this.money + money;

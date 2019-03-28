@@ -61,17 +61,16 @@ public class Property extends Tile {
                 this.setOwner(p);
             } else if (command.equals("Diam")) {
 
-            } else if (command.isEmpty()) {
-                
-            }
-        } else {
-            if (getType() == 1) {
-                
-            } else if (getType() == 2) {
-                
-            } else {
-                
-            }
+        if (command.equals("Beli")) {
+            p.buyProp();
+            this.setOwner(p);
+            this.getOwner().rdcMoney(harga);
+            System.out.println(p.getName() + " telah membeli " + this.getName() + " berharga " + this.getHarga());
+            System.out.println("Uang " + p.getName() + " tinggal " + p.getMoney());
+        } else if (command.equals("Diam")) {
+
+        } else if (command.isEmpty()) {
+            
         }
         return true;
     }
