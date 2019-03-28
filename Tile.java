@@ -1,5 +1,5 @@
 public abstract class Tile {
-    private int pos;
+    /*private int pos;    // pake index aja?
 
     public Tile(int pos){
         setPos(pos);
@@ -11,7 +11,7 @@ public abstract class Tile {
 
     public void setPos(int pos){
         this.pos = pos;
-    }
+    }*/
 
-    public abstract void landedMethod(Player p);
+    public abstract boolean landedMethod(Player p);
 }

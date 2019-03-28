@@ -10,7 +10,7 @@ public class Timer extends Thread {
                 e.printStackTrace();
             }
 
-            System.out.print(time + " ");
+            // System.out.print(time + " ");
             setTime(time + 1);
             //Switching the order of these 2 ^^^ statements and initializing time to 0 will give an output that is more accurate to the time.
         }
