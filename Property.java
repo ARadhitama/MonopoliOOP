@@ -65,8 +65,52 @@ public class Property extends Tile {
 
             } else if (command.equals("Diam")) {
 
-        } else if (command.isEmpty()) {
+            } else if (command.isEmpty()) {
             
+            }
+        } else {
+           if (getType() == 1) {
+                if (/*komplek*/) {
+                    if (/*1rumah*/) {
+                        p.rdcMoney(getHarga()/2);
+                        this.owner.addMoney(getHarga()/2);  
+                    } else if (/*2rumah*/) {
+                        p.rdcMoney(getHarga());
+                        this.owner.addMoney(getHarga());
+                    } else if (/*3rumah*/) {
+                        p.rdcMoney(getHarga()*2);
+                        this.owner.addMoney(getHarga()*2);
+                    } else {
+                        p.rdcMoney(getHarga()*4);
+                        this.owner.addMoney(getHarga()*4);
+                    }
+                } else { // ga komplek
+                    p.rdcMoney(getHarga()/8);
+                    this.owner.addMoney(getHarga()/8);
+                }
+           } else if (getType() == 2) {
+                if (/*1*/) {
+                    p.rdcMoney(getHarga()/8);
+                    this.owner.addMoney(getHarga()/8);
+                } else { // 2
+                    p.rdcMoney(getHarga()/2);
+                    this.owner.addMoney(getHarga()/2);
+                }
+           } else {
+                if (/*1*/) {
+                    p.rdcMoney(getHarga()/8);
+                    this.owner.addMoney(getHarga()/8);
+                } else if (/*2*/) {
+                    p.rdcMoney(getHarga()/4);
+                    this.owner.addMoney(getHarga()/4);
+                } else if (/*3*/) {
+                    p.rdcMoney(getHarga()/2);
+                    this.owner.addMoney(getHarga()/2);
+                } else {
+                    p.rdcMoney(getHarga());
+                    this.owner.addMoney(getHarga());
+                }
+           }
         }
         return true;
     }
