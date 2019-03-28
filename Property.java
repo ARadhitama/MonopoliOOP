@@ -68,7 +68,6 @@ public class Property extends Tile {
             } else if (command.isEmpty()) {
             
             }
-<<<<<<< HEAD
         } else {
            if (getType() == 1) {
                 if (/*komplek*/) {
@@ -112,9 +111,7 @@ public class Property extends Tile {
                     this.owner.addMoney(getHarga());
                 }
            }
-        }
-=======
->>>>>>> 1d9d79a505425a645116fe532b4ea1133ae392df
+        
         return true;
         }
     }
