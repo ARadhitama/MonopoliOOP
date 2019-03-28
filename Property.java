@@ -1,4 +1,6 @@
-public abstract class Property extends Tile {
+import java.util.Scanner;
+
+public class Property extends Tile {
     private String name;
     private Player owner = null;
     private int harga;
@@ -6,6 +8,12 @@ public abstract class Property extends Tile {
         /* 1 = Lot
         2 = Utilities
         3 = Railroad*/
+    public Property(String name, int harga, int type){
+        // super(pos);
+        setName(name);
+        setHarga(harga);
+        setType(type);
+    }
 
     public String getName(){
         return this.name;
@@ -39,10 +47,23 @@ public abstract class Property extends Tile {
         this.type = type;
     }
 
-    public Property(int pos, String name, int harga, int type){
-        super(pos);
-        setName(name);
-        setHarga(harga);
-        setType(type);
+    public boolean landedMethod(Player p) {
+        String command;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Masukkan commandmu (Beli | Diam)");
+        System.out.print(">> ");
+        command = sc.next();
+
+        if (command.equals("Beli")) {
+            p.buyProp();
+            this.setOwner(p);
+        } else if (command.equals("Diam")) {
+
+        } else if (command.isEmpty()) {
+            
+        }
+
+        return true;
     }
 }

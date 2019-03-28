@@ -49,9 +49,9 @@ public class Player {
         return this.name;
     }
 
-    public Property getProp () {
+    /*public Property getProp () {
         // return
-    }
+    }*/
 
     public void buyProp () {
         // ngurangin money, nambah ownProp

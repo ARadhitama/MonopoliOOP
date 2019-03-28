@@ -1,16 +1,22 @@
 import java.util.Random;
 
 public class Dice {
-    Random randomGen = new Random();
-    private int count = 0;
+    private Random randomGen = new Random();
+    private int count;
     private int sides;
+    private int value;
 
-    public Dice (int numSides) {
-        this.sides = numSides;
+    public Dice() {
+        this.count = 0;
+        this.sides = 6;
     }
 
-    public int roll () {
-        int result = randomGen.nextInt(sides) + 1;
-        return result;
+    public int getValue() {
+        return this.value;
+    }
+
+    public int roll() {
+        this.value = randomGen.nextInt(this.sides) + 1;
+        return this.value;
     }
 }
