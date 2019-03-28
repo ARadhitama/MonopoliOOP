@@ -111,7 +111,7 @@ public class Property extends Tile {
                     this.owner.addMoney(getHarga());
                 }
            }
-        
+        }
         return true;
         }
     }
