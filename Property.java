@@ -47,6 +47,43 @@ public class Property extends Tile {
         this.type = type;
     }
 
+    public void buyProp(Player p){
+        if (p.getMoney() >= this.getHarga()){
+            this.setOwner(p);
+            this.getOwner().rdcMoney(harga);
+            System.out.println(p.getName() + " telah membeli " + this.getName() + " seharga " + this.getHarga());
+            System.out.println("Uang " + p.getName() + " tinggal " + p.getMoney());
+        } else {
+            System.out.println(p.getName() + "tidak memiliki cukup uang");
+        }
+    }
+
+    public void bayarRent(Player p){
+        if (getType() == 2) {
+            if (this.getOwner().countProp(2) == 1) {
+                p.rdcMoney(getHarga()/8);
+                this.getOwner().addMoney(getHarga()/8);
+            } else { // 2
+                p.rdcMoney(getHarga()/2);
+                this.getOwner().addMoney(getHarga()/2);
+            }
+       } else {
+            if (this.getOwner().countProp(3) == 1) {
+                p.rdcMoney(getHarga()/8);
+                this.getOwner().addMoney(getHarga()/8);
+            } else if (this.getOwner().countProp(3) == 2) {
+                p.rdcMoney(getHarga()/4);
+                this.getOwner().addMoney(getHarga()/4);
+            } else if (this.getOwner().countProp(3) == 3) {
+                p.rdcMoney(getHarga()/2);
+                this.getOwner().addMoney(getHarga()/2);
+            } else { //4
+                p.rdcMoney(getHarga());
+                this.getOwner().addMoney(getHarga());
+            }
+       }
+    }
+
     public boolean landedMethod(Player p) {
         String command;
         Scanner sc = new Scanner(System.in);
@@ -57,62 +94,15 @@ public class Property extends Tile {
             command = sc.next();
 
             if (command.equals("Beli")) {
-                p.buyProp();
-                this.setOwner(p);
-                this.getOwner().rdcMoney(harga);
-                System.out.println(p.getName() + " telah membeli " + this.getName() + " seharga " + this.getHarga());
-                System.out.println("Uang " + p.getName() + " tinggal " + p.getMoney());
-
+                this.buyProp(p);
             } else if (command.equals("Diam")) {
-
+                // auto keluar
             } else if (command.isEmpty()) {
             
             }
         } else {
-           if (getType() == 1) {
-                if (/*komplek*/) {
-                    if (/*1rumah*/) {
-                        p.rdcMoney(getHarga()/2);
-                        this.owner.addMoney(getHarga()/2);  
-                    } else if (/*2rumah*/) {
-                        p.rdcMoney(getHarga());
-                        this.owner.addMoney(getHarga());
-                    } else if (/*3rumah*/) {
-                        p.rdcMoney(getHarga()*2);
-                        this.owner.addMoney(getHarga()*2);
-                    } else {
-                        p.rdcMoney(getHarga()*4);
-                        this.owner.addMoney(getHarga()*4);
-                    }
-                } else { // ga komplek
-                    p.rdcMoney(getHarga()/8);
-                    this.owner.addMoney(getHarga()/8);
-                }
-           } else if (getType() == 2) {
-                if (this.getOwner().countProp(2) == 1) {
-                    p.rdcMoney(getHarga()/8);
-                    this.owner.addMoney(getHarga()/8);
-                } else { // 2
-                    p.rdcMoney(getHarga()/2);
-                    this.owner.addMoney(getHarga()/2);
-                }
-           } else {
-                if (this.getOwner().countProp(3) == 1) {
-                    p.rdcMoney(getHarga()/8);
-                    this.owner.addMoney(getHarga()/8);
-                } else if (this.getOwner().countProp(3) == 2) {
-                    p.rdcMoney(getHarga()/4);
-                    this.owner.addMoney(getHarga()/4);
-                } else if (this.getOwner().countProp(3) == 3) {
-                    p.rdcMoney(getHarga()/2);
-                    this.owner.addMoney(getHarga()/2);
-                } else { //4
-                    p.rdcMoney(getHarga());
-                    this.owner.addMoney(getHarga());
-                }
-           }
+            this.bayarRent(p);
         }
         return true;
-        }
     }
 }
