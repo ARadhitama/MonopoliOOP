@@ -7,7 +7,6 @@ public class Dice {
     private int value;
 
     public Dice() {
-        this.count = 0;
         this.sides = 6;
     }
 

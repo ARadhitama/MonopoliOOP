@@ -100,5 +100,7 @@ public class Space extends Tile {
         } else if (P.getPos()==7 || P.getPos()==22 || P.getPos()==36){
             this.chanceCard(P);
         }
+
+        return true;
     }
 }
