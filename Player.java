@@ -60,4 +60,18 @@ public class Player {
     public void sellProp () {
         // ngurangin ownProp, nambah money
     }
+
+    //ngitung berapa property yang dipunya, sesuai type masukan
+    public int countProp(int type){
+        /* 1 = Lot
+        2 = Utilities
+        3 = Railroad*/
+        int i = 0;
+        for (Property prop : ownProp){
+            if (prop.getType() == type) {
+                i++;
+            }
+        }
+        return i;
+    }
 }
