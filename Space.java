@@ -27,7 +27,7 @@ public class Space extends Tile {
     }
 
     public void goToJailTile(Player P){    
-        P.setPos(9);
+        P.setPos(10);
         P.setJail(true);
     }
 
@@ -36,7 +36,7 @@ public class Space extends Tile {
         switch(sides) {
             case 1 :
                 System.out.println("Melanggar marka jalan, Anda dilempar ke penjara!");
-                P.setPos(9);
+                P.setPos(10);
                 P.setJail(true);
             case 2 :
                 System.out.println("Anda menang togel!! dapat Rp.100.000,-");
