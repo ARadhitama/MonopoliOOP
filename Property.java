@@ -65,9 +65,10 @@ public class Property extends Tile {
 
             } else if (command.equals("Diam")) {
 
-        } else if (command.isEmpty()) {
+            } else if (command.isEmpty()) {
             
-        }
+            }
         return true;
+        }
     }
 }
