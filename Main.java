@@ -92,13 +92,16 @@ public class Main {
         		// Ubah posisi player
         		players.get(turn.getPlayer()).setPos(
         			players.get(turn.getPlayer()).getPos() + dice1.roll() + dice2.roll()
-        		);
+				);
+				System.out.println("Angka dadu : " + dice1.getValue() + " , " + dice2.getValue());
 
         		// Jika dadu sama
         		if (dice1.getValue() == dice2.getValue()) {
+					System.out.println("Angka dadu sama, roll lagi!");
         			players.get(turn.getPlayer()).setPos(
 	        			players.get(turn.getPlayer()).getPos() + dice1.roll() + dice2.roll()
-	        		);
+					);
+					System.out.println("Angka dadu : " + dice1.getValue() + " , " + dice2.getValue());
         		}
 
         		// Ngejalanin landed method property / space
