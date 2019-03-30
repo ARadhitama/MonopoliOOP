@@ -26,25 +26,25 @@ public class Space extends Tile {
         }
     }
 
-    public void jailTile(){
+    public void jailTile(){                                       //Tile pada jail
         
     }
 
-    public void freeParkingTile(Player P){
+    public void freeParkingTile(Player P){                        //Tile freeparking
         Scanner sc = new Scanner(System.in);
-        if (P.getPos()==20) {
+        if (P.getPos()==20) {                                       // dapat berjalan ke lot mana saja
             System.out.println("mau mendarat dimana? : ");
-            P.setPos(sc.nextInt());
+            P.setPos(sc.nextInt());                                 //scan daerah yang ingin dituju
         }
         sc.close();
     }
 
-    public void goToJailTile(Player P){    
-        P.setPos(10);
-        P.setJail(true);
+    public void goToJailTile(Player P){                             //Tile Go TO Jail
+        P.setPos(10);                                               //set player ke jail
+        P.setJail(true);                                            //set jail true
     }
 
-    public void communityChestCard(Player P){
+    public void communityChestCard(Player P){                       //Community chest card tile
         int result = randomGen.nextInt(cards);
         switch(result) {
             case 1 :
@@ -72,7 +72,7 @@ public class Space extends Tile {
             
     }
 
-    public void chanceCard(Player P){
+    public void chanceCard(Player P){                                       //Chance Card
         int result = randomGen.nextInt(cards);
         switch(result) {
             case 1 : 
@@ -100,7 +100,7 @@ public class Space extends Tile {
         }
     }
 
-    public boolean landedMethod(Player P){
+    public boolean landedMethod(Player P){                                  //Menempatkan landed player
         if (P.getPos() == 0){
             this.startTile(P);
         } else if (P.getPos()==30){
