@@ -15,6 +15,10 @@ public class Property extends Tile {
         setType(type);
     }
 
+    public String getKind() {
+        return "Property";
+    }
+
     public String getName(){
         return this.name;
     }
