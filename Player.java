@@ -77,7 +77,7 @@ public class Player {
     }
 
     // cek komplek 
-    public boolean cekKomplek (int komp) {
+    public boolean cekKompleks (int komp) {
         int i = 0;
         for (Lot lot : ownLot){
             if (lot.getKompleks() == komp) {
@@ -97,7 +97,6 @@ public class Player {
             else {
                 return false;
             }
-        }
-        return i;  
+        }  
     }
 }

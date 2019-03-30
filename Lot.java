@@ -40,7 +40,7 @@ public class Lot extends Property {
     }
 
     public void buyProp(Player p){
-        if (this.getOwner().equals(p)){
+        if (this.getOwnerName().equals(p.getName())){
             System.out.println("Udah lu beli");
         } else if (this.getOwner() == null) {
             if (p.getMoney() >= this.getHarga()){

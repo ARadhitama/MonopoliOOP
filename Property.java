@@ -106,7 +106,6 @@ public class Property extends Tile {
         } else {
             this.bayarRent(p);
         }
-        sc.close();
         return true;
     }
 }

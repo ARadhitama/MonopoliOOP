@@ -13,7 +13,8 @@ public class Input
             if( str.equals("") )
             {
                 System.out.println( "you input nothing. exit..." );
-                System.exit( 0 );
+                
+                // System.exit( 0 );
             }
         }    
     };
