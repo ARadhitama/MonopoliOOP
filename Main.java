@@ -94,6 +94,7 @@ public class Main {
         			players.get(turn.getPlayer()).getPos() + dice1.roll() + dice2.roll()
 				);
 				System.out.println("Angka dadu : " + dice1.getValue() + " , " + dice2.getValue());
+				System.out.println("Anda mendarat di : " + tiles.get(players.get(turn.getPlayer()).getPos()));
 
         		// Jika dadu sama
         		if (dice1.getValue() == dice2.getValue()) {
@@ -102,6 +103,7 @@ public class Main {
 	        			players.get(turn.getPlayer()).getPos() + dice1.roll() + dice2.roll()
 					);
 					System.out.println("Angka dadu : " + dice1.getValue() + " , " + dice2.getValue());
+					System.out.println("Anda mendarat di : " + tiles.get(players.get(turn.getPlayer()).getPos()));
         		}
 
         		// Ngejalanin landed method property / space
