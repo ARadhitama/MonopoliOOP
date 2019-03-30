@@ -5,6 +5,7 @@ import java.io.*;
 public class Input
 {
     private String str = "";
+    private boolean empty = false;
 
     TimerTask task = new TimerTask()
     {
@@ -12,8 +13,10 @@ public class Input
         {
             if( str.equals("") )
             {
-                System.out.println( "you input nothing. exit..." );
-                
+                System.out.println( "Time limit! Next player turn" );
+                System.out.println( "Press [ENTER] untuk lanjut bermain" );
+
+                empty = true;
                 // System.exit( 0 );
             }
         }    
@@ -34,7 +37,11 @@ public class Input
 
         timer.cancel();
 
-        return str;
+        if (this.empty) {
+            return "Diam";
+        } else {
+            return str;
+        }
         // System.out.println( "you have entered: "+ str ); 
     }
 

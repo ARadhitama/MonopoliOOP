@@ -94,9 +94,7 @@ public class Property extends Tile {
 
     public boolean landedMethod(Player p, String command) {
         if (this.getOwnerName().equals("Tuhan")) {
-        System.out.println("console.log");
             if (command.equals("Beli")) {
-                System.out.println("console.log2");
                 this.buyProp(p);
             } else if (command.equals("Diam")) {
                 // auto keluar
