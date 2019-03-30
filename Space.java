@@ -35,7 +35,8 @@ public class Space extends Tile {
         if (P.getPos()==20) {
             System.out.println("mau mendarat dimana? : ");
             P.setPos(sc.nextInt());
-        } 
+        }
+        sc.close();
     }
 
     public void goToJailTile(Player P){    
