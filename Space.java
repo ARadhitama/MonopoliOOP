@@ -18,7 +18,7 @@ public class Space extends Tile {
     }
     
     public void startTile(Player P){                                //jika posisi pada startTile 
-                                                                   //akan menambahkna 2x uang start
+                                                                   //akan menambahkan 2x uang start
         if (P.getPos() == 0){
             P.addMoney(40000);
         } else {
@@ -100,7 +100,7 @@ public class Space extends Tile {
         }
     }
 
-    public boolean landedMethod(Player P){                                  //Menempatkan landed player
+    public boolean landedMethod(Player P, String command){
         if (P.getPos() == 0){
             this.startTile(P);
         } else if (P.getPos()==30){

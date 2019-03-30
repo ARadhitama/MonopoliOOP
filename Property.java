@@ -92,16 +92,11 @@ public class Property extends Tile {
        }
     }
 
-    public boolean landedMethod(Player p) {
-        String command;
-        Scanner sc = new Scanner(System.in);
-        
-        if (getOwner() == null) {
-            System.out.println("Masukkan commandmu (Beli | Diam)");
-            System.out.print(">> ");
-            command = sc.next();
-
+    public boolean landedMethod(Player p, String command) {
+        if (this.getOwnerName().equals("Tuhan")) {
+        System.out.println("console.log");
             if (command.equals("Beli")) {
+                System.out.println("console.log2");
                 this.buyProp(p);
             } else if (command.equals("Diam")) {
                 // auto keluar
