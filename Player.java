@@ -16,6 +16,7 @@ public class Player {
         this.inJail = false;
         this.pos = 0;
         ownProp = new ArrayList<Property>();
+        ownLot = new ArrayList<Lot>();
     }
 
     public int getMoney() {

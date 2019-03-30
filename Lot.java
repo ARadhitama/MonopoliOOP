@@ -57,28 +57,27 @@ public class Lot extends Property {
     }
 
     public void bayarRent(Player p){
+        int hargaRent = 0;
         if (this.getOwner().cekKompleks(this.getKompleks())) {
             switch (this.getRumah()) {
                 case 1:
-                    p.rdcMoney(getHarga()/2);
-                    this.getOwner().addMoney(getHarga()/2);
+                    hargaRent = this.getHarga()/2;
                     break;
                 case 2:
-                    p.rdcMoney(getHarga());
-                    this.getOwner().addMoney(getHarga());
+                    hargaRent = this.getHarga();
                     break;
                 case 3:
-                    p.rdcMoney(getHarga()*2);
-                    this.getOwner().addMoney(getHarga()*2);
+                    hargaRent = this.getHarga()*2;
                     break;
                 case 4:
-                    p.rdcMoney(getHarga()*4);
-                    this.getOwner().addMoney(getHarga()*4);
+                    hargaRent = this.getHarga()*4;
                     break;
             }
         } else { // ga komplek
-            p.rdcMoney(getHarga()/8);
-            this.getOwner().addMoney(getHarga()/8);
+            hargaRent = this.getHarga()/8;
         }
+        p.rdcMoney(hargaRent);
+        this.getOwner().addMoney(hargaRent);
+        System.out.println(p.getName() + " telah membayar " + this.getOwnerName() + " sebanyak " + hargaRent);
     }
 }
