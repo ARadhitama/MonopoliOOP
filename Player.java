@@ -8,6 +8,7 @@ public class Player {
     private int pos;
     private Boolean inJail;
     private ArrayList<Property> ownProp;
+    private ArrayList<Lot> ownLot;
     
     public Player (String name) {
         this.name = name;
@@ -73,5 +74,30 @@ public class Player {
             }
         }
         return i;
+    }
+
+    // cek komplek 
+    public boolean cekKomplek (int komp) {
+        int i = 0;
+        for (Lot lot : ownLot){
+            if (lot.getKompleks() == komp) {
+                i++;
+            }
+        }
+        if ((komp == 1) || (komp == 8)) {
+            if (i==2) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            if (i==3) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        return i;  
     }
 }
