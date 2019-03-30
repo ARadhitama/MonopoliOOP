@@ -13,5 +13,9 @@ public abstract class Tile {
         this.pos = pos;
     }*/
 
-    public abstract boolean landedMethod(Player p);
+    public abstract String getName();
+    public abstract String getOwnerName();
+    public abstract int getHarga();
+    
+        public abstract boolean landedMethod(Player p);
 }

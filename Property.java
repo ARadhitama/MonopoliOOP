@@ -27,6 +27,14 @@ public class Property extends Tile {
         return this.owner;
     }
 
+    public String getOwnerName() {
+        if (this.owner != null) {
+            return this.owner.getName();
+        } else {
+            return "Tuhan";
+        }
+    }
+
     public void setOwner(Player owner){
         this.owner = owner;
     }

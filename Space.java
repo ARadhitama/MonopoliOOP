@@ -2,9 +2,20 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Space extends Tile {
-    Random randomGen = new Random();
+    private Random randomGen = new Random();
     private int cards = 5;
 
+    public String getName() {
+        return "Space";
+    }
+
+    public String getOwnerName() {
+        return "Tuhan";
+    }
+
+    public int getHarga() {
+        return 0;
+    }
     
     public void startTile(Player P){                                //jika posisi pada startTile 
                                                                    //akan menambahkna 2x uang start

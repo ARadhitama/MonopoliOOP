@@ -87,14 +87,13 @@ public class Main {
         			turn.setTurn(turn.getTurn() + 1);
         		}
 
-        		turn.nextPlayer();
+				turn.nextPlayer();
 
         		// Ubah posisi player
         		players.get(turn.getPlayer()).setPos(
         			players.get(turn.getPlayer()).getPos() + dice1.roll() + dice2.roll()
 				);
 				System.out.println("Angka dadu : " + dice1.getValue() + " , " + dice2.getValue());
-				System.out.println("Anda mendarat di : " + tiles.get(players.get(turn.getPlayer()).getPos()));
 
         		// Jika dadu sama
         		if (dice1.getValue() == dice2.getValue()) {
@@ -103,11 +102,11 @@ public class Main {
 	        			players.get(turn.getPlayer()).getPos() + dice1.roll() + dice2.roll()
 					);
 					System.out.println("Angka dadu : " + dice1.getValue() + " , " + dice2.getValue());
-					System.out.println("Anda mendarat di : " + tiles.get(players.get(turn.getPlayer()).getPos()));
         		}
 
-        		// Ngejalanin landed method property / space
-        		nextPlayer = tiles.get(players.get(turn.getPlayer()).getPos()).landedMethod(players.get(turn.getPlayer()));
+				// Ngejalanin landed method property / space
+				System.out.println("Anda mendarat di " + tiles.get(players.get(turn.getPlayer()).getPos()).getName() + " milik " + tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName() + " dengan harga " + tiles.get(players.get(turn.getPlayer()).getPos()).getHarga() );
+				nextPlayer = tiles.get(players.get(turn.getPlayer()).getPos()).landedMethod(players.get(turn.getPlayer()));
         	}
 
         	if ((timer.getTime() == 30) || (nextPlayer)) {
