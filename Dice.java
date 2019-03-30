@@ -8,6 +8,7 @@ public class Dice {
 
     public Dice() {
         this.sides = 6;
+        this.value = randomGen.nextInt(this.sides) + 1;
     }
 
     public int getValue() {
