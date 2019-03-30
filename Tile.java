@@ -13,6 +13,7 @@ public abstract class Tile {
         this.pos = pos;
     }*/
 
+    public abstract String getKind();
     public abstract String getName();
     public abstract String getOwnerName();
     public abstract int getHarga();

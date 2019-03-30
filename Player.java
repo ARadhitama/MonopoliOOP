@@ -43,7 +43,7 @@ public class Player {
     }
 
     public void setPos (int pos) {
-        this.pos = pos % 39;
+        this.pos = pos % 38;
     }
 
     public String getName () {
