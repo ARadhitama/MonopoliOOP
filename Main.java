@@ -69,6 +69,8 @@ public class Main {
     		players.add(new Player(playerName));
     	}
 
+    	System.out.println("");
+
     	// Timer ga perlu di stop, biarkan mengalir aja~
     	Timer timer = new Timer();
         Turn turn = new Turn(totalPlayer);
@@ -163,6 +165,7 @@ public class Main {
 	        	}
 
 					turn.nextPlayer();
+					System.out.println("");
         }
 
         System.out.println("Selesai");
