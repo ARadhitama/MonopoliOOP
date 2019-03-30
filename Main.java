@@ -99,55 +99,62 @@ public class Main {
         			turn.setTurn(turn.getTurn() + 1);
         		}
 
-
-        		// Ubah posisi player
-        		players.get(turn.getPlayer()).setPos(
-        			players.get(turn.getPlayer()).getPos() + dice1.roll() + dice2.roll()
-				);
-				System.out.println("Angka dadu : " + dice1.getValue() + " & " + dice2.getValue());
-
-        		// Jika dadu sama
-        		if (dice1.getValue() == dice2.getValue()) {
-					System.out.println("Angka dadu sama, roll lagi!");
-        			players.get(turn.getPlayer()).setPos(
-	        			players.get(turn.getPlayer()).getPos() + dice1.roll() + dice2.roll()
+				if (players.get(turn.getPlayer()).getJail() == true) {
+					dice1.roll();
+					dice2.roll();
+					if (dice1.getValue() == dice2.getValue()) {
+						players.get(turn.getPlayer()).setJail(false);
+					}
+				} else {
+					// Ubah posisi player
+					players.get(turn.getPlayer()).setPos(
+						players.get(turn.getPlayer()).getPos() + dice1.roll() + dice2.roll()
 					);
 					System.out.println("Angka dadu : " + dice1.getValue() + " & " + dice2.getValue());
-        		}
 
-				// Info landing
-				System.out.println(players.get(turn.getPlayer()).getName() + " mendarat di " + tiles.get(players.get(turn.getPlayer()).getPos()).getName() 
-								+ " milik " + tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName() 
-								+ " dengan harga " + tiles.get(players.get(turn.getPlayer()).getPos()).getHarga() );
-				
+					// Jika dadu sama
+					if (dice1.getValue() == dice2.getValue()) {
+						System.out.println("Angka dadu sama, roll lagi!");
+						players.get(turn.getPlayer()).setPos(
+							players.get(turn.getPlayer()).getPos() + dice1.roll() + dice2.roll()
+						);
+						System.out.println("Angka dadu : " + dice1.getValue() + " & " + dice2.getValue());
+					}
 
-				////////////////////////////////////////////////////////////////
-				// Syarat untuk landedMethod property
-				command = "Diam";
-				if (!tiles.get(players.get(turn.getPlayer()).getPos()).getKind().equals("Space")) {
-        			if (tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName().equals("Tuhan")) {
-        				/*String command;
-        				Scanner sc = new Scanner(System.in);
+					// Info landing
+					System.out.println(players.get(turn.getPlayer()).getName() + " mendarat di " + tiles.get(players.get(turn.getPlayer()).getPos()).getName() 
+									+ " milik " + tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName() 
+									+ " dengan harga " + tiles.get(players.get(turn.getPlayer()).getPos()).getHarga() );
+					
 
-	        			System.out.println("Masukkan commandmu (Beli | Diam)");
-			            System.out.print(">> ");
-			            command = sc.next();
+					////////////////////////////////////////////////////////////////
+					// Syarat untuk landedMethod property
+					command = "Diam";
+					if (!tiles.get(players.get(turn.getPlayer()).getPos()).getKind().equals("Space")) {
+						if (tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName().equals("Tuhan")) {
+							/*String command;
+							Scanner sc = new Scanner(System.in);
 
-			            // BIG BOSS
+							System.out.println("Masukkan commandmu (Beli | Diam)");
+							System.out.print(">> ");
+							command = sc.next();
 
-			        	//// Panggil method di suatu class, yang menjalankan reading input with timer
-			            sc.close();*/
-			            try
-				        {
-				            command = (new Input()).getInput();
-				        }
-				        catch( Exception e )
-				        {
-				            System.out.println( e );
-				        }
-        			}
+							// BIG BOSS
+
+							//// Panggil method di suatu class, yang menjalankan reading input with timer
+							sc.close();*/
+							try
+							{
+								command = (new Input()).getInput();
+							}
+							catch( Exception e )
+							{
+								System.out.println( e );
+							}
+						}
+					}
+					///////////////////////////////////////////////////////////////
 				}
-				///////////////////////////////////////////////////////////////
 
         		nextPlayer = tiles.get(players.get(turn.getPlayer()).getPos()).landedMethod(players.get(turn.getPlayer()), command);
         	
