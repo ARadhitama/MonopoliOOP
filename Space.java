@@ -4,7 +4,12 @@ import java.util.Scanner;
 public class Space extends Tile {
     private Random randomGen = new Random();
     private int cards = 5;
+    private String spacetile;
 
+    public Space(String spacetile){
+        this.spacetile = spacetile;
+    }
+    
     public String getName() {
         return "Space";
     }
