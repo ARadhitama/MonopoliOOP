@@ -11,7 +11,7 @@ public class Player {
     
     public Player (String name) {
         this.name = name;
-        this.money = 0;
+        this.money = 200000;
         this.inJail = false;
         this.pos = 0;
         ownProp = new ArrayList<Property>();

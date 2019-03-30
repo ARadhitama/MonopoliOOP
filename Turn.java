@@ -1,11 +1,10 @@
 public class Turn extends Thread {
-	private Timer timer;
+	// private Timer timer;
 	private int totalPlayer;
 	private int turn = 1;
 	private int player = 0;		// Index dimulai dari 0
 
-	public Turn(Timer t, int totalPlayer) {
-		this.timer = t;
+	public Turn(int totalPlayer) {
 		this.totalPlayer = totalPlayer;
 	}
 
@@ -21,11 +20,15 @@ public class Turn extends Thread {
 		this.turn = turn;
 	}
 
+	public void setTotalPlayer(int totalPlayer) {
+		this.totalPlayer = totalPlayer;
+	}
+
 	public void nextPlayer() {
 		this.player = (this.player + 1) % this.totalPlayer;
 	}
 
-	public void run() {
+/*	public void run() {
         synchronized (timer) {
             while (true) {
                 try {
@@ -34,11 +37,10 @@ public class Turn extends Thread {
                     e.printStackTrace();
                 }
 
-                if (timer.getTime() % 30 == 0) {
+                if (timer.getTime() == 30) {
                 	timer.setTime(1);
-                    System.out.println("Time limit, next player turn!");
                 }
             }
         }
-    }
+    }*/
 }

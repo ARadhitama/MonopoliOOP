@@ -26,7 +26,7 @@ public class Timer extends Thread {
         return time;
     }
 
-    public synchronized void setTime (int t) {
+    public synchronized void setTime(int t) {
         setting = true;
         this.time = t;
         setting = false;
