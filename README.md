@@ -20,3 +20,4 @@ Mainkan sesuai petunjuk
 Masukkan "Quit" untuk selesai di tengah-tengah permainan
 
 ~Selamat bermain~
+
