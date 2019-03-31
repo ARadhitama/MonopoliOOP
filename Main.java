@@ -101,13 +101,23 @@ public class Main {
 
 				command = "Diam";
 
+				// Penjara
 				if (players.get(turn.getPlayer()).getJail() == true) {
+					players.get(turn.getPlayer()).decrementJail();
+					if (players.get(turn.getPlayer()).getCountJail() <= 0) {
+						players.get(turn.getPlayer()).setJail(false);
+						System.out.println("Selamat! " + players.get(turn.getPlayer()).getName() + " keluar dari penjara");
+					}
 					dice1.roll();
 					dice2.roll();
+					System.out.println("Angka dadu : " + dice1.getValue() + " & " + dice2.getValue());
 					if (dice1.getValue() == dice2.getValue()) {
 						players.get(turn.getPlayer()).setJail(false);
+						System.out.println("Selamat! " + players.get(turn.getPlayer()).getName() + " keluar dari penjara");
 					}
-				} else {
+				}
+				// Biasa
+				else {
 					// Ubah posisi player
 					players.get(turn.getPlayer()).setPos(
 						players.get(turn.getPlayer()).getPos() + dice1.roll() + dice2.roll()
