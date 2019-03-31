@@ -6,16 +6,9 @@
     "configurations": [
         {
             "type": "java",
-            "name": "CodeLens (Launch) - Main",
+            "name": "Main",
             "request": "launch",
-            "mainClass": "Main",
-            "projectName": "MonopoliOOP_60b2dae5"
-        },
-        {
-            "type": "java",
-            "name": "Debug (Launch) - External Terminal",
-            "request": "launch",
-            "console": "integratedTerminal",
+            "console": "externalTerminal",
             "mainClass": ""
         }
     ]

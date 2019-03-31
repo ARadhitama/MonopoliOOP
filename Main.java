@@ -145,11 +145,15 @@ public class Main {
 				}
 
 				// Info landing
-				System.out.println(players.get(turn.getPlayer()).getName() 
+				if (tiles.get(players.get(turn.getPlayer()).getPos()).getKind().equals("Property")) {
+					System.out.println(players.get(turn.getPlayer()).getName() 
 								+ " mendarat di " + tiles.get(players.get(turn.getPlayer()).getPos()).getName() 
 								+ " milik " + tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName() 
 								+ " dengan harga " + tiles.get(players.get(turn.getPlayer()).getPos()).getHarga() );
-				
+				} else {
+					System.out.println(players.get(turn.getPlayer()).getName() 
+								+ " mendarat di " + tiles.get(players.get(turn.getPlayer()).getPos()).getName());
+				}
 
 				////////////////////////////////////////////////////////////////
 				// Syarat untuk landedMethod property
@@ -181,10 +185,15 @@ public class Main {
     	
     		if (turn.getCommand().equals("majuchance") || turn.getCommand().equals("mundurchance") || turn.getCommand().equals("parkirsabeb")) {
         		// Info landing
-				System.out.println(players.get(turn.getPlayer()).getName() 
+				if (tiles.get(players.get(turn.getPlayer()).getPos()).getKind().equals("Property")) {
+					System.out.println(players.get(turn.getPlayer()).getName() 
 								+ " mendarat di " + tiles.get(players.get(turn.getPlayer()).getPos()).getName() 
 								+ " milik " + tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName() 
 								+ " dengan harga " + tiles.get(players.get(turn.getPlayer()).getPos()).getHarga() );
+				} else {
+					System.out.println(players.get(turn.getPlayer()).getName() 
+								+ " mendarat di " + tiles.get(players.get(turn.getPlayer()).getPos()).getName());
+				}
 				
 
 				////////////////////////////////////////////////////////////////
