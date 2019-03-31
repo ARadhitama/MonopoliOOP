@@ -14,7 +14,6 @@ public class Main {
     	boolean nextPlayer = false;
 
 
-
     	// Adding map of the game	
 		tiles.add(new Space("Start"));								// 0
 		tiles.add(new Lot("Monas", 10000, 1));
@@ -135,7 +134,8 @@ public class Main {
 				}
 
 				// Info landing
-				System.out.println(players.get(turn.getPlayer()).getName() + " mendarat di " + tiles.get(players.get(turn.getPlayer()).getPos()).getName() 
+				System.out.println(players.get(turn.getPlayer()).getName() 
+								+ " mendarat di " + tiles.get(players.get(turn.getPlayer()).getPos()).getName() 
 								+ " milik " + tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName() 
 								+ " dengan harga " + tiles.get(players.get(turn.getPlayer()).getPos()).getHarga() );
 				
@@ -148,7 +148,12 @@ public class Main {
 					if (tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName().equals("Tuhan")) {
 						try
 						{
-							command = (new Input()).getInput();
+							command = (new Input()).getInput(
+								tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName()
+								.equals(
+									players.get(turn.getPlayer()).getName()
+								)
+							);
 						}
 						catch( Exception e )
 						{
@@ -177,7 +182,12 @@ public class Main {
         			if (tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName().equals("Tuhan")) {
 			            try
 				        {
-				            command = (new Input()).getInput();
+				            command = (new Input()).getInput(
+								tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName()
+								.equals(
+									players.get(turn.getPlayer()).getName()
+								)
+							);
 				        }
 				        catch( Exception e )
 				        {

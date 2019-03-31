@@ -29,7 +29,7 @@ public class Player {
     }
     
     public void setJail (boolean inJail) {
-        if (!inJail) {
+        if (inJail) {
             this.countJail = 3;
         }
         this.inJail = inJail;

@@ -22,13 +22,16 @@ public class Input
         }    
     };
 
-    public String getInput() throws Exception
+    public String getInput(boolean isOwner) throws Exception
     {
         Timer timer = new Timer();
         timer.schedule( task, 30*1000 );
 
-        // System.out.println( "Input a string within 30 seconds: " );
-        System.out.println("Masukkan commandmu dalam 30 detik (Beli | Diam)");
+        if (!isOwner) {
+            System.out.println("Masukkan commandmu dalam 30 detik (Beli | Diam)");
+        } else {
+            System.out.println("Mau beli rumah? (Beli | Diam)");
+        }
         System.out.print(">> ");
         BufferedReader in = new BufferedReader(
         new InputStreamReader( System.in ) );
