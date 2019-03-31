@@ -113,7 +113,7 @@ public class Main {
 						players.get(turn.getPlayer()).setJail(false);
 						System.out.println("Selamat! " + players.get(turn.getPlayer()).getName() + " keluar dari penjara");
 					} else {
-						System.out.println("Sorry " + players.get(turn.getPlayer()).getName() + " yang betah ya di penjara~");
+						System.out.println("Sorry, " + players.get(turn.getPlayer()).getName() + " yang betah ya di penjara~");
 					}
 				}
 			}
@@ -207,14 +207,14 @@ public class Main {
         	}
 
         	// Quit
-        	if (command.equals("Quit")) {
+        	if (command.equals("quit")) {
         		play = false;
         	}			
         }
 
         System.out.println("");
         System.out.println("Selesai");
-        System.out.println("Anda bermain selama " + timer.getTime() + " detik");
+        System.out.println("Anda bermain selama " + (timer.getTime() / 60) + " menit " + (timer.getTime() % 60) + " detik");
 
         sc.close();
     }
