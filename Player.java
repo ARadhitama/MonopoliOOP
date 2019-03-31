@@ -33,6 +33,10 @@ public class Player {
         this.countJail = 3;
     }
 
+    public int getCountJail() {
+        return this.countJail;
+    }
+
     public void decrementJail() {
         this.countJail--;
         System.out.println("Di penjara " + this.countJail + " turn lagi yaa~");
