@@ -51,17 +51,17 @@ public class Player {
         return this.name;
     }
 
-    /*public Property getProp () {
-        // return
-    }*/
-
-    public void buyProp () {
-        // ngurangin money, nambah ownProp
+    public ArrayList<Property> getProp () {
+        return ownProp;
     }
 
-    public void sellProp () {
+    public ArrayList<Lot> getLot () {
+        return ownLot;
+    }
+
+    /*public void sellProp () {
         // ngurangin ownProp, nambah money
-    }
+    }*/
 
     //ngitung berapa property yang dipunya, sesuai type masukan
     public int countProp(int type){

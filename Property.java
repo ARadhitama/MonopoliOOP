@@ -62,6 +62,7 @@ public class Property extends Tile {
     public void buyProp(Player p){
         if (p.getMoney() >= this.getHarga()){
             this.setOwner(p);
+            p.getProp().add(this);
             this.getOwner().rdcMoney(harga);
             System.out.println(p.getName() + " telah membeli " + this.getName() + " seharga " + this.getHarga());
             System.out.println("Uang " + p.getName() + " tinggal " + p.getMoney());

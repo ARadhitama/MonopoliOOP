@@ -45,6 +45,8 @@ public class Lot extends Property {
         } else if (this.getOwner() == null) {
             if (p.getMoney() >= this.getHarga()){
                 this.setOwner(p);
+                p.getProp().add(this);
+                p.getLot().add(this);
                 this.getOwner().rdcMoney(this.getHarga());
                 System.out.println(p.getName() + " telah membeli " + this.getName() + " seharga " + this.getHarga());
                 System.out.println("Uang " + p.getName() + " tinggal " + p.getMoney());
