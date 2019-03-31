@@ -43,12 +43,21 @@ public class Space extends Tile {
 
     public void freeParkingTile(Player P, Turn t){                        //Tile freeparking
         Scanner sc = new Scanner(System.in);
+        int pos = P.getPos();
+
         if (P.getPos()==20) {                                       // dapat berjalan ke lot mana saja
-            System.out.println("Mau mendarat di mana? (Sebut posisi 0-37) : ");
-            P.setPos(sc.nextInt());
+            System.out.println("Mau mendarat di mana? (Sebut posisi 0-37)");
+            System.out.print(">> ");
+            pos = sc.nextInt();
+            while (pos > 37 || pos < 0) {
+                System.out.println("Input salah, yang bener dong mau mendarat di mana!? (Sebut posisi 0-37)");
+                System.out.print(">> ");
+                pos = sc.nextInt();
+            }
+            P.setPos(pos);
             t.setCommand("parkirsabeb");                                 //scan daerah yang ingin dituju
         }
-        sc.close();
+        // sc.close();
     }
 
     public void goToJailTile(Player P){                             //Tile Go TO Jail
