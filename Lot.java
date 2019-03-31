@@ -60,8 +60,6 @@ public class Lot extends Property {
 
     public void bayarRent(Player p){
         int hargaRent = 0;
-        //System.out.println(p.getLot().get(0).getName());
-        System.out.println(this.getOwner().cekKompleks(this.getKompleks()));
         if (this.getOwner().cekKompleks(this.getKompleks())) {
             switch (this.getRumah()) {
                 case 0:
