@@ -105,8 +105,10 @@ public class Property extends Tile {
             } else if (this.getOwnerName().equals(p.getName())){
                 // belom tau
             }   
-        } else {
+        } else if (!this.getOwnerName().equals("Tuhan")) {
             this.bayarRent(p);
+        } else {
+            
         }
         return true;
     }
