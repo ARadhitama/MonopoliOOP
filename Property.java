@@ -71,29 +71,32 @@ public class Property extends Tile {
     }
 
     public void bayarRent(Player p){
+        int hargaRent = 0;
         if (getType() == 2) {
             if (this.getOwner().countProp(2) == 1) {
-                p.rdcMoney(getHarga()/8);
-                this.getOwner().addMoney(getHarga()/8);
+                hargaRent = getHarga()/8;
             } else { // 2
-                p.rdcMoney(getHarga()/2);
-                this.getOwner().addMoney(getHarga()/2);
+                hargaRent = getHarga()/2;
             }
-       } else {
-            if (this.getOwner().countProp(3) == 1) {
-                p.rdcMoney(getHarga()/8);
-                this.getOwner().addMoney(getHarga()/8);
-            } else if (this.getOwner().countProp(3) == 2) {
-                p.rdcMoney(getHarga()/4);
-                this.getOwner().addMoney(getHarga()/4);
-            } else if (this.getOwner().countProp(3) == 3) {
-                p.rdcMoney(getHarga()/2);
-                this.getOwner().addMoney(getHarga()/2);
-            } else { //4
-                p.rdcMoney(getHarga());
-                this.getOwner().addMoney(getHarga());
-            }
-       }
+        } else {
+            switch (this.getOwner().countProp(3)) {
+                case 1:
+                    hargaRent = getHarga()/8; 
+                    break;
+                case 2:
+                    hargaRent = getHarga()/4;
+                    break;
+                case 3:
+                    hargaRent = getHarga()/2;
+                    break;
+                default: //4
+                    hargaRent = getHarga();
+                    break;
+           }
+        }
+        p.rdcMoney(hargaRent);
+        this.getOwner().addMoney(hargaRent);
+        System.out.println(p.getName() + " telah membayar sewa " + this.getName() + " kepada " + this.getOwnerName() + " sebanyak " + hargaRent);
     }
 
     public boolean landedMethod(Player p, String command) {

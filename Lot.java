@@ -78,6 +78,6 @@ public class Lot extends Property {
         }
         p.rdcMoney(hargaRent);
         this.getOwner().addMoney(hargaRent);
-        System.out.println(p.getName() + " telah membayar " + this.getOwnerName() + " sebanyak " + hargaRent);
+        System.out.println(p.getName() + " telah membayar sewa " + this.getName() + " kepada " + this.getOwnerName() + " sebanyak " + hargaRent);
     }
 }
