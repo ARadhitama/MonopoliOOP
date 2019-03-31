@@ -6,6 +6,7 @@ public class Player {
     private int money;
     private int pos;
     private Boolean inJail;
+    private int countJail;
     private ArrayList<Property> ownProp;
     private ArrayList<Lot> ownLot;
     
@@ -13,6 +14,7 @@ public class Player {
         this.name = name;
         this.money = 200000;
         this.inJail = false;
+        this.countJail = 0;
         this.pos = 0;
         ownProp = new ArrayList<Property>();
         ownLot = new ArrayList<Lot>();
@@ -28,6 +30,12 @@ public class Player {
     
     public void setJail (boolean inJail) {
         this.inJail = inJail;
+        this.countJail = 3;
+    }
+
+    public void decrementJail() {
+        this.countJail--;
+        System.out.println("Di penjara " + this.countJail + " turn lagi yaa~");
     }
 
     public void addMoney (int money) {
