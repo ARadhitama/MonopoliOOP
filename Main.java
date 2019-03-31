@@ -17,43 +17,43 @@ public class Main {
 
     	// Adding map of the game	
 		tiles.add(new Space("Start"));								// 0
-		tiles.add(new Lot("Monas", 5000, 1));
+		tiles.add(new Lot("Monas", 10000, 1));
 		tiles.add(new Space("Community Chest"));
-		tiles.add(new Lot("Taman Mini", 6000, 1));
-    	tiles.add(new Property("Bandara Kemayoran", 20000, 3));
-    	tiles.add(new Lot("Ragunan Pasar Minggu", 7000, 2));		// 5
-    	tiles.add(new Lot("Binaria", 7500, 2));
+		tiles.add(new Lot("Taman Mini", 13000, 1));
+    	tiles.add(new Property("Bandara Kemayoran", 22500, 3));
+    	tiles.add(new Lot("Ragunan Pasar Minggu", 15000, 2));		// 5
+    	tiles.add(new Lot("Binaria", 20000, 2));
 		tiles.add(new Space("Chance"));
-		tiles.add(new Lot("Taman Pluit", 8000, 2));
-    	tiles.add(new Lot("Kebun Raya Bogor", 9000, 3));
+		tiles.add(new Lot("Taman Pluit", 20000, 2));
+    	tiles.add(new Lot("Kebun Raya Bogor", 25000, 3));
 		tiles.add(new Space("Penjara"));							// 10
-		tiles.add(new Property("Perusahaan Listrik", 10000, 2));
-    	tiles.add(new Lot("Pelabuhan Ratu", 9500, 3));
-    	tiles.add(new Lot("Tangkuban Perahu", 10000, 3));
-    	tiles.add(new Property("Terminal Bis Semarang", 20000, 3));
-    	tiles.add(new Lot("Gedung Batu", 11000, 4));				// 15
-    	tiles.add(new Lot("Kopeng", 11500, 4));
+		tiles.add(new Property("Perusahaan Listrik", 32500, 2));
+    	tiles.add(new Lot("Pelabuhan Ratu", 26500, 3));
+    	tiles.add(new Lot("Tangkuban Perahu", 26500, 3));
+    	tiles.add(new Property("Terminal Bis Semarang", 27500, 3));
+    	tiles.add(new Lot("Gedung Batu", 27000, 4));				// 15
+    	tiles.add(new Lot("Kopeng", 27000, 4));
 		tiles.add(new Space("Community Chest"));
-		tiles.add(new Lot("Borobudur", 12000, 4));
-    	tiles.add(new Lot("Prambanan", 13000, 5));
+		tiles.add(new Lot("Borobudur", 30000, 4));
+    	tiles.add(new Lot("Prambanan", 30000, 5));
 		tiles.add(new Space("Free Parking"));						// 20
-		tiles.add(new Lot("Kraton Yogya", 13500, 5));
+		tiles.add(new Lot("Kraton Yogya", 32000, 5));
 		tiles.add(new Space("Chance"));
-		tiles.add(new Lot("Bengawan Solo", 14000, 5));
-    	tiles.add(new Property("Stasiun Pasar Turi", 20000, 3));
-    	tiles.add(new Lot("Sarangan", 15000, 6));					// 25
-    	tiles.add(new Lot("Selecta", 15500, 6));
-    	tiles.add(new Property("Perusahaan Air", 10000, 2));		
-    	tiles.add(new Lot("Gunung Kawi", 16000, 6));		
-		tiles.add(new Lot("Pantai Sanur", 17000, 7));
+		tiles.add(new Lot("Bengawan Solo", 31000, 5));
+    	tiles.add(new Property("Stasiun Pasar Turi", 30000, 3));
+    	tiles.add(new Lot("Sarangan", 33000, 6));					// 25
+    	tiles.add(new Lot("Selecta", 33500, 6));
+    	tiles.add(new Property("Perusahaan Air", 37000, 2));		
+    	tiles.add(new Lot("Gunung Kawi", 33000, 6));		
+		tiles.add(new Lot("Pantai Sanur", 33000, 7));
 		tiles.add(new Space("Go To Jail"));							// 30
-		tiles.add(new Lot("Tampak Siring", 17500, 7));
+		tiles.add(new Lot("Tampak Siring", 34000, 7));
 		tiles.add(new Space("Community Chest"));
-		tiles.add(new Lot("Taman Laut Banda", 18000, 7));
-		tiles.add(new Property("Pelabuhan Belawan", 20000, 3));
-		tiles.add(new Lot("Danau Toba", 19000, 8));					// 35
+		tiles.add(new Lot("Taman Laut Banda", 36000, 7));
+		tiles.add(new Property("Pelabuhan Belawan", 36000, 3));
+		tiles.add(new Lot("Danau Toba", 39000, 8));					// 35
 		tiles.add(new Space("Chance"));
-		tiles.add(new Lot("Brastagi", 20000, 8));					// 37
+		tiles.add(new Lot("Brastagi", 40000, 8));					// 37
 
         System.out.println("============ WELCOME TO HELL MONOPOLY ============\n");
 
