@@ -30,8 +30,10 @@ public class Space extends Tile {
                                                                    //akan menambahkan 2x uang start
         if (P.getPos() == 0){
             P.addMoney(40000);
+            System.out.println("Selamat anda beruntung tiba di start dapat Rp.40.000!!!");
         } else {
             P.addMoney(20000);
+            System.out.println("Selamat anda mendapatkan Rp.20.000");
         }
     }
 
