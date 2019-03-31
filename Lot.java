@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Lot extends Property {
     private int rumah;
     private int kompleks;

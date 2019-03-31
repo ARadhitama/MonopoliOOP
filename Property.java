@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Property extends Tile {
     private String name;
     private Player owner = null;

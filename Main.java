@@ -99,6 +99,8 @@ public class Main {
         			turn.setTurn(turn.getTurn() + 1);
         		}
 
+				command = "Diam";
+
 				if (players.get(turn.getPlayer()).getJail() == true) {
 					dice1.roll();
 					dice2.roll();
