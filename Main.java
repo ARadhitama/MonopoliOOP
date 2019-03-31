@@ -84,121 +84,114 @@ public class Main {
         System.out.println("Giliran " + players.get(turn.getPlayer()).getName() + " bermain!");
 
         while (play) {
-	       
-    	// Next player turn
-        	// if (timer.getTime() == 1) {
-        		// Kelar
-        		/*for (Player p : players) {
-        			if (p.getMoney() <= 0) {
-        				players.remove()		// Hapus player
-        			}
+    		// Kelar
+    		/*for (Player p : players) {
+    			if (p.getMoney() <= 0) {
+    				players.remove()		// Hapus player
+    			}
 
-        		}*/
-        		// New turn (setiap player sudah bermain)
-        		if (turn.getPlayer() == 0) {
-        			turn.setTurn(turn.getTurn() + 1);
-        		}
+    		}*/
 
-				command = "Diam";
+        	// New turn (setiap player sudah bermain)
+    		if (turn.getPlayer() == 0) {
+    			turn.setTurn(turn.getTurn() + 1);
+    		}
 
-				// Penjara
-				if (players.get(turn.getPlayer()).getJail() == true) {
-					players.get(turn.getPlayer()).decrementJail();
-					if (players.get(turn.getPlayer()).getCountJail() <= 0) {
-						players.get(turn.getPlayer()).setJail(false);
-						System.out.println("Selamat! " + players.get(turn.getPlayer()).getName() + " keluar dari penjara");
-					}
+			command = "diam";
+
+			// Penjara
+			if (players.get(turn.getPlayer()).getJail() == true) {
+				players.get(turn.getPlayer()).decrementJail();
+				if (players.get(turn.getPlayer()).getCountJail() <= 0) {
+					players.get(turn.getPlayer()).setJail(false);
+					System.out.println("Selamat! " + players.get(turn.getPlayer()).getName() + " keluar dari penjara");
+				} else {
 					dice1.roll();
 					dice2.roll();
 					System.out.println("Angka dadu : " + dice1.getValue() + " & " + dice2.getValue());
 					if (dice1.getValue() == dice2.getValue()) {
 						players.get(turn.getPlayer()).setJail(false);
 						System.out.println("Selamat! " + players.get(turn.getPlayer()).getName() + " keluar dari penjara");
+					} else {
+						System.out.println("Sorry " + players.get(turn.getPlayer()).getName() + " yang betah ya di penjara~");
 					}
 				}
-				// Biasa
-				else {
-					// Ubah posisi player
+			}
+			// Biasa
+			else {
+				// Ubah posisi player
+				players.get(turn.getPlayer()).setPos(
+					players.get(turn.getPlayer()).getPos() + dice1.roll() + dice2.roll()
+				);
+				System.out.println("Angka dadu : " + dice1.getValue() + " & " + dice2.getValue());
+
+				// Jika dadu sama
+				if (dice1.getValue() == dice2.getValue()) {
+					System.out.println("Angka dadu sama, roll lagi!");
 					players.get(turn.getPlayer()).setPos(
 						players.get(turn.getPlayer()).getPos() + dice1.roll() + dice2.roll()
 					);
 					System.out.println("Angka dadu : " + dice1.getValue() + " & " + dice2.getValue());
-
-					// Jika dadu sama
-					if (dice1.getValue() == dice2.getValue()) {
-						System.out.println("Angka dadu sama, roll lagi!");
-						players.get(turn.getPlayer()).setPos(
-							players.get(turn.getPlayer()).getPos() + dice1.roll() + dice2.roll()
-						);
-						System.out.println("Angka dadu : " + dice1.getValue() + " & " + dice2.getValue());
-					}
-
-					// Info landing
-					System.out.println(players.get(turn.getPlayer()).getName() + " mendarat di " + tiles.get(players.get(turn.getPlayer()).getPos()).getName() 
-									+ " milik " + tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName() 
-									+ " dengan harga " + tiles.get(players.get(turn.getPlayer()).getPos()).getHarga() );
-					
-
-					////////////////////////////////////////////////////////////////
-					// Syarat untuk landedMethod property
-					command = "Diam";
-					if (!tiles.get(players.get(turn.getPlayer()).getPos()).getKind().equals("Space")) {
-						if (tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName().equals("Tuhan")) {
-							/*String command;
-							Scanner sc = new Scanner(System.in);
-
-							System.out.println("Masukkan commandmu (Beli | Diam)");
-							System.out.print(">> ");
-							command = sc.next();
-
-							// BIG BOSS
-
-							//// Panggil method di suatu class, yang menjalankan reading input with timer
-							sc.close();*/
-							try
-							{
-								command = (new Input()).getInput();
-							}
-							catch( Exception e )
-							{
-								System.out.println( e );
-							}
-						}
-					}
-					///////////////////////////////////////////////////////////////
 				}
 
-        		nextPlayer = tiles.get(players.get(turn.getPlayer()).getPos()).landedMethod(players.get(turn.getPlayer()), command);
-        	
-        		if (command.equals("Majuchance") || command.equals("Mundurchance") || command.equals("parkirsabeb")) {
-	        		// Info landing
-					System.out.println(players.get(turn.getPlayer()).getName() + " mendarat di " + tiles.get(players.get(turn.getPlayer()).getPos()).getName() 
-									+ " milik " + tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName() 
-									+ " dengan harga " + tiles.get(players.get(turn.getPlayer()).getPos()).getHarga() );
-					
+				// Info landing
+				System.out.println(players.get(turn.getPlayer()).getName() + " mendarat di " + tiles.get(players.get(turn.getPlayer()).getPos()).getName() 
+								+ " milik " + tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName() 
+								+ " dengan harga " + tiles.get(players.get(turn.getPlayer()).getPos()).getHarga() );
+				
 
-					////////////////////////////////////////////////////////////////
-					// Syarat untuk landedMethod property
-					command = "Diam";
-					if (!tiles.get(players.get(turn.getPlayer()).getPos()).getKind().equals("Space")) {
-						// Property
-	        			if (tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName().equals("Tuhan")) {
-				            try
-					        {
-					            command = (new Input()).getInput();
-					        }
-					        catch( Exception e )
-					        {
-					            System.out.println( e );
-					        }
-	        			}
+				////////////////////////////////////////////////////////////////
+				// Syarat untuk landedMethod property
+				command = "diam";
+				if (!tiles.get(players.get(turn.getPlayer()).getPos()).getKind().equals("Space")) {
+					// Property
+					if (tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName().equals("Tuhan")) {
+						try
+						{
+							command = (new Input()).getInput();
+						}
+						catch( Exception e )
+						{
+							System.out.println( e );
+						}
 					}
-					///////////////////////////////////////////////////////////////
+				}
+				///////////////////////////////////////////////////////////////
+			}
 
-	        		nextPlayer = tiles.get(players.get(turn.getPlayer()).getPos()).landedMethod(players.get(turn.getPlayer()), command);
-	        	
-        		} 
+    		nextPlayer = tiles.get(players.get(turn.getPlayer()).getPos()).landedMethod(players.get(turn.getPlayer()), command);
+    	
+    		if (command.equals("majuchance") || command.equals("mundurchance") || command.equals("parkirsabeb")) {
+        		// Info landing
+				System.out.println(players.get(turn.getPlayer()).getName() 
+								+ " mendarat di " + tiles.get(players.get(turn.getPlayer()).getPos()).getName() 
+								+ " milik " + tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName() 
+								+ " dengan harga " + tiles.get(players.get(turn.getPlayer()).getPos()).getHarga() );
+				
 
+				////////////////////////////////////////////////////////////////
+				// Syarat untuk landedMethod property
+				command = "diam";
+				if (!tiles.get(players.get(turn.getPlayer()).getPos()).getKind().equals("Space")) {
+					// Property
+        			if (tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName().equals("Tuhan")) {
+			            try
+				        {
+				            command = (new Input()).getInput();
+				        }
+				        catch( Exception e )
+				        {
+				            System.out.println( e );
+				        }
+        			}
+				}
+				///////////////////////////////////////////////////////////////
+
+				// landedMethod
+        		nextPlayer = tiles.get(players.get(turn.getPlayer()).getPos()).landedMethod(players.get(turn.getPlayer()), command);
+    		} 
+
+        	// Next turn
         	if (nextPlayer) {
         		nextPlayer = false;
         		System.out.println("");
@@ -213,6 +206,7 @@ public class Main {
         		System.out.println("Giliran " + players.get(turn.getPlayer()).getName() + " bermain!");
         	}
 
+        	// Quit
         	if (command.equals("Quit")) {
         		play = false;
         	}			

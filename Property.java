@@ -100,12 +100,8 @@ public class Property extends Tile {
 
     public boolean landedMethod(Player p, String command) {
         if (this.getOwnerName().equals("Tuhan")) {
-            if (command.equals("Beli")) {
+            if (command.equals("beli")) {
                 this.buyProp(p);
-            } else if (command.equals("Diam")) {
-                // auto keluar
-            } else if (command.isEmpty()) {
-            
             }
         } else {
             this.bayarRent(p);

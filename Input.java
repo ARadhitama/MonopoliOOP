@@ -38,9 +38,9 @@ public class Input
         timer.cancel();
 
         if (this.empty) {
-            return "Diam";
+            return "diam";
         } else {
-            return str;
+            return str.toLowerCase();
         }
         // System.out.println( "you have entered: "+ str ); 
     }
