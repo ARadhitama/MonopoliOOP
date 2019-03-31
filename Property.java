@@ -65,7 +65,7 @@ public class Property extends Tile {
             System.out.println(p.getName() + " telah membeli " + this.getName() + " seharga " + this.getHarga());
             System.out.println("Uang " + p.getName() + " tinggal " + p.getMoney());
         } else {
-            System.out.println(p.getName() + "tidak memiliki cukup uang");
+            System.out.println(p.getName() + " tidak memiliki cukup uang");
         }
     }
 

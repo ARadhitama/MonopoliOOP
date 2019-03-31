@@ -51,7 +51,7 @@ public class Lot extends Property {
                 System.out.println(p.getName() + " telah membeli " + this.getName() + " seharga " + this.getHarga());
                 System.out.println("Uang " + p.getName() + " tinggal " + p.getMoney());
             } else {
-                System.out.println(p.getName() + "tidak memiliki cukup uang");
+                System.out.println(p.getName() + " tidak memiliki cukup uang");
             }
         } else {
            System.out.println("Udah punya orang lain");
@@ -60,6 +60,8 @@ public class Lot extends Property {
 
     public void bayarRent(Player p){
         int hargaRent = 0;
+        //System.out.println(p.getLot().get(0).getName());
+        System.out.println(this.getOwner().cekKompleks(this.getKompleks()));
         if (this.getOwner().cekKompleks(this.getKompleks())) {
             switch (this.getRumah()) {
                 case 0:

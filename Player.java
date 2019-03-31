@@ -92,24 +92,19 @@ public class Player {
 
     // cek komplek 
     public boolean cekKompleks (int komp) {
-        int i = 0;
-        for (Lot lot : ownLot){
-            if (lot.getKompleks() == komp) {
-                i++;
-            }
-        }
-        if ((komp == 1) || (komp == 8)) {
-            if (i==2) {
-                return true;
-            } else {
-                return false;
-            }
+        if (this.getLot().size() == 0 ){
+            return false;
         } else {
-            if (i==3) {
-                return true;
+            int i = 0;
+            for (Lot lot : ownLot){
+                if (lot.getKompleks() == komp) {
+                    i++;
+                }
             }
-            else {
-                return false;
+            if ((komp == 1) || (komp == 8)) {
+                return i == 2;
+            } else {
+                return i == 3;
             }
         }  
     }
