@@ -8,7 +8,7 @@ public class Main {
     	Scanner sc = new Scanner(System.in);
     	List<Player> players = new ArrayList<Player>();
     	List<Tile> tiles = new ArrayList<Tile>();
-    	String playerName, command;
+    	String playerName;
     	int i, totalPlayer;
     	boolean play = true;
     	boolean nextPlayer = false;
@@ -96,7 +96,7 @@ public class Main {
     			turn.setTurn(turn.getTurn() + 1);
     		}
 
-			command = "diam";
+			turn.setCommand("diam");
 
 			// Penjara
 			if (players.get(turn.getPlayer()).getJail() == true) {
@@ -142,18 +142,18 @@ public class Main {
 
 				////////////////////////////////////////////////////////////////
 				// Syarat untuk landedMethod property
-				command = "diam";
+				turn.setCommand("diam");
 				if (!tiles.get(players.get(turn.getPlayer()).getPos()).getKind().equals("Space")) {
 					// Property
 					if (tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName().equals("Tuhan")) {
 						try
 						{
-							command = (new Input()).getInput(
+							turn.setCommand((new Input()).getInput(
 								tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName()
 								.equals(
 									players.get(turn.getPlayer()).getName()
 								)
-							);
+							));
 						}
 						catch( Exception e )
 						{
@@ -164,9 +164,9 @@ public class Main {
 				///////////////////////////////////////////////////////////////
 			}
 
-    		nextPlayer = tiles.get(players.get(turn.getPlayer()).getPos()).landedMethod(players.get(turn.getPlayer()), command);
+    		nextPlayer = tiles.get(players.get(turn.getPlayer()).getPos()).landedMethod(players.get(turn.getPlayer()), turn);
     	
-    		if (command.equals("majuchance") || command.equals("mundurchance") || command.equals("parkirsabeb")) {
+    		if (turn.getCommand().equals("majuchance") || turn.getCommand().equals("mundurchance") || turn.getCommand().equals("parkirsabeb")) {
         		// Info landing
 				System.out.println(players.get(turn.getPlayer()).getName() 
 								+ " mendarat di " + tiles.get(players.get(turn.getPlayer()).getPos()).getName() 
@@ -176,18 +176,18 @@ public class Main {
 
 				////////////////////////////////////////////////////////////////
 				// Syarat untuk landedMethod property
-				command = "diam";
+				turn.setCommand("diam");
 				if (!tiles.get(players.get(turn.getPlayer()).getPos()).getKind().equals("Space")) {
 					// Property
         			if (tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName().equals("Tuhan")) {
 			            try
 				        {
-				            command = (new Input()).getInput(
+				            turn.setCommand((new Input()).getInput(
 								tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName()
 								.equals(
 									players.get(turn.getPlayer()).getName()
 								)
-							);
+							));
 				        }
 				        catch( Exception e )
 				        {
@@ -198,7 +198,7 @@ public class Main {
 				///////////////////////////////////////////////////////////////
 
 				// landedMethod
-        		nextPlayer = tiles.get(players.get(turn.getPlayer()).getPos()).landedMethod(players.get(turn.getPlayer()), command);
+        		nextPlayer = tiles.get(players.get(turn.getPlayer()).getPos()).landedMethod(players.get(turn.getPlayer()), turn);
     		} 
 
         	// Next turn
@@ -217,7 +217,7 @@ public class Main {
         	}
 
         	// Quit
-        	if (command.equals("quit")) {
+        	if (turn.getCommand().equals("quit")) {
         		play = false;
         	}			
         }

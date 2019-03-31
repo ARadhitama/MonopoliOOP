@@ -98,9 +98,9 @@ public class Property extends Tile {
         System.out.println(p.getName() + " telah membayar sewa " + this.getName() + " kepada " + this.getOwnerName() + " sebanyak " + hargaRent);
     }
 
-    public boolean landedMethod(Player p, String command) {
+    public boolean landedMethod(Player p, Turn t) {
         if (this.getOwnerName().equals("Tuhan")) {
-            if (command.equals("beli")) {
+            if (t.getCommand().equals("beli")) {
                 this.buyProp(p);
             }
         } else {
