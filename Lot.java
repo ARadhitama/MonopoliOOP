@@ -62,6 +62,9 @@ public class Lot extends Property {
         int hargaRent = 0;
         if (this.getOwner().cekKompleks(this.getKompleks())) {
             switch (this.getRumah()) {
+                case 0:
+                    hargaRent = this.getHarga()/4;
+                    break;
                 case 1:
                     hargaRent = this.getHarga()/2;
                     break;
