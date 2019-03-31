@@ -26,6 +26,10 @@ public class Space extends Tile {
         return 0;
     }
     
+    public void setOwner(Player owner) {
+
+    }
+
     public void startTile(Player P){                                //jika posisi pada startTile 
                                                                    //akan menambahkan 2x uang start
         if (P.getPos() == 0){

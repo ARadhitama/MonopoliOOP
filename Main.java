@@ -102,6 +102,11 @@ public class Main {
     			turn.setTurn(turn.getTurn() + 1);
     		}
 
+    		if (turn.getTotalPlayer() == 1) {
+    			play = false;
+    			break;
+    		}
+
 			turn.setCommand("diam");
 
 			// Penjara
@@ -213,6 +218,21 @@ public class Main {
 
         	// Next turn
         	if (nextPlayer) {
+        		if (players.get(turn.getPlayer()).getMoney() <= 0) {
+		            System.out.println("");
+        			for (Tile tile : tiles) {
+        				if (tile.getKind().equals("Property")) {
+			                if (tile.getOwnerName().equals(players.get(turn.getPlayer()).getName())) {
+			                    tile.setOwner(null);
+			                    System.out.println(tile.getName() + " telah dikembalikan kepada Tuhan");
+			                }
+			            }
+		            }
+        			System.out.println(players.get(turn.getPlayer()).getName() + " kalah! Sukurinn hahahah");
+        			players.remove(turn.getPlayer());
+        			turn.setTotalPlayer(players.size());
+        		}
+
         		nextPlayer = false;
         		System.out.println("");
         		turn.nextPlayer();
@@ -235,7 +255,11 @@ public class Main {
         }
 
         System.out.println("");
-        System.out.println("Selesai");
+        System.out.println("==================== Selesai ====================");
+        System.out.println("========== Terima kasih telah bermain ==========");
+        System.out.println("");
+        System.out.println("Selamat! " + players.get(0).getName() + " menang");
+        System.out.println("Anda bermain sebanyak " + turn.getTurn() + " turn");
         System.out.println("Anda bermain selama " + (timer.getTime() / 60) + " menit " + (timer.getTime() % 60) + " detik");
 
         sc.close();

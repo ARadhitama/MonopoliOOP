@@ -19,6 +19,10 @@ public class Turn extends Thread {
 		return this.player;
 	}
 
+	public int getTotalPlayer() {
+		return this.totalPlayer;
+	}
+
 	public int getTime() {
 		return this.timer.getTime();
 	}
