@@ -7,5 +7,4 @@
 *.exe
 
 # vscode
-.vscode
-.json
+vscode/
