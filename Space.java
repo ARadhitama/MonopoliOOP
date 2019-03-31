@@ -99,7 +99,7 @@ public class Space extends Tile {
             case 2 :
                 System.out.println("Maju 3 langkah dong");
                 P.setPos(P.getPos()+3);
-                command = "Majuchance";
+                command = "majuchance";
                 break;
             case 3 :
                 System.out.println("Astaghfirullah menang judi.... tapi gaapa uang monopoli kokga haram");
@@ -108,7 +108,7 @@ public class Space extends Tile {
             case 4 : 
                 System.out.println("Mundur 3 langkah");
                 P.setPos(P.getPos()-3);
-                command = "Mundurchance";
+                command = "mundurchance";
                 break;
         }
     }
