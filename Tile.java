@@ -18,5 +18,5 @@ public abstract class Tile {
     public abstract String getOwnerName();
     public abstract int getHarga();
     
-    public abstract boolean landedMethod(Player p, String command);
+    public abstract boolean landedMethod(Player p, Turn t);
 }

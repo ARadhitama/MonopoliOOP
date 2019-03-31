@@ -3,10 +3,12 @@ public class Turn extends Thread {
 	private int totalPlayer;
 	private int turn = 1;
 	private int player = 0;		// Index dimulai dari 0
+	private String command;
 
 	public Turn(int totalPlayer, Timer t) {
 		this.totalPlayer = totalPlayer;
 		this.timer = t;
+		this.command = "diam";
 	}
 
 	public int getTurn() {
@@ -21,8 +23,16 @@ public class Turn extends Thread {
 		return this.timer.getTime();
 	}
 
+	public String getCommand() {
+		return this.command;
+	}
+
 	public void setTurn(int turn) {
 		this.turn = turn;
+	}
+
+	public void setCommand(String command) {
+		this.command = command;
 	}
 
 	public void setTotalPlayer(int totalPlayer) {

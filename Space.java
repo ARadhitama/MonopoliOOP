@@ -41,12 +41,12 @@ public class Space extends Tile {
         
     }
 
-    public void freeParkingTile(Player P, String command){                        //Tile freeparking
+    public void freeParkingTile(Player P, Turn t){                        //Tile freeparking
         Scanner sc = new Scanner(System.in);
         if (P.getPos()==20) {                                       // dapat berjalan ke lot mana saja
             System.out.println("Mau mendarat di mana? (Sebut posisi 0-37) : ");
             P.setPos(sc.nextInt());
-            command = "parkirsabeb";                                 //scan daerah yang ingin dituju
+            t.setCommand("parkirsabeb");                                 //scan daerah yang ingin dituju
         }
         sc.close();
     }
@@ -85,7 +85,7 @@ public class Space extends Tile {
             
     }
 
-    public void chanceCard(Player P, String command){                                       //Chance Card
+    public void chanceCard(Player P, Turn t){                                       //Chance Card
         int result = randomGen.nextInt(cards);
         switch(result) {
             case 0 : 
@@ -101,7 +101,7 @@ public class Space extends Tile {
             case 2 :
                 System.out.println("Maju 3 langkah dong");
                 P.setPos(P.getPos()+3);
-                command = "majuchance";
+                t.setCommand("majuchance");
                 break;
             case 3 :
                 System.out.println("Astaghfirullah menang judi.... tapi gaapa uang monopoli kokga haram");
@@ -110,22 +110,22 @@ public class Space extends Tile {
             case 4 : 
                 System.out.println("Mundur 3 langkah");
                 P.setPos(P.getPos()-3);
-                command = "mundurchance";
+                t.setCommand("mundurchance");
                 break;
         }
     }
 
-    public boolean landedMethod(Player P, String command){
+    public boolean landedMethod(Player P, Turn t){
         if (P.getPos() == 0){
             this.startTile(P);
         } else if (P.getPos()==30){
             this.goToJailTile(P);
         } else if (P.getPos()==20){
-            this.freeParkingTile(P, command);
+            this.freeParkingTile(P, t);
         } else if (P.getPos()==2 || P.getPos()==17 || P.getPos()==32){
             this.communityChestCard(P);
         } else if (P.getPos()==7 || P.getPos()==22 || P.getPos()==36){
-            this.chanceCard(P, command);
+            this.chanceCard(P, t);
         }
 
         return true;
