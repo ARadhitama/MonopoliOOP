@@ -56,9 +56,15 @@ public class Main {
 
         System.out.println("============ WELCOME TO HELL MONOPOLY ============\n");
 
-    	System.out.println("Berapa orang yang main?");
+    	System.out.println("Berapa orang yang main? (2-4 orang)");
     	System.out.print(">> ");
     	totalPlayer = sc.nextInt();
+
+    	while (totalPlayer < 2 || totalPlayer > 4) {
+			System.out.println("Yang bener dong, yang main berapa ni? (2-4 orang)");
+	    	System.out.print(">> ");
+	    	totalPlayer = sc.nextInt();    		
+    	}
 
     	System.out.println("Masukkan nama pemain");
 
@@ -145,7 +151,9 @@ public class Main {
 				turn.setCommand("diam");
 				if (!tiles.get(players.get(turn.getPlayer()).getPos()).getKind().equals("Space")) {
 					// Property
-					if (tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName().equals("Tuhan")) {
+					if (tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName().equals("Tuhan")
+        				|| tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName()
+        					.equals(players.get(turn.getPlayer()).getName())) {
 						try
 						{
 							turn.setCommand((new Input()).getInput(
@@ -179,7 +187,9 @@ public class Main {
 				turn.setCommand("diam");
 				if (!tiles.get(players.get(turn.getPlayer()).getPos()).getKind().equals("Space")) {
 					// Property
-        			if (tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName().equals("Tuhan")) {
+        			if (tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName().equals("Tuhan")
+        				|| tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName()
+        					.equals(players.get(turn.getPlayer()).getName())) {
 			            try
 				        {
 				            turn.setCommand((new Input()).getInput(
@@ -213,7 +223,9 @@ public class Main {
 	                e.printStackTrace();
 	            }
 
-        		System.out.println("Giliran " + players.get(turn.getPlayer()).getName() + " bermain!");
+	            if (!turn.getCommand().equals("quit")) {
+	        		System.out.println("Giliran " + players.get(turn.getPlayer()).getName() + " bermain!");
+	            }
         	}
 
         	// Quit
