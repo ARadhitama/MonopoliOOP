@@ -81,13 +81,17 @@ public class Player {
         /* 1 = Lot
         2 = Utilities
         3 = Railroad*/
-        int i = 0;
-        for (Property prop : ownProp){
-            if (prop.getType() == type) {
-                i++;
+        if (this.getLot().size() == 0 ){
+            return 0;
+        } else {
+            int i = 0;
+            for (Property prop : ownProp){
+                if (prop.getType() == type) {
+                    i++;
+                }
             }
+            return i;
         }
-        return i;
     }
 
     // cek komplek 
