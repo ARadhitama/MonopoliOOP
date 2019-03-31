@@ -2,12 +2,9 @@ public class Property extends Tile {
     private String name;
     private Player owner = null;
     private int harga;
-    private int type;
-        /* 1 = Lot
-        2 = Utilities
-        3 = Railroad*/
-    public Property(String name, int harga, int type){
-        // super(pos);
+    private int type; /* 1 = Lot 2 = Utilities 3 = Railroad */
+
+    public Property(String name, int harga, int type) {
         setName(name);
         setHarga(harga);
         setType(type);
@@ -17,15 +14,15 @@ public class Property extends Tile {
         return "Property";
     }
 
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
 
-    public Player getOwner(){
+    public Player getOwner() {
         return this.owner;
     }
 
@@ -37,28 +34,28 @@ public class Property extends Tile {
         }
     }
 
-    public void setOwner(Player owner){
+    public void setOwner(Player owner) {
         this.owner = owner;
     }
 
-    public int getHarga(){
+    public int getHarga() {
         return this.harga;
     }
 
-    public void setHarga(int harga){
+    public void setHarga(int harga) {
         this.harga = harga;
     }
 
-    public int getType(){
+    public int getType() {
         return this.type;
     }
 
-    public void setType(int type){
+    public void setType(int type) {
         this.type = type;
     }
 
-    public void buyProp(Player p){
-        if (p.getMoney() >= this.getHarga()){
+    public void buyProp(Player p) {
+        if (p.getMoney() >= this.getHarga()) {
             this.setOwner(p);
             p.getProp().add(this);
             this.getOwner().rdcMoney(harga);
@@ -69,7 +66,7 @@ public class Property extends Tile {
         }
     }
 
-    public void bayarRent(Player p){
+    public void bayarRent(Player p) {
         int hargaRent = 0;
         if (getType() == 2) {
             if (this.getOwner().countProp(2) == 1) {
@@ -108,7 +105,7 @@ public class Property extends Tile {
         } else if (!this.getOwnerName().equals("Tuhan")) {
             this.bayarRent(p);
         } else {
-            
+            // 
         }
         return true;
     }

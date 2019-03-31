@@ -2,7 +2,6 @@ import java.util.Random;
 
 public class Dice {
     private Random randomGen = new Random();
-    // private int count;
     private int sides;
     private int value;
 

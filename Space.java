@@ -6,7 +6,7 @@ public class Space extends Tile {
     private int cards = 4;
     private String spacetile;
 
-    public Space(String spacetile){
+    public Space(String spacetile) {
         this.spacetile = spacetile;
     }
     
@@ -30,117 +30,110 @@ public class Space extends Tile {
 
     }
 
-    public void startTile(Player P){                                //jika posisi pada startTile 
-                                                                   //akan menambahkan 2x uang start
-        if (P.getPos() == 0){
-            P.addMoney(40000);
+    public void startTile(Player p) {                   // Jika posisi pada startTile akan menambahkan 2x uang start
+        if (p.getPos() == 0) {
+            p.addMoney(40000);
             System.out.println("Selamat anda beruntung tiba di start dapat Rp.40.000!!!");
         } else {
-            P.addMoney(20000);
+            p.addMoney(20000);
             System.out.println("Selamat anda mendapatkan Rp.20.000");
         }
     }
 
-    public void jailTile(){                                       //Tile pada jail
-        
-    }
-
-    public void freeParkingTile(Player P, Turn t){                        //Tile freeparking
+    public void freeParkingTile(Player p, Turn t) {     //Tile freeparking
         Scanner sc = new Scanner(System.in);
-        int pos = P.getPos();
+        int pos = p.getPos();
 
-        if (P.getPos()==20) {                                       // dapat berjalan ke lot mana saja
+        if (p.getPos() == 20) {                         // Dapat berjalan ke lot mana saja
             System.out.println("Mau mendarat di mana? (Sebut posisi 0-37)");
             System.out.print(">> ");
-            pos = sc.nextInt();
+            pos = sc.nextInt();                         // Scan daerah yang ingin dituju
             while (pos > 37 || pos < 0) {
                 System.out.println("Input salah, yang bener dong mau mendarat di mana!? (Sebut posisi 0-37)");
                 System.out.print(">> ");
                 pos = sc.nextInt();
             }
-            P.setPos(pos);
-            t.setCommand("parkirsabeb");                                 //scan daerah yang ingin dituju
+            p.setPos(pos);
+            t.setCommand("parkirsabeb");                                 
         }
-        // sc.close();
     }
 
-    public void goToJailTile(Player P){                             //Tile Go TO Jail
-        P.setPos(10);                                               //set player ke jail
-        P.setJail(true);                                            //set jail true
+    public void goToJailTile(Player p) {                                // Tile Go TO Jail
+        p.setPos(10);                                                   // Set player ke jail
+        p.setJail(true);                                                // Set jail true
         System.out.println("Anda mendarat penjara");
     }
 
-    public void communityChestCard(Player P){                       //Community chest card tile
+    public void communityChestCard(Player p) {                          // Community chest card tile
         int result = randomGen.nextInt(cards);
-        switch(result) {
+        switch (result) {
             case 0 :
                 System.out.println("Melanggar marka jalan, Anda dilempar ke penjara!");
-                P.setPos(10);
-                P.setJail(true);
+                p.setPos(10);
+                p.setJail(true);
                 break;
             case 1 :
                 System.out.println("Anda menang togel!! dapat Rp.100.000,-");
-                P.addMoney(100000);
+                p.addMoney(100000);
                 break;
             case 2 :
                 System.out.println("Vaksinisasi wajib!! bayar Rp.15.000");
-                P.rdcMoney(15000);
+                p.rdcMoney(15000);
                 break;
             case 3 :
                 System.out.println("Sekolah itu gak gratis!! ga bayar sekolah RP.50.000 PKI!!!!!");
-                P.rdcMoney(15000);
+                p.rdcMoney(15000);
                 break;
             case 4 :
                 System.out.println("Cie menang olimpiade, selamat anda mendapatkan Rp.50.000");
-                P.addMoney(50000);
+                p.addMoney(50000);
                 break;    
         } 
             
     }
 
-    public void chanceCard(Player P, Turn t){                                       //Chance Card
+    public void chanceCard(Player p, Turn t) {                          // Chance Card
         int result = randomGen.nextInt(cards);
-        switch(result) {
+        switch (result) {
             case 0 : 
                 System.out.println("Keciduk polisi, hiya hiya hiya, korupsi ya?? masuk penjara sini!! jangan korupsi dong");
-                P.setPos(10);
-                P.setJail(true);
+                p.setPos(10);
+                p.setJail(true);
                 break;
             case 1 :
                 System.out.println("Pergi ke go!! lumayan dapet Rp.40.000");
-                P.setPos(0);
-                this.startTile(P);
+                p.setPos(0);
+                this.startTile(p);
                 break;
             case 2 :
                 System.out.println("Maju 3 langkah dong");
-                P.setPos(P.getPos()+3);
+                p.setPos(p.getPos() + 3);
                 t.setCommand("majuchance");
                 break;
             case 3 :
-                System.out.println("Astaghfirullah menang judi.... tapi gaapa uang monopoli kokga haram");
-                P.addMoney(100000);
+                System.out.println("Astaghfirullah menang judi 100k.... tapi gaapa uang monopoli kok ga haram");
+                p.addMoney(100000);
                 break;
             case 4 : 
                 System.out.println("Mundur 3 langkah");
-                P.setPos(P.getPos()-3);
+                p.setPos(p.getPos() - 3);
                 t.setCommand("mundurchance");
                 break;
         }
     }
 
-    public boolean landedMethod(Player P, Turn t){
-        if (P.getPos() == 0){
-            this.startTile(P);
-        } else if (P.getPos()==30){
-            this.goToJailTile(P);
-        } else if (P.getPos()==20){
-            this.freeParkingTile(P, t);
-        } else if (P.getPos()==2 || P.getPos()==17 || P.getPos()==32){
-            this.communityChestCard(P);
-        } else if (P.getPos()==7 || P.getPos()==22 || P.getPos()==36){
-            this.chanceCard(P, t);
+    public boolean landedMethod(Player p, Turn t) {
+        if (p.getPos() == 0) {
+            this.startTile(p);
+        } else if (p.getPos() == 30) {
+            this.goToJailTile(p);
+        } else if (p.getPos() == 20) {
+            this.freeParkingTile(p, t);
+        } else if (p.getPos() == 2 || p.getPos() == 17 || p.getPos() == 32) {
+            this.communityChestCard(p);
+        } else if (p.getPos() == 7 || p.getPos() == 22 || p.getPos() == 36) {
+            this.chanceCard(p, t);
         }
-
         return true;
     }
 }

@@ -13,7 +13,6 @@ public class Main {
     	boolean play = true;
     	boolean nextPlayer = false;
 
-
     	// Adding map of the game	
 		tiles.add(new Space("Start"));								// 0
 		tiles.add(new Lot("Monas", 10000, 1));
@@ -89,19 +88,12 @@ public class Main {
         System.out.println("Giliran " + players.get(turn.getPlayer()).getName() + " bermain!");
 
         while (play) {
-    		// Kelar
-    		/*for (Player p : players) {
-    			if (p.getMoney() <= 0) {
-    				players.remove()		// Hapus player
-    			}
-
-    		}*/
-
         	// New turn (setiap player sudah bermain)
     		if (turn.getPlayer() == 0) {
     			turn.setTurn(turn.getTurn() + 1);
     		}
 
+    		// Dah kelar, tinggal 1 player
     		if (turn.getTotalPlayer() == 1) {
     			play = false;
     			break;
@@ -172,15 +164,16 @@ public class Main {
 								)
 							));
 						}
-						catch( Exception e )
+						catch (Exception e)
 						{
-							System.out.println( e );
+							System.out.println(e);
 						}
 					}
 				}
 				///////////////////////////////////////////////////////////////
 			}
 
+			// landedMethod
     		nextPlayer = tiles.get(players.get(turn.getPlayer()).getPos()).landedMethod(players.get(turn.getPlayer()), turn);
     	
     		if (turn.getCommand().equals("majuchance") || turn.getCommand().equals("mundurchance") || turn.getCommand().equals("parkirsabeb")) {
@@ -213,9 +206,9 @@ public class Main {
 								)
 							));
 				        }
-				        catch( Exception e )
+				        catch (Exception e)
 				        {
-				            System.out.println( e );
+				            System.out.println(e);
 				        }
         			}
 				}

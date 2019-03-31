@@ -2,32 +2,32 @@ public class Lot extends Property {
     private int rumah;
     private int kompleks;
 
-    public Lot(String name, int harga, int kompleks){
+    public Lot(String name, int harga, int kompleks) {
         super(name, harga, 1);
         setRumah(0);
         setKompleks(kompleks);
     }
 
-    public int getRumah(){
+    public int getRumah() {
         return this.rumah;
     }
 
-    public void setRumah(int rumah){
+    public void setRumah(int rumah) {
         this.rumah = rumah;
     }
 
-    public int getKompleks(){
+    public int getKompleks() {
         return this.kompleks;
     }
 
-    public void setKompleks(int kompleks){
+    public void setKompleks(int kompleks) {
         this.kompleks = kompleks;
     }
 
-    public void addRumah(){
-        //cek punya komplek atau belum
+    public void addRumah() {
+        // Cek punya komplek atau belum
         if (this.getOwner().cekKompleks(this.getKompleks())) {
-            if (getRumah() == 4){
+            if (getRumah() == 4) {
                 System.out.println("Gabisa bang, rumahlu udah 4");
             } else {
                 this.getOwner().rdcMoney(this.getHarga());
@@ -39,11 +39,11 @@ public class Lot extends Property {
         }
     }
 
-    public void buyProp(Player p){
-        if (this.getOwnerName().equals(p.getName())){
+    public void buyProp(Player p) {
+        if (this.getOwnerName().equals(p.getName())) {
             System.out.println("Udah lu beli");
         } else if (this.getOwner() == null) {
-            if (p.getMoney() >= this.getHarga()){
+            if (p.getMoney() >= this.getHarga()) {
                 this.setOwner(p);
                 p.getProp().add(this);
                 p.getLot().add(this);
@@ -58,28 +58,28 @@ public class Lot extends Property {
         }
     }
 
-    public void bayarRent(Player p){
+    public void bayarRent(Player p) {
         int hargaRent = 0;
         if (this.getOwner().cekKompleks(this.getKompleks())) {
             switch (this.getRumah()) {
                 case 0:
-                    hargaRent = this.getHarga()/4;
+                    hargaRent = this.getHarga() / 4;
                     break;
                 case 1:
-                    hargaRent = this.getHarga()/2;
+                    hargaRent = this.getHarga() / 2;
                     break;
                 case 2:
                     hargaRent = this.getHarga();
                     break;
                 case 3:
-                    hargaRent = this.getHarga()*2;
+                    hargaRent = this.getHarga() * 2;
                     break;
                 case 4:
-                    hargaRent = this.getHarga()*4;
+                    hargaRent = this.getHarga() * 4;
                     break;
             }
-        } else { // ga komplek
-            hargaRent = this.getHarga()/8;
+        } else { // Ga komplek
+            hargaRent = this.getHarga() / 8;
         }
         p.rdcMoney(hargaRent);
         this.getOwner().addMoney(hargaRent);
@@ -90,7 +90,7 @@ public class Lot extends Property {
         if (command.equals("beli")) {
             if (this.getOwnerName().equals("Tuhan")) {
                 this.buyProp(p);
-            } else if (this.getOwnerName().equals(p.getName())){
+            } else if (this.getOwnerName().equals(p.getName())) {
                 this.addRumah();
             }
         } else {

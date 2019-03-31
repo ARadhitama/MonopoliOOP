@@ -12,14 +12,14 @@ public class Timer extends Thread {
 
             // System.out.print(time + " ");
             setTime(time + 1);
-            //Switching the order of these 2 ^^^ statements and initializing time to 0 will give an output that is more accurate to the time.
+            // Switching the order of these 2 ^^^ statements and initializing time to 0 will give an output that is more accurate to the time.
         }
     }
 
     public synchronized int getTime() {
         while (setting) {
             try {
-                wait(); //This will only be run on the off-chance that setTime is being run at the same time.
+                wait(); // This will only be run on the off-chance that setTime is being run at the same time.
             } catch (InterruptedException e) {  }
         }
 

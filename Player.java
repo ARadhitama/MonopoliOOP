@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-// import java.util.arrays;
 
 public class Player {
     private String name;
@@ -10,7 +9,7 @@ public class Player {
     private ArrayList<Property> ownProp;
     private ArrayList<Lot> ownLot;
     
-    public Player (String name) {
+    public Player(String name) {
         this.name = name;
         this.money = 50000;
         this.inJail = false;
@@ -24,11 +23,11 @@ public class Player {
         return this.money;
     }
 
-    public Boolean getJail () {
+    public Boolean getJail() {
         return this.inJail;
     }
     
-    public void setJail (boolean inJail) {
+    public void setJail(boolean inJail) {
         if (inJail) {
             this.countJail = 3;
         }
@@ -44,31 +43,31 @@ public class Player {
         System.out.println("Di penjara " + this.countJail + " turn lagi yaa~");
     }
 
-    public void addMoney (int money) {
+    public void addMoney(int money) {
         this.money = this.money + money;
     }
 
-    public void rdcMoney (int money) {
+    public void rdcMoney(int money) {
         this.money = this.money - money;
     }
 
-    public int getPos () {
+    public int getPos() {
         return this.pos;
     }
 
-    public void setPos (int pos) {
+    public void setPos(int pos) {
         this.pos = pos % 38;
     }
 
-    public String getName () {
+    public String getName() {
         return this.name;
     }
 
-    public ArrayList<Property> getProp () {
+    public ArrayList<Property> getProp() {
         return ownProp;
     }
 
-    public ArrayList<Lot> getLot () {
+    public ArrayList<Lot> getLot() {
         return ownLot;
     }
 
@@ -76,12 +75,12 @@ public class Player {
         // ngurangin ownProp, nambah money
     }*/
 
-    //ngitung berapa property yang dipunya, sesuai type masukan
-    public int countProp(int type){
+    // Ngitung berapa property yang dipunya, sesuai type masukan
+    public int countProp(int type) {
         /* 1 = Lot
         2 = Utilities
         3 = Railroad*/
-        if (this.getLot().size() == 0 ){
+        if (this.getLot().size() == 0 ) {
             return 0;
         } else {
             int i = 0;
@@ -94,9 +93,9 @@ public class Player {
         }
     }
 
-    // cek komplek 
-    public boolean cekKompleks (int komp) {
-        if (this.getLot().size() == 0 ){
+    // Cek komplek 
+    public boolean cekKompleks(int komp) {
+        if (this.getLot().size() == 0) {
             return false;
         } else {
             int i = 0;
