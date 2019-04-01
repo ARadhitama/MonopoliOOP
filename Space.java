@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Space extends Tile {
     private Random randomGen = new Random();
-    private int cards = 4;
+    private int cards = 5;
     private String spacetile;
 
     public Space(String spacetile) {
@@ -111,7 +111,7 @@ public class Space extends Tile {
                 t.setCommand("majuchance");
                 break;
             case 3 :
-                System.out.println("Astaghfirullah menang judi 100k.... tapi gaapa uang monopoli kok ga haram");
+                System.out.println("Astaghfirullah menang judi 100k.... tapi gaapa uang monopoli kok, ga haram");
                 p.addMoney(100000);
                 break;
             case 4 : 
