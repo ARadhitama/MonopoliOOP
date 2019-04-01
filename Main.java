@@ -176,6 +176,7 @@ public class Main {
 			// landedMethod
     		nextPlayer = tiles.get(players.get(turn.getPlayer()).getPos()).landedMethod(players.get(turn.getPlayer()), turn);
     	
+    		// For chances, free parking, and cheats
     		if (turn.getCommand().equals("majuchance") || turn.getCommand().equals("mundurchance") || turn.getCommand().equals("parkirsabeb")) {
         		// Info landing
 				if (tiles.get(players.get(turn.getPlayer()).getPos()).getKind().equals("Property")) {

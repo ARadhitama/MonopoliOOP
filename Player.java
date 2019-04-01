@@ -11,7 +11,7 @@ public class Player {
     
     public Player(String name) {
         this.name = name;
-        this.money = 50000;
+        this.money = 100000;
         this.inJail = false;
         this.countJail = 0;
         this.pos = 0;

@@ -86,15 +86,17 @@ public class Lot extends Property {
         System.out.println(p.getName() + " telah membayar sewa " + this.getName() + " kepada " + this.getOwnerName() + " sebanyak " + hargaRent);
     }
 
-    public boolean landedMethod(Player p, String command) {
-        if (command.equals("beli")) {
+    public boolean landedMethod(Player p, Turn t) {
+        if (t.getCommand().equals("beli")) {
             if (this.getOwnerName().equals("Tuhan")) {
                 this.buyProp(p);
-            } else if (this.getOwnerName().equals(p.getName())) {
+            } else if (this.getOwnerName().equals(p.getName())){
                 this.addRumah();
-            }
-        } else {
+            }   
+        } else if (!this.getOwnerName().equals("Tuhan")) {
             this.bayarRent(p);
+        } else {
+            // 
         }
         return true;
     }
