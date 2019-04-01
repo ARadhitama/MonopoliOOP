@@ -77,7 +77,7 @@ public class Main {
 
     	// Timer ga perlu di stop, biarkan mengalir aja~
     	Timer timer = new Timer();
-        Turn turn = new Turn(totalPlayer, timer);
+        Turn<Timer> turn = new Turn<Timer>(totalPlayer, timer);
 	    timer.start();
         turn.start();
 
@@ -259,11 +259,11 @@ public class Main {
 
         System.out.println("");
         System.out.println("==================== Selesai ====================");
-        System.out.println("========== Terima kasih telah bermain ==========");
+        System.out.println("========== Terima kasih telah bermain! ==========");
         System.out.println("");
         System.out.println("Selamat! " + players.get(0).getName() + " menang");
         System.out.println("Anda bermain sebanyak " + turn.getTurn() + " turn");
-        System.out.println("Anda bermain selama " + (timer.getTime() / 60) + " menit " + (timer.getTime() % 60) + " detik");
+        System.out.println("Anda bermain selama " + (turn.getT().getTime() / 60) + " menit " + (turn.getT().getTime() % 60) + " detik");
 
         sc.close();
     }

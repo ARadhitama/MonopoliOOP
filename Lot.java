@@ -28,14 +28,14 @@ public class Lot extends Property {
         // Cek punya komplek atau belum
         if (this.getOwner().cekKompleks(this.getKompleks())) {
             if (getRumah() == 4) {
-                System.out.println("Gabisa bang, rumahlu udah 4");
+                System.out.println("Ga bisa bang, rumah lu udah 4");
             } else {
                 this.getOwner().rdcMoney(this.getHarga());
                 setRumah(getRumah() + 1);
                 System.out.println("Rumah " + this.getOwnerName() + " di " + this.getName() + " ada " + this.getRumah());
             }
         } else {
-            System.out.println("blom punya satu komplek, beli dulu sana");
+            System.out.println("Belom punya satu komplek, beli dulu sana");
         }
     }
 

@@ -1,13 +1,13 @@
-public class Turn extends Thread {
-	private Timer timer;
+public class Turn<T> extends Thread {
+	private T t;				// Timer
 	private int totalPlayer;
 	private int turn = 1;
 	private int player = 0;		// Index dimulai dari 0
 	private String command;
 
-	public Turn(int totalPlayer, Timer t) {
+	public Turn(int totalPlayer, T t) {
 		this.totalPlayer = totalPlayer;
-		this.timer = t;
+		this.t = t;
 		this.command = "diam";
 	}
 
@@ -23,9 +23,13 @@ public class Turn extends Thread {
 		return this.totalPlayer;
 	}
 
-	public int getTime() {
-		return this.timer.getTime();
+	public T getT() {
+		return this.t;
 	}
+
+	/*public int getTime() {
+		return this.t.getTime();
+	}*/
 
 	public String getCommand() {
 		return this.command;
@@ -48,10 +52,10 @@ public class Turn extends Thread {
 	}
 
 	public void run() {
-        synchronized (timer) {
+        synchronized (t) {
             while (true) {
                 try {
-                    timer.wait();
+                    t.wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
