@@ -81,9 +81,13 @@ public class Lot extends Property {
         } else { // Ga komplek
             hargaRent = this.getHarga() / 8;
         }
-        p.rdcMoney(hargaRent);
         this.getOwner().addMoney(hargaRent);
-        System.out.println(p.getName() + " telah membayar sewa " + this.getName() + " kepada " + this.getOwnerName() + " sebanyak " + hargaRent);
+        if (this.getOwnerName().equals(p.getName())) {
+            System.out.println(p.getName() + " dapet bonus sebesar " + hargaRent + " karena mendarat di property sendiri");
+        } else {
+            p.rdcMoney(hargaRent);
+            System.out.println(p.getName() + " telah membayar sewa " + this.getName() + " kepada " + this.getOwnerName() + " sebanyak " + hargaRent);
+        }
     }
 
     public boolean landedMethod(Player p, Turn t) {
@@ -91,6 +95,7 @@ public class Lot extends Property {
             if (this.getOwnerName().equals("Tuhan")) {
                 this.buyProp(p);
             } else if (this.getOwnerName().equals(p.getName())){
+                this.bayarRent(p);
                 this.addRumah();
             }   
         } else if (!this.getOwnerName().equals("Tuhan")) {
