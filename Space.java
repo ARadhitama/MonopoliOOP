@@ -64,6 +64,11 @@ public class Space extends Tile {
         System.out.println("Anda mendarat penjara");
     }
 
+    public void taxTile(Player p) {
+        System.out.println("Bayar pajak 10% dulu");
+        p.rdcMoney(50000);
+    }
+
     public void communityChestCard(Player p) {                          // Community chest card tile
         int result = randomGen.nextInt(cards);
         switch (result) {
