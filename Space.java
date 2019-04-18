@@ -66,7 +66,7 @@ public class Space extends Tile {
     }
 
     public void taxTile(Player p) {
-        System.out.println("Bayar pajak dulu");
+        System.out.println("Bayar pajak 10% dulu, biar negara maju");
         p.rdcMoney(p.getMoney()/10);                                              //Maunya 10% tapi money gak double
     }
 
