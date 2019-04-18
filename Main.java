@@ -59,9 +59,6 @@ public class Main {
 		tiles.add(new Lot("Semarang", 40000, 8));					// 39
 			// end of fourth row
 
-
-		tiles.add(new Space("Pajak"));
-
         System.out.println("============ WELCOME TO HELL MONOPOLY ============\n");
 
     	System.out.println("Berapa orang yang main? (2-4 orang)");
