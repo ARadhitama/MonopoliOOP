@@ -135,10 +135,12 @@ public class Space extends Tile {
             this.goToJailTile(p);
         } else if (p.getPos() == 20) {
             this.freeParkingTile(p, t);
-        } else if (p.getPos() == 2 || p.getPos() == 17 || p.getPos() == 32) {
+        } else if (p.getPos() == 2 || p.getPos() == 17 || p.getPos() == 33) {
             this.communityChestCard(p);
         } else if (p.getPos() == 7 || p.getPos() == 22 || p.getPos() == 36) {
             this.chanceCard(p, t);
+        } else if (p.getPos() == 4 || p.getPos() == 38) {
+            this.taxTile(p);
         }
         return true;
     }
