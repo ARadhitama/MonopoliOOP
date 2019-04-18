@@ -6,6 +6,7 @@ public class Space extends Tile {
     private int cards = 5;
     private String spacetile;
 
+
     public Space(String spacetile) {
         this.spacetile = spacetile;
     }
@@ -65,8 +66,8 @@ public class Space extends Tile {
     }
 
     public void taxTile(Player p) {
-        System.out.println("Bayar pajak 10% dulu");
-        p.rdcMoney(50000);                                              //Maunya 10% tapi money gak double
+        System.out.println("Bayar pajak dulu");
+        p.rdcMoney(p.getMoney()/10);                                              //Maunya 10% tapi money gak double
     }
 
     public void communityChestCard(Player p) {                          // Community chest card tile
