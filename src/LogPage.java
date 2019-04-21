@@ -35,7 +35,7 @@ public class LogPage extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea1.setRows(5);
-        jTextArea1.setText("asdasdasds");
+        jTextArea1.setText("Log Page start\n");
         jTextArea1.setCaretColor(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(jTextArea1);
 
@@ -52,6 +52,10 @@ public class LogPage extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    public void appendLog(String log) {
+        jTextArea1.append(log + "\n");
+    }
 
     /**
      * @param args the command line arguments

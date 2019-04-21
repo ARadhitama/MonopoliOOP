@@ -59,17 +59,24 @@ public class Main {
 		tiles.add(new Lot("Semarang", 40000, 8));					// 39
 			// end of fourth row
 
+		// Log Page
+		LogPage logPage = new LogPage();
+		logPage.setVisible(true);
+
 		// Welcome Page
 		NewGameUI welcomePage = new NewGameUI();
 		welcomePage.setVisible(true);
+		int markCounter = 0;
 		while (welcomePage.getPanelOpen()) {
 			// while visible
+			if (markCounter == 0) {
+				logPage.appendLog("Welcome page");
+				markCounter++;
+			}
 			System.out.println("inside");
 		}
     	for (i = 1; i <= welcomePage.getNumP(); i++) {
-    		System.out.print("Player " + i + " : ");
     		players.add(new Player(welcomePage.getPlayersName().get(i - 1)));
-    		System.out.println(players.get(i - 1).getName());
     	}
     	welcomePage.setVisible(false);
 
@@ -80,22 +87,16 @@ public class Main {
 
 		/////////////////////
 		// UI (deprecated) //
-        System.out.println("============ WELCOME TO HELL MONOPOLY ============\n");
+		logPage.appendLog("============ WELCOME TO HELL MONOPOLY ============\n");
 
-    	System.out.println("Berapa orang yang main? (2-4 orang)");
-    	System.out.print(">> ");
-    	totalPlayer = sc.nextInt();
+    	logPage.appendLog("Berapa orang yang main? (2-4 orang)");
+    	totalPlayer = welcomePage.getNumP();
+    	logPage.appendLog(">> " + totalPlayer);
 
-    	while (totalPlayer < 2 || totalPlayer > 4) {
-			System.out.println("Yang bener dong, yang main berapa ni? (2-4 orang)");
-	    	System.out.print(">> ");
-	    	totalPlayer = sc.nextInt();    		
+    	for (i = 1; i <= totalPlayer; i++) {
+    		logPage.appendLog("Player " + i + " : ");
+    		logPage.appendLog(players.get(i - 1).getName());
     	}
-
-    	System.out.println("Masukkan nama pemain");
-
-
-    	System.out.println("");
 
     	// Timer ga perlu di stop, biarkan mengalir aja~
     	Timer timer = new Timer();
@@ -107,7 +108,7 @@ public class Main {
         Dice dice1 = new Dice();
         Dice dice2 = new Dice();
 
-        System.out.println("Giliran " + players.get(turn.getPlayer()).getName() + " bermain!");
+        logPage.appendLog("Giliran " + players.get(turn.getPlayer()).getName() + " bermain!");
 
         while (play) {
         	// New turn (setiap player sudah bermain)
@@ -128,16 +129,16 @@ public class Main {
 				players.get(turn.getPlayer()).decrementJail();
 				if (players.get(turn.getPlayer()).getCountJail() <= 0) {
 					players.get(turn.getPlayer()).setJail(false);
-					System.out.println("Selamat! " + players.get(turn.getPlayer()).getName() + " keluar dari penjara");
+					logPage.appendLog("Selamat! " + players.get(turn.getPlayer()).getName() + " keluar dari penjara");
 				} else {
 					dice1.roll();
 					dice2.roll();
-					System.out.println("Angka dadu : " + dice1.getValue() + " & " + dice2.getValue());
+					logPage.appendLog("Angka dadu : " + dice1.getValue() + " & " + dice2.getValue());
 					if (dice1.getValue() == dice2.getValue()) {
 						players.get(turn.getPlayer()).setJail(false);
-						System.out.println("Selamat! " + players.get(turn.getPlayer()).getName() + " keluar dari penjara");
+						logPage.appendLog("Selamat! " + players.get(turn.getPlayer()).getName() + " keluar dari penjara");
 					} else {
-						System.out.println("Sorry, " + players.get(turn.getPlayer()).getName() + " yang betah ya di penjara~");
+						logPage.appendLog("Sorry, " + players.get(turn.getPlayer()).getName() + " yang betah ya di penjara~");
 					}
 				}
 			}
@@ -147,25 +148,25 @@ public class Main {
 				players.get(turn.getPlayer()).setPos(
 					players.get(turn.getPlayer()).getPos() + dice1.roll() + dice2.roll()
 				);
-				System.out.println("Angka dadu : " + dice1.getValue() + " & " + dice2.getValue());
+				logPage.appendLog("Angka dadu : " + dice1.getValue() + " & " + dice2.getValue());
 
 				// Jika dadu sama
 				if (dice1.getValue() == dice2.getValue()) {
-					System.out.println("Angka dadu sama, roll lagi!");
+					logPage.appendLog("Angka dadu sama, roll lagi!");
 					players.get(turn.getPlayer()).setPos(
 						players.get(turn.getPlayer()).getPos() + dice1.roll() + dice2.roll()
 					);
-					System.out.println("Angka dadu : " + dice1.getValue() + " & " + dice2.getValue());
+					logPage.appendLog("Angka dadu : " + dice1.getValue() + " & " + dice2.getValue());
 				}
 
 				// Info landing
 				if (tiles.get(players.get(turn.getPlayer()).getPos()).getKind().equals("Property")) {
-					System.out.println(players.get(turn.getPlayer()).getName() 
+					logPage.appendLog(players.get(turn.getPlayer()).getName() 
 								+ " mendarat di " + tiles.get(players.get(turn.getPlayer()).getPos()).getName() 
 								+ " milik " + tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName() 
 								+ " dengan harga " + tiles.get(players.get(turn.getPlayer()).getPos()).getHarga() );
 				} else {
-					System.out.println(players.get(turn.getPlayer()).getName() 
+					logPage.appendLog(players.get(turn.getPlayer()).getName() 
 								+ " mendarat di " + tiles.get(players.get(turn.getPlayer()).getPos()).getName());
 				}
 
@@ -202,12 +203,12 @@ public class Main {
     		if (turn.getCommand().equals("majuchance") || turn.getCommand().equals("mundurchance") || turn.getCommand().equals("parkirsabeb")) {
         		// Info landing
 				if (tiles.get(players.get(turn.getPlayer()).getPos()).getKind().equals("Property")) {
-					System.out.println(players.get(turn.getPlayer()).getName() 
+					logPage.appendLog(players.get(turn.getPlayer()).getName() 
 								+ " mendarat di " + tiles.get(players.get(turn.getPlayer()).getPos()).getName() 
 								+ " milik " + tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName() 
 								+ " dengan harga " + tiles.get(players.get(turn.getPlayer()).getPos()).getHarga() );
 				} else {
-					System.out.println(players.get(turn.getPlayer()).getName() 
+					logPage.appendLog(players.get(turn.getPlayer()).getName() 
 								+ " mendarat di " + tiles.get(players.get(turn.getPlayer()).getPos()).getName());
 				}
 				
@@ -244,22 +245,22 @@ public class Main {
         	// Next turn
         	if (nextPlayer) {
         		if (players.get(turn.getPlayer()).getMoney() <= 0) {
-		            System.out.println("");
+		            logPage.appendLog("");
         			for (Tile tile : tiles) {
         				if (tile.getKind().equals("Property")) {
 			                if (tile.getOwnerName().equals(players.get(turn.getPlayer()).getName())) {
 			                    tile.setOwner(null);
-			                    System.out.println(tile.getName() + " telah dikembalikan kepada Tuhan");
+			                    logPage.appendLog(tile.getName() + " telah dikembalikan kepada Tuhan");
 			                }
 			            }
 		            }
-        			System.out.println(players.get(turn.getPlayer()).getName() + " kalah! Sukurinn hahahah");
+        			logPage.appendLog(players.get(turn.getPlayer()).getName() + " kalah! Sukurinn hahahah");
         			players.remove(turn.getPlayer());
         			turn.setTotalPlayer(players.size());
         		}
 
         		nextPlayer = false;
-        		System.out.println("");
+        		logPage.appendLog("");
         		turn.nextPlayer();
 
         		try {
@@ -269,7 +270,7 @@ public class Main {
 	            }
 
 	            if (!turn.getCommand().equals("quit")) {
-	        		System.out.println("Giliran " + players.get(turn.getPlayer()).getName() + " bermain!");
+	        		logPage.appendLog("Giliran " + players.get(turn.getPlayer()).getName() + " bermain!");
 	            }
         	}
 
@@ -279,13 +280,13 @@ public class Main {
         	}			
         }
 
-        System.out.println("");
-        System.out.println("==================== Selesai ====================");
-        System.out.println("========== Terima kasih telah bermain! ==========");
-        System.out.println("");
-        System.out.println("Selamat! " + players.get(0).getName() + " menang");
-        System.out.println("Anda bermain sebanyak " + turn.getTurn() + " turn");
-        System.out.println("Anda bermain selama " + (turn.getT().getTime() / 60) + " menit " + (turn.getT().getTime() % 60) + " detik");
+        logPage.appendLog("");
+        logPage.appendLog("==================== Selesai ====================");
+        logPage.appendLog("========== Terima kasih telah bermain! ==========");
+        logPage.appendLog("");
+        logPage.appendLog("Selamat! " + players.get(0).getName() + " menang");
+        logPage.appendLog("Anda bermain sebanyak " + turn.getTurn() + " turn");
+        logPage.appendLog("Anda bermain selama " + (turn.getT().getTime() / 60) + " menit " + (turn.getT().getTime() % 60) + " detik");
 
         sc.close();
     }
