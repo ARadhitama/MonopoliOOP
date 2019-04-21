@@ -2,6 +2,8 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import my.MonopoliOOP.*;
+
 public class Main {
     public static synchronized void main(String[] args) {
     	// Variables
@@ -58,6 +60,12 @@ public class Main {
 		tiles.add(new Space("Pajak"));
 		tiles.add(new Lot("Semarang", 40000, 8));					// 39
 			// end of fourth row
+
+		// UI classes initialization
+		NewGameUI welcomePage = new NewGameUI();
+		welcomePage.setVisible(true);
+		MonopoliOOPUI mainPage = new MonopoliOOPUI();
+		mainPage.setVisible(true);
 
         System.out.println("============ WELCOME TO HELL MONOPOLY ============\n");
 

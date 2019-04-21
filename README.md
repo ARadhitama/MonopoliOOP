@@ -7,13 +7,16 @@ Mohammad Nathiq Ulman (18217023)
 Dwi Cahyo Pangestu (18217029)
 Alfian Maulana Ibrahim (18217038)
 
+## Info
+Semua code berada di folder \src
+
 ## Cara compile
 javac *.java
 
 ## Cara run
 java Main
 
-## Cara bermain
+## Cara bermain (Deprecated)
 Masukkan jumlah pemain
 Masukkan nama-nama pemain
 Mainkan sesuai petunjuk
