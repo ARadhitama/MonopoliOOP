@@ -1,11 +1,13 @@
 public class Lot extends Property {
     private int rumah;
     private int kompleks;
+    private LogPage logPage;
 
-    public Lot(String name, int harga, int kompleks) {
+    public Lot(String name, int harga, int kompleks, LogPage log) {
         super(name, harga, 1);
         setRumah(0);
         setKompleks(kompleks);
+        this.logPage = log;
     }
 
     public int getRumah() {
@@ -28,33 +30,33 @@ public class Lot extends Property {
         // Cek punya komplek atau belum
         if (this.getOwner().cekKompleks(this.getKompleks())) {
             if (getRumah() == 4) {
-                System.out.println("Ga bisa bang, rumah lu udah 4");
+                logPage.appendLog("Ga bisa bang, rumah lu udah 4");
             } else {
                 this.getOwner().rdcMoney(this.getHarga());
                 setRumah(getRumah() + 1);
-                System.out.println("Rumah " + this.getOwnerName() + " di " + this.getName() + " ada " + this.getRumah());
+                logPage.appendLog("Rumah " + this.getOwnerName() + " di " + this.getName() + " ada " + this.getRumah());
             }
         } else {
-            System.out.println("Belom punya satu komplek, beli dulu sana");
+            logPage.appendLog("Belom punya satu komplek, beli dulu sana");
         }
     }
 
     public void buyProp(Player p) {
         if (this.getOwnerName().equals(p.getName())) {
-            System.out.println("Udah lu beli");
+            logPage.appendLog("Udah lu beli");
         } else if (this.getOwner() == null) {
             if (p.getMoney() >= this.getHarga()) {
                 this.setOwner(p);
                 p.getProp().add(this);
                 p.getLot().add(this);
                 this.getOwner().rdcMoney(this.getHarga());
-                System.out.println(p.getName() + " telah membeli " + this.getName() + " seharga " + this.getHarga());
-                System.out.println("Uang " + p.getName() + " tinggal " + p.getMoney());
+                logPage.appendLog(p.getName() + " telah membeli " + this.getName() + " seharga " + this.getHarga());
+                logPage.appendLog("Uang " + p.getName() + " tinggal " + p.getMoney());
             } else {
-                System.out.println(p.getName() + " tidak memiliki cukup uang");
+                logPage.appendLog(p.getName() + " tidak memiliki cukup uang");
             }
         } else {
-           System.out.println("Udah punya orang lain");
+            logPage.appendLog("Udah punya orang lain");
         }
     }
 
@@ -83,10 +85,10 @@ public class Lot extends Property {
         }
         this.getOwner().addMoney(hargaRent);
         if (this.getOwnerName().equals(p.getName())) {
-            System.out.println(p.getName() + " dapet bonus sebesar " + hargaRent + " karena mendarat di property sendiri");
+            logPage.appendLog(p.getName() + " dapet bonus sebesar " + hargaRent + " karena mendarat di property sendiri");
         } else {
             p.rdcMoney(hargaRent);
-            System.out.println(p.getName() + " telah membayar sewa " + this.getName() + " kepada " + this.getOwnerName() + " sebanyak " + hargaRent);
+            logPage.appendLog(p.getName() + " telah membayar sewa " + this.getName() + " kepada " + this.getOwnerName() + " sebanyak " + hargaRent);
         }
     }
 

@@ -8,8 +8,9 @@ public class Player {
     private int countJail;
     private ArrayList<Property> ownProp;
     private ArrayList<Lot> ownLot;
+    private LogPage logPage;
     
-    public Player(String name) {
+    public Player(String name, LogPage log) {
         this.name = name;
         this.money = 100000;
         this.inJail = false;
@@ -17,6 +18,7 @@ public class Player {
         this.pos = 0;
         ownProp = new ArrayList<Property>();
         ownLot = new ArrayList<Lot>();
+        this.logPage = log;
     }
 
     public int getMoney() {
@@ -40,7 +42,7 @@ public class Player {
 
     public void decrementJail() {
         this.countJail--;
-        System.out.println("Di penjara " + this.countJail + " turn lagi yaa~");
+        logPage.appendLog("Di penjara " + this.countJail + " turn lagi yaa~");
     }
 
     public void addMoney(int money) {

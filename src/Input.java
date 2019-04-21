@@ -6,8 +6,7 @@ public class Input
 {
     private String str = "";
     private boolean empty = false;
-    LogPage logPage = new LogPage();
-    logPage.setVisible(true);
+    private LogPage logPage;
     
     TimerTask task = new TimerTask()
     {
