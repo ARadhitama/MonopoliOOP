@@ -2,8 +2,6 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import my.MonopoliOOP.*;
-
 public class Main {
     public static synchronized void main(String[] args) {
     	// Variables
@@ -78,6 +76,7 @@ public class Main {
     	// Main Page
 		MonopoliOOPUI mainPage = new MonopoliOOPUI();
 		mainPage.setVisible(true);
+		play = true;
 
 		/////////////////////
 		// UI (deprecated) //

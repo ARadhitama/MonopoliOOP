@@ -1,5 +1,3 @@
-package my.MonopoliOOP;
-
 /**
  *
  * @author ACER SWIFT3
@@ -196,7 +194,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
             .addGap(0, 78, Short.MAX_VALUE)
         );
 
-        jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/39 Semarang icon.jpg"))); // NOI18N
+        jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/39 Semarang icon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -217,7 +215,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel3.setPreferredSize(new java.awt.Dimension(100, 100));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/start tiile.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/start tiile.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -247,7 +245,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
             .addGap(0, 78, Short.MAX_VALUE)
         );
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/tax icon.png"))); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/tax icon.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -281,7 +279,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
             .addGap(0, 78, Short.MAX_VALUE)
         );
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/chance icon.png"))); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/chance icon.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -301,7 +299,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel6.setPreferredSize(new java.awt.Dimension(100, 80));
 
-        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/35 Tanjung pirok icon.jpg"))); // NOI18N
+        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/35 Tanjung pirok icon.jpg"))); // NOI18N
 
         jPanel71.setBackground(new java.awt.Color(0, 153, 102));
         jPanel71.setPreferredSize(new java.awt.Dimension(23, 80));
@@ -350,7 +348,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
             .addGap(0, 78, Short.MAX_VALUE)
         );
 
-        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/31 Makassar icon.jpg"))); // NOI18N
+        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/31 Makassar icon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -385,7 +383,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
             .addGap(0, 78, Short.MAX_VALUE)
         );
 
-        jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/37 medan icon.jpg"))); // NOI18N
+        jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/37 medan icon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -407,7 +405,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         jPanel9.setPreferredSize(new java.awt.Dimension(100, 100));
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/go to jail icon.jpg"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/go to jail icon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -437,7 +435,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
             .addGap(0, 78, Short.MAX_VALUE)
         );
 
-        jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/32 malang icon.jpg"))); // NOI18N
+        jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/32 malang icon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -472,7 +470,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
             .addGap(0, 78, Short.MAX_VALUE)
         );
 
-        jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/34 Manokwari icon.jpg"))); // NOI18N
+        jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/34 Manokwari icon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -507,7 +505,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/community chest tile.jpg"))); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/community chest tile.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -577,7 +575,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         );
 
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/community chest tile.jpg"))); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/community chest tile.jpg"))); // NOI18N
 
         javax.swing.GroupLayout chestT1Layout = new javax.swing.GroupLayout(chestT1);
         chestT1.setLayout(chestT1Layout);
@@ -735,7 +733,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         );
 
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/1 aceh ikon fix.jpg"))); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/1 aceh ikon fix.jpg"))); // NOI18N
 
         javax.swing.GroupLayout acehTLayout = new javax.swing.GroupLayout(acehT);
         acehT.setLayout(acehTLayout);
@@ -759,7 +757,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         taxT1.setPreferredSize(new java.awt.Dimension(80, 100));
 
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/tax icon.png"))); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/tax icon.png"))); // NOI18N
 
         javax.swing.GroupLayout taxT1Layout = new javax.swing.GroupLayout(taxT1);
         taxT1.setLayout(taxT1Layout);
@@ -777,7 +775,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         bandaraT.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         bandaraT.setPreferredSize(new java.awt.Dimension(80, 100));
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/5 soetta ikon.jpg"))); // NOI18N
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/5 soetta ikon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout bandaraTLayout = new javax.swing.GroupLayout(bandaraT);
         bandaraT.setLayout(bandaraTLayout);
@@ -847,7 +845,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         );
 
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/6 bali ikon.jpg"))); // NOI18N
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/6 bali ikon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout baliTLayout = new javax.swing.GroupLayout(baliT);
         baliT.setLayout(baliTLayout);
@@ -870,7 +868,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         chanceT1.setPreferredSize(new java.awt.Dimension(80, 100));
 
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/chance icon.png"))); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/chance icon.png"))); // NOI18N
 
         javax.swing.GroupLayout chanceT1Layout = new javax.swing.GroupLayout(chanceT1);
         chanceT1.setLayout(chanceT1Layout);
@@ -938,7 +936,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         );
 
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/8 bandung icon.jpg"))); // NOI18N
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/8 bandung icon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout bandungTLayout = new javax.swing.GroupLayout(bandungT);
         bandungT.setLayout(bandungTLayout);
@@ -962,7 +960,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         jPanel17.setPreferredSize(new java.awt.Dimension(100, 100));
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/jail icon.jpg"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/jail icon.jpg"))); // NOI18N
         jLabel6.setToolTipText("");
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
@@ -1029,7 +1027,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         );
 
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/9 banjarbaru icon.jpg"))); // NOI18N
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/9 banjarbaru icon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout banjarbaruTLayout = new javax.swing.GroupLayout(banjarbaruT);
         banjarbaruT.setLayout(banjarbaruTLayout);
@@ -1052,7 +1050,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         pltuT.setPreferredSize(new java.awt.Dimension(100, 80));
 
         jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/12 pltu icon.jpg"))); // NOI18N
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/12 pltu icon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout pltuTLayout = new javax.swing.GroupLayout(pltuT);
         pltuT.setLayout(pltuTLayout);
@@ -1070,7 +1068,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         jPanel24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel24.setPreferredSize(new java.awt.Dimension(100, 100));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/free parking icon.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/free parking icon.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
         jPanel24.setLayout(jPanel24Layout);
@@ -1100,7 +1098,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
             .addGap(0, 78, Short.MAX_VALUE)
         );
 
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/13 bekasi icon.jpg"))); // NOI18N
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/13 bekasi icon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
         jPanel25.setLayout(jPanel25Layout);
@@ -1135,7 +1133,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
             .addGap(0, 78, Short.MAX_VALUE)
         );
 
-        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/14 bima icon.jpg"))); // NOI18N
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/14 bima icon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
@@ -1171,7 +1169,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         );
 
         jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/11 Banten icon.jpg"))); // NOI18N
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/11 Banten icon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout bantenTLayout = new javax.swing.GroupLayout(bantenT);
         bantenT.setLayout(bantenTLayout);
@@ -1205,7 +1203,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
             .addGap(0, 78, Short.MAX_VALUE)
         );
 
-        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/15 cicaheum icon.jpg"))); // NOI18N
+        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/15 cicaheum icon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
         jPanel28.setLayout(jPanel28Layout);
@@ -1240,7 +1238,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
             .addGap(0, 78, Short.MAX_VALUE)
         );
 
-        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/16 bogor icon.jpg"))); // NOI18N
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/16 bogor icon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
         jPanel29.setLayout(jPanel29Layout);
@@ -1275,7 +1273,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
             .addGap(0, 78, Short.MAX_VALUE)
         );
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/community chest tile.jpg"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/community chest tile.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
@@ -1309,7 +1307,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
             .addGap(0, 78, Short.MAX_VALUE)
         );
 
-        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/18 tangerang icon.jpg"))); // NOI18N
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/18 tangerang icon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
@@ -1344,7 +1342,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
             .addGap(0, 78, Short.MAX_VALUE)
         );
 
-        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/19 bontang icon.jpg"))); // NOI18N
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/19 bontang icon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
         jPanel32.setLayout(jPanel32Layout);
@@ -1379,7 +1377,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         );
 
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/chance icon.png"))); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/chance icon.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
         jPanel33.setLayout(jPanel33Layout);
@@ -1416,7 +1414,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
             .addGap(0, 23, Short.MAX_VALUE)
         );
 
-        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/21 depok icon.jpg"))); // NOI18N
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/21 depok icon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
         jPanel34.setLayout(jPanel34Layout);
@@ -1453,7 +1451,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
             .addGap(0, 23, Short.MAX_VALUE)
         );
 
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/23 gorontalo icon.jpg"))); // NOI18N
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/23 gorontalo icon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
         jPanel35.setLayout(jPanel35Layout);
@@ -1490,7 +1488,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
             .addGap(0, 23, Short.MAX_VALUE)
         );
 
-        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/24 jakarta icon.jpg"))); // NOI18N
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/24 jakarta icon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
         jPanel36.setLayout(jPanel36Layout);
@@ -1527,7 +1525,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
             .addGap(0, 23, Short.MAX_VALUE)
         );
 
-        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/25 gambir icon.jpg"))); // NOI18N
+        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/25 gambir icon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel37Layout = new javax.swing.GroupLayout(jPanel37);
         jPanel37.setLayout(jPanel37Layout);
@@ -1561,7 +1559,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
             .addGap(0, 23, Short.MAX_VALUE)
         );
 
-        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/26 jogja icon.jpg"))); // NOI18N
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/26 jogja icon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel38Layout = new javax.swing.GroupLayout(jPanel38);
         jPanel38.setLayout(jPanel38Layout);
@@ -1598,7 +1596,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
             .addGap(0, 23, Short.MAX_VALUE)
         );
 
-        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/27 lampung icon.jpg"))); // NOI18N
+        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/27 lampung icon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel39Layout = new javax.swing.GroupLayout(jPanel39);
         jPanel39.setLayout(jPanel39Layout);
@@ -1621,7 +1619,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         jPanel40.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel40.setPreferredSize(new java.awt.Dimension(80, 100));
 
-        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/28 PLTA icon.jpg"))); // NOI18N
+        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/28 PLTA icon.jpg"))); // NOI18N
 
         jPanel66.setBackground(new java.awt.Color(255, 255, 0));
         jPanel66.setPreferredSize(new java.awt.Dimension(78, 23));
@@ -1673,7 +1671,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         );
 
         jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/MonopoliOOP/Space icon/Prop + railroad +util/29 lombok icon.jpg"))); // NOI18N
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space icon/Prop + railroad +util/29 lombok icon.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel41Layout = new javax.swing.GroupLayout(jPanel41);
         jPanel41.setLayout(jPanel41Layout);
