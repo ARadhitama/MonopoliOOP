@@ -63,8 +63,8 @@ public class Main {
 		NewGameUI welcomePage = new NewGameUI();
 		welcomePage.setVisible(true);
 		while (welcomePage.getPanelOpen()) {
-			System.out.println("inside");
 			// while visible
+			System.out.println("inside");
 		}
     	for (i = 1; i <= welcomePage.getNumP(); i++) {
     		System.out.print("Player " + i + " : ");
