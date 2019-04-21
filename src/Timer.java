@@ -13,6 +13,9 @@ public class Timer extends Thread {
             // System.out.print(time + " ");
             setTime(time + 1);
             // Switching the order of these 2 ^^^ statements and initializing time to 0 will give an output that is more accurate to the time.
+        
+            // Sambungin Main page ke sini
+            // Ntar setiap setTime() akak nge-trigger setTimer() di UI
         }
     }
 

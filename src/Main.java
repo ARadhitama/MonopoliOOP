@@ -12,6 +12,11 @@ public class Main {
     	int i, totalPlayer;
     	boolean play = false;
     	boolean nextPlayer = false;
+    	// UI pages
+		LogPage logPage = new LogPage();
+		NewGameUI welcomePage = new NewGameUI();
+		MonopoliOOPUI mainPage = new MonopoliOOPUI();
+		WinnerPage endPage = new WinnerPage();
 
     	// Adding map of the game (Total: 40 tiles)
 		tiles.add(new Space("Start"));								// 0
@@ -60,11 +65,9 @@ public class Main {
 			// end of fourth row
 
 		// Log Page
-		LogPage logPage = new LogPage();
 		logPage.setVisible(true);
 
 		// Welcome Page
-		NewGameUI welcomePage = new NewGameUI();
 		welcomePage.setVisible(true);
 		int markCounter = 0;
 		while (welcomePage.getPanelOpen()) {
@@ -81,7 +84,6 @@ public class Main {
     	welcomePage.setVisible(false);
 
     	// Main Page
-		MonopoliOOPUI mainPage = new MonopoliOOPUI();
 		mainPage.setVisible(true);
 		play = true;
 
