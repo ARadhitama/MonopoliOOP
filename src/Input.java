@@ -6,15 +6,17 @@ public class Input
 {
     private String str = "";
     private boolean empty = false;
-
+    LogPage logPage = new LogPage();
+    logPage.setVisible(true);
+    
     TimerTask task = new TimerTask()
     {
         public void run()
         {
             if (str.equals(""))
             {
-                System.out.println( "Time limit! Next player turn" );
-                System.out.println( "Press [ENTER] untuk lanjut bermain" );
+                logPage.appendLog( "Time limit! Next player turn" );
+                logPage.appendLog( "Press [ENTER] untuk lanjut bermain" );
 
                 empty = true;
             }
@@ -27,11 +29,11 @@ public class Input
         timer.schedule(task, 30*1000);
 
         if (!isOwner) {
-            System.out.println("Masukkan commandmu dalam 30 detik (Beli | Diam)");
+            logPage.appendLog("Masukkan commandmu dalam 30 detik (Beli | Diam)");
         } else {
-            System.out.println("Mau beli rumah? (Beli | Diam)");
+            logPage.appendLog("Mau beli rumah? (Beli | Diam)");
         }
-        System.out.print(">> ");
+        logPage.appendLog(">> ");
         BufferedReader in = new BufferedReader(
         new InputStreamReader( System.in ) );
         str = in.readLine();
@@ -39,7 +41,8 @@ public class Input
         timer.cancel();
 
         if (this.empty) {
-            return "diam";
+            logPage.appendLog ("diam");
+            return 0;                       // gayakin
         } else {
             return str.toLowerCase();
         }
