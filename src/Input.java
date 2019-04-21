@@ -6,7 +6,7 @@ public class Input
 {
     private String str = "";
     private boolean empty = false;
-    // private MonopoliOOPUI mainPage;
+    private MonopoliOOPUI mainPage;
     private LogPage logPage;
 
     TimerTask task = new TimerTask()
@@ -18,18 +18,24 @@ public class Input
         {
             i++;
 
-            if (str.equals(""))
+            logPage.appendLog(String.valueOf(seconds - i));
+
+            /*if (str.equals(""))
             {
                 logPage.appendLog( "Time limit! Next player turn" );
                 logPage.appendLog( "Press [ENTER] untuk lanjut bermain" );
 
                 empty = true;
-            }
+            }*/
 
             if (i % seconds != 0) {
+                logPage.appendLog("Time limit! Next player turn");
+
+                empty = true;
                 // edit timer in main page
                 // this.mainPage.editTimer(seconds - i -> toString()); atau biarin aja int
             } else {
+                logPage.appendLog(String.valueOf(seconds - i));
                 // edit timer in main page
                 // this.mainPage.editTimer("Time limit!");
             }
@@ -37,34 +43,54 @@ public class Input
         }    
     };
 
-    public String getInput(boolean isOwner) throws Exception
+    public String getInput(boolean isOwner, MonopoliOOPUI mainPage, LogPage logPage, String kind, String ownerName, String playerName, String tileName) throws Exception
     {
+        this.mainPage = mainPage;
+        this.logPage = logPage;
+
         Timer timer = new Timer();
         timer.schedule(task, 30 * 1000);
 
-        // this.mainPage = mainPage;
-        // sambungin main page ke sini (sebagai parameter?)
-
-        if (!isOwner) {
-            logPage.appendLog("Masukkan commandmu dalam 30 detik (Beli | Diam)");
-            // set visible
-            // invisible upgrade button
+        if (!kind.equals("Space")) {
+            if (!isOwner) {
+                this.logPage.appendLog("Masukkan commandmu dalam 30 detik (Beli | Diam)");
+                this.mainPage.setRollButtonEnabled(true);
+                this.mainPage.setBuyButtonEnabled(true);
+            } else {
+                this.logPage.appendLog("Mau beli rumah? (Beli | Diam)");
+                this.mainPage.setRollButtonEnabled(true);
+                this.mainPage.setUpgradeButtonEnabled(true);
+            }
         } else {
-            logPage.appendLog("Mau beli rumah? (Beli | Diam)");
-            // all button visible
+            if (tileName.equals("Free Parking")) {
+                this.logPage.appendLog("Mendarat di Free Parking");
+                // Bikin textfield untuk input mau mendarat di berapa
+            } else {
+                this.logPage.appendLog("Mendarat di Space, hanya bisa roll");
+                this.mainPage.setRollButtonEnabled(true);
+            }
+        }
+
+        while (!this.mainPage.getIsButtonClicked() && !this.empty) {
+            System.out.println("waiting for command");
         }
 
         // kalo misal ada actionperformed dari button, maka ... while (!isButtonClicked) {Sys.out("wait for command")}
         // get command dari attribute command di dalem Main page
 
-        logPage.appendLog(">> ");
-        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        str = in.readLine();
+        this.logPage.appendLog(">> ");
+        // BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        str = this.mainPage.getCommand();
+        this.logPage.appendLog(str);
 
         timer.cancel();
 
+        this.mainPage.setIsButtonClicked(false);
+        this.mainPage.setRollButtonEnabled(false);
+        this.mainPage.setBuyButtonEnabled(false);
+        this.mainPage.setUpgradeButtonEnabled(false);
+
         if (this.empty) {
-            logPage.appendLog("diam");
             return "diam";                       // gayakin
         } else {
             return str.toLowerCase();

@@ -19,49 +19,49 @@ public class Main {
 		WinnerPage endPage = new WinnerPage();
 
     	// Adding map of the game (Total: 40 tiles)
-		tiles.add(new Space("Start"));								// 0
-		tiles.add(new Lot("Aceh", 10000, 1));
-		tiles.add(new Space("Community Chest"));
-		tiles.add(new Lot("Ambon", 13000, 1));
-		tiles.add(new Space("Pajak"));
-    	tiles.add(new Property("Soekarno-Hatta", 22500, 3));		// 5
-    	tiles.add(new Lot("Bali", 15000, 2));
-		tiles.add(new Space("Chance"));
-		tiles.add(new Lot("Bandung", 20000, 2));
-		tiles.add(new Lot("Banjarbaru", 20000, 2));					// 9
+		tiles.add(new Space("Start", logPage));								// 0
+		tiles.add(new Lot("Aceh", 10000, 1, logPage));
+		tiles.add(new Space("Community Chest", logPage));
+		tiles.add(new Lot("Ambon", 13000, 1, logPage));
+		tiles.add(new Space("Pajak", logPage));
+    	tiles.add(new Property("Soekarno-Hatta", 22500, 3, logPage));		// 5
+    	tiles.add(new Lot("Bali", 15000, 2, logPage));
+		tiles.add(new Space("Chance", logPage));
+		tiles.add(new Lot("Bandung", 20000, 2, logPage));
+		tiles.add(new Lot("Banjarbaru", 20000, 2, logPage));					// 9
 			// end of first row
-		tiles.add(new Space("Penjara"));
-		tiles.add(new Lot("Banten", 25000, 3));
-		tiles.add(new Property("PLTU", 32500, 2));
-    	tiles.add(new Lot("Bekasi", 26500, 3));
-    	tiles.add(new Lot("Bima", 26500, 3));
-    	tiles.add(new Property("Cicaheum", 27500, 3));				// 15
-    	tiles.add(new Lot("Bogor", 27000, 4));
-		tiles.add(new Space("Community Chest"));
-		tiles.add(new Lot("Tangerang", 27000, 4));
-		tiles.add(new Lot("Bontang", 30000, 4));					// 19
+		tiles.add(new Space("Penjara", logPage));
+		tiles.add(new Lot("Banten", 25000, 3, logPage));
+		tiles.add(new Property("PLTU", 32500, 2, logPage));
+    	tiles.add(new Lot("Bekasi", 26500, 3, logPage));
+    	tiles.add(new Lot("Bima", 26500, 3, logPage));
+    	tiles.add(new Property("Cicaheum", 27500, 3, logPage));				// 15
+    	tiles.add(new Lot("Bogor", 27000, 4, logPage));
+		tiles.add(new Space("Community Chest", logPage));
+		tiles.add(new Lot("Tangerang", 27000, 4, logPage));
+		tiles.add(new Lot("Bontang", 30000, 4, logPage));					// 19
 			// end of second row
-		tiles.add(new Space("Free Parking"));
-		tiles.add(new Lot("Depok", 30000, 5));
-		tiles.add(new Space("Chance"));
-		tiles.add(new Lot("Gorontalo", 32000, 5));
-		tiles.add(new Lot("Jakarta", 31000, 5));
-    	tiles.add(new Property("Gambir", 30000, 3));				// 25
-    	tiles.add(new Lot("Jogja", 33000, 6));
-    	tiles.add(new Lot("Lampung", 33500, 6));
-    	tiles.add(new Property("PLTA", 37000, 2));		
-    	tiles.add(new Lot("Lombok", 33000, 6));						// 29
+		tiles.add(new Space("Free Parking", logPage));
+		tiles.add(new Lot("Depok", 30000, 5, logPage));
+		tiles.add(new Space("Chance", logPage));
+		tiles.add(new Lot("Gorontalo", 32000, 5, logPage));
+		tiles.add(new Lot("Jakarta", 31000, 5, logPage));
+    	tiles.add(new Property("Gambir", 30000, 3, logPage));				// 25
+    	tiles.add(new Lot("Jogja", 33000, 6, logPage));
+    	tiles.add(new Lot("Lampung", 33500, 6, logPage));
+    	tiles.add(new Property("PLTA", 37000, 2, logPage));		
+    	tiles.add(new Lot("Lombok", 33000, 6, logPage));						// 29
     		// end of third row
-		tiles.add(new Space("Go To Jail"));
-		tiles.add(new Lot("Makassar", 33000, 7));
-		tiles.add(new Lot("Malang", 34000, 7));
-		tiles.add(new Space("Community Chest"));
-		tiles.add(new Lot("Manokwari", 36000, 7));
-		tiles.add(new Property("Tanjung Priok", 36000, 3));			// 35
-		tiles.add(new Space("Chance"));
-		tiles.add(new Lot("Medan", 39000, 8));
-		tiles.add(new Space("Pajak"));
-		tiles.add(new Lot("Semarang", 40000, 8));					// 39
+		tiles.add(new Space("Go To Jail", logPage));
+		tiles.add(new Lot("Makassar", 33000, 7, logPage));
+		tiles.add(new Lot("Malang", 34000, 7, logPage));
+		tiles.add(new Space("Community Chest", logPage));
+		tiles.add(new Lot("Manokwari", 36000, 7, logPage));
+		tiles.add(new Property("Tanjung Priok", 36000, 3, logPage));			// 35
+		tiles.add(new Space("Chance", logPage));
+		tiles.add(new Lot("Medan", 39000, 8, logPage));
+		tiles.add(new Space("Pajak", logPage));
+		tiles.add(new Lot("Semarang", 40000, 8, logPage));					// 39
 			// end of fourth row
 
 		// Log Page
@@ -79,7 +79,7 @@ public class Main {
 			System.out.println("inside");
 		}
     	for (i = 1; i <= welcomePage.getNumP(); i++) {
-    		players.add(new Player(welcomePage.getPlayersName().get(i - 1)));
+    		players.add(new Player(welcomePage.getPlayersName().get(i - 1), logPage));
     	}
     	welcomePage.setVisible(false);
 
@@ -175,26 +175,27 @@ public class Main {
 				////////////////////////////////////////////////////////////////
 				// Syarat untuk landedMethod property
 				turn.setCommand("diam");
-				if (!tiles.get(players.get(turn.getPlayer()).getPos()).getKind().equals("Space")) {
-					// Property
-					if (tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName().equals("Tuhan")
-        				|| tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName()
-        					.equals(players.get(turn.getPlayer()).getName())) {
-						try
-						{
-							turn.setCommand((new Input()).getInput(
-								tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName()
-								.equals(
-									players.get(turn.getPlayer()).getName()
-								)
-							));
-						}
-						catch (Exception e)
-						{
-							System.out.println(e);
-						}
-					}
+
+				try
+				{
+					turn.setCommand((new Input()).getInput(
+						tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName()
+						.equals(
+							players.get(turn.getPlayer()).getName()
+						),
+						mainPage,
+						logPage,
+						tiles.get(players.get(turn.getPlayer()).getPos()).getKind(),
+						tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName(),
+						players.get(turn.getPlayer()).getName(),
+						tiles.get(players.get(turn.getPlayer()).getPos()).getName()
+					));
 				}
+				catch (Exception e)
+				{
+					System.out.println(e);
+				}
+
 				///////////////////////////////////////////////////////////////
 			}
 
@@ -218,26 +219,27 @@ public class Main {
 				////////////////////////////////////////////////////////////////
 				// Syarat untuk landedMethod property
 				turn.setCommand("diam");
-				if (!tiles.get(players.get(turn.getPlayer()).getPos()).getKind().equals("Space")) {
-					// Property
-        			if (tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName().equals("Tuhan")
-        				|| tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName()
-        					.equals(players.get(turn.getPlayer()).getName())) {
-			            try
-				        {
-				            turn.setCommand((new Input()).getInput(
-								tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName()
-								.equals(
-									players.get(turn.getPlayer()).getName()
-								)
-							));
-				        }
-				        catch (Exception e)
-				        {
-				            System.out.println(e);
-				        }
-        			}
+
+				try
+				{
+					turn.setCommand((new Input()).getInput(
+						tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName()
+						.equals(
+							players.get(turn.getPlayer()).getName()
+						),
+						mainPage,
+						logPage,
+						tiles.get(players.get(turn.getPlayer()).getPos()).getKind(),
+						tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName(),
+						players.get(turn.getPlayer()).getName(),
+						tiles.get(players.get(turn.getPlayer()).getPos()).getName()
+					));
 				}
+				catch (Exception e)
+				{
+					System.out.println(e);
+				}
+
 				///////////////////////////////////////////////////////////////
 
 				// landedMethod

@@ -4,10 +4,15 @@
  */
 public class MonopoliOOPUI extends javax.swing.JFrame {
 
+    private String commandInput;
+    private boolean isButtonClicked;
+
     /**
      * Creates new form MonopoliOOPUI
      */
     public MonopoliOOPUI() {
+        this.commandInput = "diam";
+        this.isButtonClicked = false;
         initComponents();
     }
 
@@ -170,7 +175,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         player2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Monopoly");
+        setTitle("Monopoly Chaos");
         setBackground(new java.awt.Color(0, 0, 0));
         setPreferredSize(new java.awt.Dimension(1800, 1000));
 
@@ -1691,10 +1696,25 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         );
 
         roll.setText("ROLL");
+        roll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rollActionPerformed(evt);
+            }
+        });
 
-        buy.setText("UPGRADE");
+        buy.setText("BUY");
+        buy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buyActionPerformed(evt);
+            }
+        });
 
-        upgrade.setText("BUY");
+        upgrade.setText("UPGRADE");
+        upgrade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                upgradeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout boardLayout = new javax.swing.GroupLayout(board);
         board.setLayout(boardLayout);
@@ -2043,6 +2063,52 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
             }
         });
     }
+
+    public String getCommand() {
+        return this.commandInput;
+    }
+
+    public boolean getIsButtonClicked() {
+        return this.isButtonClicked;
+    }
+
+    public void setCommand(String cmd) {
+        this.commandInput = cmd;
+    }
+
+    public void setIsButtonClicked(boolean state) {
+        this.isButtonClicked = state;
+    }
+
+    public void setRollButtonEnabled(boolean state) {
+        this.roll.setEnabled(state);
+    }
+
+    public void setBuyButtonEnabled(boolean state) {
+        this.buy.setEnabled(state);
+    }
+
+    public void setUpgradeButtonEnabled(boolean state) {
+        this.upgrade.setEnabled(state);
+    }
+
+    private void rollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rollActionPerformed
+        // TODO add your handling code here:
+        this.setCommand("diam");
+        this.setIsButtonClicked(true);
+    }//GEN-LAST:event_rollActionPerformed
+
+    private void buyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyActionPerformed
+        // TODO add your handling code here:
+        this.setCommand("beli");
+        this.setIsButtonClicked(true);
+    }//GEN-LAST:event_buyActionPerformed
+
+    private void upgradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upgradeActionPerformed
+        // TODO add your handling code here:
+        this.setCommand("beli");
+        this.setIsButtonClicked(true);
+    }//GEN-LAST:event_upgradeActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel acehT;

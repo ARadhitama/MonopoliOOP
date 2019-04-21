@@ -16,6 +16,10 @@ public class Property extends Tile {
         return "Property";
     }
 
+    public LogPage getLog() {
+        return this.logPage;
+    }
+
     public String getName() {
         return this.name;
     }
