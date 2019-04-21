@@ -12,7 +12,7 @@ public class Main {
     	List<Tile> tiles = new ArrayList<Tile>();
     	String playerName;
     	int i, totalPlayer;
-    	boolean play = true;
+    	boolean play = false;
     	boolean nextPlayer = false;
 
     	// Adding map of the game (Total: 40 tiles)
@@ -61,12 +61,26 @@ public class Main {
 		tiles.add(new Lot("Semarang", 40000, 8));					// 39
 			// end of fourth row
 
-		// UI classes initialization
+		// Welcome Page
 		NewGameUI welcomePage = new NewGameUI();
 		welcomePage.setVisible(true);
+		while (welcomePage.getPanelOpen()) {
+			System.out.println("inside");
+			// while visible
+		}
+    	for (i = 1; i <= welcomePage.getNumP(); i++) {
+    		System.out.print("Player " + i + " : ");
+    		players.add(new Player(welcomePage.getPlayersName().get(i - 1)));
+    		System.out.println(players.get(i - 1).getName());
+    	}
+    	welcomePage.setVisible(false);
+
+    	// Main Page
 		MonopoliOOPUI mainPage = new MonopoliOOPUI();
 		mainPage.setVisible(true);
 
+		/////////////////////
+		// UI (deprecated) //
         System.out.println("============ WELCOME TO HELL MONOPOLY ============\n");
 
     	System.out.println("Berapa orang yang main? (2-4 orang)");
@@ -81,11 +95,6 @@ public class Main {
 
     	System.out.println("Masukkan nama pemain");
 
-    	for (i = 1; i <= totalPlayer; i++) {
-    		System.out.print("Player " + i + " : ");
-    		playerName = sc.next();
-    		players.add(new Player(playerName));
-    	}
 
     	System.out.println("");
 

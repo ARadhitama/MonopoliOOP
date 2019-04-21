@@ -5,12 +5,24 @@
  */
 package my.MonopoliOOP;
 
+import java.util.List;
+import java.util.ArrayList;
+
 /**
  *
  * @author ACER SWIFT3
  */
 public class NewGameUI extends javax.swing.JFrame {
-    
+    // private List<Player> players = new ArrayList<Player>();
+
+    private int player;
+    private String p1Name;
+    private String p2Name;
+    private String p3Name;
+    private String p4Name;
+    private List<String> playersName = new ArrayList<String>();
+    private boolean panelOpen = true;
+
     /**
      * Creates new form NewGameUI
      */
@@ -49,6 +61,16 @@ public class NewGameUI extends javax.swing.JFrame {
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
+        /*p1.setVisible(false);
+        player1F.setVisible(false);
+        p2.setVisible(false);
+        player2F.setVisible(false);
+        p3.setVisible(false);
+        player3F.setVisible(false);
+        p4.setVisible(false);
+        player4F.setVisible(false);*/
+
+        // CHANGE TO JLABEL
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jTextArea1.setText("Number of Players :");
@@ -57,6 +79,8 @@ public class NewGameUI extends javax.swing.JFrame {
 
         jComboBoxP.setMaximumRowCount(3);
         jComboBoxP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2", "3", "4" }));
+        jComboBoxP.setSelectedItem("4");
+        this.setNumP(4);
         jComboBoxP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxPActionPerformed(evt);
@@ -70,6 +94,7 @@ public class NewGameUI extends javax.swing.JFrame {
             }
         });
 
+        // CHANGE TO JLABEL
         jTextField1.setText("Name");
         jTextField1.setToolTipText("");
         jTextField1.setEnabled(false);
@@ -86,6 +111,8 @@ public class NewGameUI extends javax.swing.JFrame {
                 p1ActionPerformed(evt);
             }
         });
+        // p1.setVisible(false);
+        // player1F.setVisible(false);
 
         p2.setText("2");
         p2.setEnabled(false);
@@ -94,14 +121,8 @@ public class NewGameUI extends javax.swing.JFrame {
                 p2ActionPerformed(evt);
             }
         });
-
-        p4.setText("4");
-        p4.setEnabled(false);
-        p4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                p4ActionPerformed(evt);
-            }
-        });
+        // p2.setVisible(false);
+        // player2F.setVisible(false);
 
         p3.setText("3");
         p3.setEnabled(false);
@@ -110,6 +131,18 @@ public class NewGameUI extends javax.swing.JFrame {
                 p3ActionPerformed(evt);
             }
         });
+        // p3.setVisible(false);
+        // player3F.setVisible(false);
+
+        p4.setText("4");
+        p4.setEnabled(false);
+        p4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                p4ActionPerformed(evt);
+            }
+        });
+        // p4.setVisible(false);
+        // player4F.setVisible(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -189,7 +222,9 @@ public class NewGameUI extends javax.swing.JFrame {
 
     private void jComboBoxPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxPActionPerformed
         // TODO add your handling code here:
-        /*if (jComboBoxP.getSelectedItem().equals("2")) {
+        this.player = Integer.parseInt((String)jComboBoxP.getSelectedItem());
+
+        if (this.getNumP() == 2) {
             player1F.setVisible(true);
             player2F.setVisible(true);
             player3F.setVisible(false);
@@ -198,7 +233,7 @@ public class NewGameUI extends javax.swing.JFrame {
             p2.setVisible(true);
             p3.setVisible(false);
             p4.setVisible(false);
-        } else if (jComboBoxP.getSelectedItem().equals("3")) {
+        } else if (this.getNumP() == 3) {
             player1F.setVisible(true);
             player2F.setVisible(true);
             player3F.setVisible(true);
@@ -207,7 +242,7 @@ public class NewGameUI extends javax.swing.JFrame {
             p2.setVisible(true);
             p3.setVisible(true);
             p4.setVisible(false);
-        } else if (jComboBoxP.getSelectedItem().equals("4")) {
+        } else if (this.getNumP() == 4) {
             player1F.setVisible(true);
             player2F.setVisible(true);
             player3F.setVisible(true);
@@ -216,7 +251,7 @@ public class NewGameUI extends javax.swing.JFrame {
             p2.setVisible(true);
             p3.setVisible(true);
             p4.setVisible(true);
-        }*/
+        }
     }//GEN-LAST:event_jComboBoxPActionPerformed
 
     private void jButtonOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOKActionPerformed
@@ -225,8 +260,13 @@ public class NewGameUI extends javax.swing.JFrame {
         this.p2Name = player2F.getText();
         this.p3Name = player3F.getText();
         this.p4Name = player4F.getText();
-        // this.player = jComboBoxP.getSelectedItem();
         
+        playersName.add(this.p1Name);
+        playersName.add(this.p2Name);
+        playersName.add(this.p3Name);
+        playersName.add(this.p4Name);
+
+        this.panelOpen = false;
     }//GEN-LAST:event_jButtonOKActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -249,14 +289,11 @@ public class NewGameUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_p3ActionPerformed
     
-    private int player;
-    private String p1Name;
-    private String p2Name;
-    private String p3Name;
-    private String p4Name;
-    
+    public boolean getPanelOpen () {
+        return this.panelOpen;
+    }
     public int getNumP () {
-        return player;
+        return this.player;
     }
     public String getP1 () {
         return p1Name;
@@ -270,7 +307,13 @@ public class NewGameUI extends javax.swing.JFrame {
     public String getP4 () {
         return p4Name;
     }
+    public List<String> getPlayersName () {
+        return this.playersName;
+    }
     
+    public void setPanelOpen (boolean b) {
+        this.panelOpen = b;
+    }
     public void setNumP (int i) {
         this.player = i;
     }
@@ -286,9 +329,23 @@ public class NewGameUI extends javax.swing.JFrame {
     public void setP4 (String n) {
         this.p4Name = n;
     }
-    
-    
-    
+
+    /*public void setAllPlayers(List<Player> players) {
+        if (this.getNumP() == 2) {
+            players.add(new Player(this.getP1));
+            players.add(new Player(this.getP2));
+        } else if (this.getNumP() == 3) {
+            players.add(new Player(this.getP1));
+            players.add(new Player(this.getP2));
+            players.add(new Player(this.getP3));
+        } else if (this.getNumP() == 4) {
+            players.add(new Player(this.getP1));
+            players.add(new Player(this.getP2));
+            players.add(new Player(this.getP3));
+            players.add(new Player(this.getP4));
+        }
+    }*/
+
     /**
      * @param args the command line arguments
      */
