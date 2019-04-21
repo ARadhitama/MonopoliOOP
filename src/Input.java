@@ -7,6 +7,7 @@ public class Input
     private String str = "";
     private boolean empty = false;
     // private MonopoliOOPUI mainPage;
+    private LogPage logPage;
 
     TimerTask task = new TimerTask()
     {
@@ -19,8 +20,8 @@ public class Input
 
             if (str.equals(""))
             {
-                System.out.println( "Time limit! Next player turn" );
-                System.out.println( "Press [ENTER] untuk lanjut bermain" );
+                logPage.appendLog( "Time limit! Next player turn" );
+                logPage.appendLog( "Press [ENTER] untuk lanjut bermain" );
 
                 empty = true;
             }
@@ -45,25 +46,26 @@ public class Input
         // sambungin main page ke sini (sebagai parameter?)
 
         if (!isOwner) {
-            System.out.println("Masukkan commandmu dalam 30 detik (Beli | Diam)");
+            logPage.appendLog("Masukkan commandmu dalam 30 detik (Beli | Diam)");
             // set visible
             // invisible upgrade button
         } else {
-            System.out.println("Mau beli rumah? (Beli | Diam)");
+            logPage.appendLog("Mau beli rumah? (Beli | Diam)");
             // all button visible
         }
 
         // kalo misal ada actionperformed dari button, maka ... while (!isButtonClicked) {Sys.out("wait for command")}
         // get command dari attribute command di dalem Main page
 
-        System.out.print(">> ");
+        logPage.appendLog(">> ");
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         str = in.readLine();
 
         timer.cancel();
 
         if (this.empty) {
-            return "diam";
+            logPage.appendLog("diam");
+            return "diam";                       // gayakin
         } else {
             return str.toLowerCase();
         }

@@ -5,10 +5,12 @@ public class Space extends Tile {
     private Random randomGen = new Random();
     private int cards = 5;
     private String spacetile;
+    private LogPage logPage;
 
 
-    public Space(String spacetile) {
+    public Space(String spacetile, LogPage log) {
         this.spacetile = spacetile;
+        this.logPage = log;
     }
     
     public String getKind() {
@@ -34,10 +36,10 @@ public class Space extends Tile {
     public void startTile(Player p) {                   // Jika posisi pada startTile akan menambahkan 2x uang start
         if (p.getPos() == 0) {
             p.addMoney(40000);
-            System.out.println("Selamat anda beruntung tiba di start dapat Rp.40.000!!!");
+            logPage.appendLog("Selamat anda beruntung tiba di start dapat Rp.40.000!!!");
         } else {
             p.addMoney(20000);
-            System.out.println("Selamat anda mendapatkan Rp.20.000");
+            logPage.appendLog("Selamat anda mendapatkan Rp.20.000");
         }
     }
 
@@ -46,12 +48,12 @@ public class Space extends Tile {
         int pos = p.getPos();
 
         if (p.getPos() == 20) {                         // Dapat berjalan ke lot mana saja
-            System.out.println("Mau mendarat di mana? (Sebut posisi 0-37)");
-            System.out.print(">> ");
+            logPage.appendLog("Mau mendarat di mana? (Sebut posisi 0-37)");
+            logPage.appendLog(">> ");
             pos = sc.nextInt();                         // Scan daerah yang ingin dituju
             while (pos > 37 || pos < 0) {
-                System.out.println("Input salah, yang bener dong mau mendarat di mana!? (Sebut posisi 0-37)");
-                System.out.print(">> ");
+                logPage.appendLog("Input salah, yang bener dong mau mendarat di mana!? (Sebut posisi 0-37)");
+                logPage.appendLog(">> ");
                 pos = sc.nextInt();
             }
             p.setPos(pos);
@@ -62,11 +64,11 @@ public class Space extends Tile {
     public void goToJailTile(Player p) {                                // Tile Go TO Jail
         p.setPos(10);                                                   // Set player ke jail
         p.setJail(true);                                                // Set jail true
-        System.out.println("Anda mendarat penjara");
+        logPage.appendLog("Anda mendarat penjara");
     }
 
     public void taxTile(Player p) {
-        System.out.println("Bayar pajak 10% dulu, biar negara maju");
+        logPage.appendLog("Bayar pajak 10% dulu, biar negara maju");
         p.rdcMoney(p.getMoney()/10);                                              //Maunya 10% tapi money gak double
     }
 
@@ -74,24 +76,24 @@ public class Space extends Tile {
         int result = randomGen.nextInt(cards);
         switch (result) {
             case 0 :
-                System.out.println("Melanggar marka jalan, Anda dilempar ke penjara!");
+                logPage.appendLog("Melanggar marka jalan, Anda dilempar ke penjara!");
                 p.setPos(10);
                 p.setJail(true);
                 break;
             case 1 :
-                System.out.println("Anda menang togel!! dapat Rp.100.000,-");
+                logPage.appendLog("Anda menang togel!! dapat Rp.100.000,-");
                 p.addMoney(100000);
                 break;
             case 2 :
-                System.out.println("Vaksinisasi wajib!! bayar Rp.15.000");
+                logPage.appendLog("Vaksinisasi wajib!! bayar Rp.15.000");
                 p.rdcMoney(15000);
                 break;
             case 3 :
-                System.out.println("Sekolah itu gak gratis!! ga bayar sekolah RP.50.000 PKI!!!!!");
+                logPage.appendLog("Sekolah itu gak gratis!! ga bayar sekolah RP.50.000 PKI!!!!!");
                 p.rdcMoney(15000);
                 break;
             case 4 :
-                System.out.println("Cie menang olimpiade, selamat anda mendapatkan Rp.50.000");
+                logPage.appendLog("Cie menang olimpiade, selamat anda mendapatkan Rp.50.000");
                 p.addMoney(50000);
                 break;    
         } 
@@ -102,26 +104,26 @@ public class Space extends Tile {
         int result = randomGen.nextInt(cards);
         switch (result) {
             case 0 : 
-                System.out.println("Keciduk polisi, hiya hiya hiya, korupsi ya?? masuk penjara sini!! jangan korupsi dong");
+                logPage.appendLog("Keciduk polisi, hiya hiya hiya, korupsi ya?? masuk penjara sini!! jangan korupsi dong");
                 p.setPos(10);
                 p.setJail(true);
                 break;
             case 1 :
-                System.out.println("Pergi ke go!! lumayan dapet Rp.40.000");
+                logPage.appendLog("Pergi ke go!! lumayan dapet Rp.40.000");
                 p.setPos(0);
                 this.startTile(p);
                 break;
             case 2 :
-                System.out.println("Maju 3 langkah dong");
+                logPage.appendLog("Maju 3 langkah dong");
                 p.setPos(p.getPos() + 3);
                 t.setCommand("majuchance");
                 break;
             case 3 :
-                System.out.println("Astaghfirullah menang judi 100k.... tapi gaapa uang monopoli kok, ga haram");
+                logPage.appendLog("Astaghfirullah menang judi 100k.... tapi gaapa uang monopoli kok, ga haram");
                 p.addMoney(100000);
                 break;
             case 4 : 
-                System.out.println("Mundur 3 langkah");
+                logPage.appendLog("Mundur 3 langkah");
                 p.setPos(p.getPos() - 3);
                 t.setCommand("mundurchance");
                 break;

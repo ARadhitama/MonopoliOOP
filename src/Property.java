@@ -3,11 +3,13 @@ public class Property extends Tile {
     private Player owner = null;
     private int harga;
     private int type; /* 1 = Lot 2 = Utilities 3 = Railroad */
+    private LogPage logPage;
 
-    public Property(String name, int harga, int type) {
+    public Property(String name, int harga, int type, LogPage log) {
         setName(name);
         setHarga(harga);
         setType(type);
+        this.logPage = log;
     }
 
     public String getKind() {
@@ -59,10 +61,10 @@ public class Property extends Tile {
             this.setOwner(p);
             p.getProp().add(this);
             this.getOwner().rdcMoney(harga);
-            System.out.println(p.getName() + " telah membeli " + this.getName() + " seharga " + this.getHarga());
-            System.out.println("Uang " + p.getName() + " tinggal " + p.getMoney());
+            logPage.appendLog(p.getName() + " telah membeli " + this.getName() + " seharga " + this.getHarga());
+            logPage.appendLog("Uang " + p.getName() + " tinggal " + p.getMoney());
         } else {
-            System.out.println(p.getName() + " tidak memiliki cukup uang");
+            logPage.appendLog(p.getName() + " tidak memiliki cukup uang");
         }
     }
 
@@ -92,10 +94,10 @@ public class Property extends Tile {
         }
         this.getOwner().addMoney(hargaRent);
         if (this.getOwnerName().equals(p.getName())) {
-            System.out.println(p.getName() + " dapet bonus sebesar " + hargaRent + " karena mendarat di property sendiri");
+            logPage.appendLog(p.getName() + " dapet bonus sebesar " + hargaRent + " karena mendarat di property sendiri");
         } else {
             p.rdcMoney(hargaRent);
-            System.out.println(p.getName() + " telah membayar sewa " + this.getName() + " kepada " + this.getOwnerName() + " sebanyak " + hargaRent);
+            logPage.appendLog(p.getName() + " telah membayar sewa " + this.getName() + " kepada " + this.getOwnerName() + " sebanyak " + hargaRent);
         }
     }
 
