@@ -41,6 +41,15 @@ public class Space extends Tile {
             p.addMoney(20000);
             logPage.appendLog("Selamat anda mendapatkan Rp.20.000");
         }
+        System.out.println("Uang anda sekarang :" + p.getMoney());
+    }
+
+    public void jailTile(Player p, Turn t){
+       if (t.getCommand().equals("Bayar")) {
+        p.rdcMoney(50000);
+       } else {
+        logPage.appendLog("Roll Dice");
+       }
     }
 
     public void freeParkingTile(Player p, Turn t) {     //Tile freeparking
@@ -69,7 +78,7 @@ public class Space extends Tile {
 
     public void taxTile(Player p) {
         logPage.appendLog("Bayar pajak 10% dulu, biar negara maju");
-        p.rdcMoney(p.getMoney()/10);                                              //Maunya 10% tapi money gak double
+        p.rdcMoney(p.getMoney()/10);                                              
     }
 
     public void communityChestCard(Player p) {                          // Community chest card tile
@@ -83,18 +92,22 @@ public class Space extends Tile {
             case 1 :
                 logPage.appendLog("Anda menang togel!! dapat Rp.100.000,-");
                 p.addMoney(100000);
+                System.out.println("Uang anda sekarang :" + p.getMoney());
                 break;
             case 2 :
                 logPage.appendLog("Vaksinisasi wajib!! bayar Rp.15.000");
                 p.rdcMoney(15000);
+                System.out.println("Uang anda sekarang :" + p.getMoney());
                 break;
             case 3 :
                 logPage.appendLog("Sekolah itu gak gratis!! ga bayar sekolah RP.50.000 PKI!!!!!");
                 p.rdcMoney(15000);
+                System.out.println("Uang anda sekarang :" + p.getMoney());
                 break;
             case 4 :
                 logPage.appendLog("Cie menang olimpiade, selamat anda mendapatkan Rp.50.000");
                 p.addMoney(50000);
+                System.out.println("Uang anda sekarang :" + p.getMoney());
                 break;    
         } 
             
@@ -121,6 +134,7 @@ public class Space extends Tile {
             case 3 :
                 logPage.appendLog("Astaghfirullah menang judi 100k.... tapi gaapa uang monopoli kok, ga haram");
                 p.addMoney(100000);
+                System.out.println("Uang anda sekarang :" + p.getMoney());
                 break;
             case 4 : 
                 logPage.appendLog("Mundur 3 langkah");
