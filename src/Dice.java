@@ -12,6 +12,18 @@ public class Dice {
         this.sides = 6;
         this.value = randomGen.nextInt(this.sides) + 1;
         this.mainPage = mainPage;
+        this.mainPage.setVisibleDice11(false);
+        this.mainPage.setVisibleDice12(false);
+        this.mainPage.setVisibleDice13(false);
+        this.mainPage.setVisibleDice14(false);
+        this.mainPage.setVisibleDice15(false);
+        this.mainPage.setVisibleDice16(false);
+        this.mainPage.setVisibleDice21(false);
+        this.mainPage.setVisibleDice22(false);
+        this.mainPage.setVisibleDice23(false);
+        this.mainPage.setVisibleDice24(false);
+        this.mainPage.setVisibleDice25(false);
+        this.mainPage.setVisibleDice26(false);
     }
 
     public int getValue() {

@@ -1215,14 +1215,39 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         playerUI.setPreferredSize(new java.awt.Dimension(700, 1000));
 
         roll.setText("ROLL");
+        roll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rollActionPerformed(evt);
+            }
+        });
 
         log.setText("LOG");
+        log.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logActionPerformed(evt);
+            }
+        });
 
         buy.setText("BUY");
+        buy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buyActionPerformed(evt);
+            }
+        });
 
         upgrade.setText("UPGRADE");
+        upgrade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                upgradeActionPerformed(evt);
+            }
+        });
 
         endTurn.setText("END TURN");
+        endTurn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                endTurnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout commandLayout = new javax.swing.GroupLayout(command);
         command.setLayout(commandLayout);
@@ -1705,7 +1730,15 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
     }
 
     public void setPlayersStatus(List<Player> players) {
-
+        this.jTextArea1.setText(players.get(0).getName());
+        this.jTextArea2.setText(String.valueOf(players.get(0).getMoney()));
+        this.jTextArea3.setText(players.get(1).getName());
+        this.jTextArea4.setText(String.valueOf(players.get(1).getMoney()));
+        this.jTextArea5.setText(players.get(2).getName());
+        this.jTextArea6.setText(String.valueOf(players.get(2).getMoney()));
+        this.jTextArea12.setText(players.get(3).getName());
+        this.jTextArea11.setText(String.valueOf(players.get(3).getMoney()));
+        // this.letak.setText();
     }
 
     public void setTimer(int time) {
@@ -1721,11 +1754,11 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
     }
 
     public void setBuyButtonEnabled(boolean state) {
-        this.log.setEnabled(state);
+        this.buy.setEnabled(state);
     }
 
     public void setUpgradeButtonEnabled(boolean state) {
-        this.buy.setEnabled(state);
+        this.upgrade.setEnabled(state);
     }
 
     public void setEndTurnButtonEnabled(boolean state) {
@@ -1783,6 +1816,8 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
 
     private void quitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitActionPerformed
         // TODO add your handling code here:
+        this.setCommand("quit");
+        this.setIsButtonClicked(true);
     }//GEN-LAST:event_quitActionPerformed
 
 
@@ -1810,7 +1845,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         this.dice21.setVisible(state);
     }
     public void setVisibleDice22(boolean state) {
-        this.dice12.setVisible(state);
+        this.dice22.setVisible(state);
     }
     public void setVisibleDice23(boolean state) {
         this.dice23.setVisible(state);

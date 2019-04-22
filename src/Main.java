@@ -101,6 +101,8 @@ public class Main {
     		logPage.appendLog(players.get(i - 1).getName());
     	}
 
+		mainPage.setPlayersStatus(players);
+
     	// Timer ga perlu di stop, biarkan mengalir aja~
     	Timer timer = new Timer();
         Turn<Timer> turn = new Turn<Timer>(totalPlayer, timer);
@@ -310,6 +312,8 @@ public class Main {
 
         	// Next turn
         	if (nextPlayer) {
+				mainPage.setPlayersStatus(players);
+				
         		if (players.get(turn.getPlayer()).getMoney() <= 0) {
 		            logPage.appendLog("");
         			for (Tile tile : tiles) {
