@@ -133,6 +133,26 @@ public class Main {
 					players.get(turn.getPlayer()).setJail(false);
 					logPage.appendLog("Selamat! " + players.get(turn.getPlayer()).getName() + " keluar dari penjara");
 				} else {
+					// Roll dice
+					try
+					{
+						turn.setCommand((new Input()).getInput(
+							tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName()
+							.equals(
+								players.get(turn.getPlayer()).getName()
+							),
+							mainPage,
+							logPage,
+							"roll",
+							tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName(),
+							players.get(turn.getPlayer()).getName(),
+							tiles.get(players.get(turn.getPlayer()).getPos()).getName()
+						));
+					}
+					catch (Exception e)
+					{
+						System.out.println(e);
+					}
 					dice1.roll();
 					dice2.roll();
 					logPage.appendLog("Angka dadu : " + dice1.getValue() + " & " + dice2.getValue());
@@ -146,6 +166,27 @@ public class Main {
 			}
 			// Biasa
 			else {
+				// Roll dice
+				try
+				{
+					turn.setCommand((new Input()).getInput(
+						tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName()
+						.equals(
+							players.get(turn.getPlayer()).getName()
+						),
+						mainPage,
+						logPage,
+						"roll",
+						tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName(),
+						players.get(turn.getPlayer()).getName(),
+						tiles.get(players.get(turn.getPlayer()).getPos()).getName()
+					));
+				}
+				catch (Exception e)
+				{
+					System.out.println(e);
+				}
+
 				// Ubah posisi player
 				players.get(turn.getPlayer()).setPos(
 					players.get(turn.getPlayer()).getPos() + dice1.roll() + dice2.roll()
@@ -155,6 +196,26 @@ public class Main {
 				// Jika dadu sama
 				if (dice1.getValue() == dice2.getValue()) {
 					logPage.appendLog("Angka dadu sama, roll lagi!");
+					// Roll dice
+					try
+					{
+						turn.setCommand((new Input()).getInput(
+							tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName()
+							.equals(
+								players.get(turn.getPlayer()).getName()
+							),
+							mainPage,
+							logPage,
+							"roll",
+							tiles.get(players.get(turn.getPlayer()).getPos()).getOwnerName(),
+							players.get(turn.getPlayer()).getName(),
+							tiles.get(players.get(turn.getPlayer()).getPos()).getName()
+						));
+					}
+					catch (Exception e)
+					{
+						System.out.println(e);
+					}
 					players.get(turn.getPlayer()).setPos(
 						players.get(turn.getPlayer()).getPos() + dice1.roll() + dice2.roll()
 					);
