@@ -8,15 +8,18 @@ public class Input
     private boolean empty = false;
     private MonopoliOOPUI mainPage;
     private LogPage logPage;
+    int seconds = 30;
+    int i = 0;
 
     TimerTask task = new TimerTask()
     {
-        int seconds = 30;
-        int i = 0;
+        
 
         public void run()
         {
             i++;
+
+            mainPage.setTimer(seconds - i);
 
             logPage.appendLog(String.valueOf(seconds - i));
 
@@ -78,6 +81,16 @@ public class Input
 
         while (!this.mainPage.getIsButtonClicked() && !this.empty) {
             System.out.println("waiting for command");
+            mainPage.setTimer(seconds - i);
+            i++;
+            if (i >= 30) {
+                i = 0;
+            }
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
 
         // kalo misal ada actionperformed dari button, maka ... while (!isButtonClicked) {Sys.out("wait for command")}

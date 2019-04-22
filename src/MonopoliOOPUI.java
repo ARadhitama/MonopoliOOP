@@ -1245,14 +1245,39 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         playerUI.setPreferredSize(new java.awt.Dimension(700, 1000));
 
         roll.setText("ROLL");
+        roll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rollActionPerformed(evt);
+            }
+        });
 
         log.setText("LOG");
+        log.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logActionPerformed(evt);
+            }
+        });
 
         buy.setText("BUY");
+        buy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buyActionPerformed(evt);
+            }
+        });
 
         upgrade.setText("UPGRADE");
+        upgrade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                upgradeActionPerformed(evt);
+            }
+        });
 
         endTurn.setText("END TURN");
+        endTurn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                endTurnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout commandLayout = new javax.swing.GroupLayout(command);
         command.setLayout(commandLayout);
@@ -1815,11 +1840,15 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         this.jTextArea6.setText(String.valueOf(players.get(2).getMoney()));
         this.jTextArea12.setText(players.get(3).getName());
         this.jTextArea11.setText(String.valueOf(players.get(3).getMoney()));
+        this.jTextArea13.setText(String.valueOf(players.get(0).getPos()));
+        this.jTextArea14.setText(String.valueOf(players.get(1).getPos()));
+        this.jTextArea15.setText(String.valueOf(players.get(2).getPos()));
+        this.jTextArea16.setText(String.valueOf(players.get(3).getPos()));
         // this.letak.setText();
     }
 
     public void setTimer(int time) {
-        
+        this.timerTA.setText("TIMER\n" + String.valueOf(time));
     }
 
     public void setIsButtonClicked(boolean state) {
