@@ -1,4 +1,4 @@
-public class Turn<T> extends Thread {
+	public class Turn<T> extends Thread {
 	private T t;				// Timer
 	private int totalPlayer;
 	private int turn = 1;
