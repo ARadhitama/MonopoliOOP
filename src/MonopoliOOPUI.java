@@ -2,6 +2,9 @@
  *
  * @author ACER SWIFT3
  */
+import java.util.List;
+import java.util.ArrayList;
+
 public class MonopoliOOPUI extends javax.swing.JFrame {
 
     private String commandInput;
@@ -1396,6 +1399,14 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
 
     public void setLogPage(LogPage logPage) {
         this.logPage = logPage;
+    }
+
+    public void setPlayersStatus(List<Player> players) {
+
+    }
+
+    public void setTimer(int time) {
+        
     }
 
     public void setIsButtonClicked(boolean state) {
