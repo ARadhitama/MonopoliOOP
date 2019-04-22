@@ -2102,13 +2102,13 @@
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="roll" min="-2" pref="150" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
+                      <Component id="buy" min="-2" pref="150" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="upgrade" min="-2" pref="150" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="buy2" min="-2" pref="150" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="buy" min="-2" pref="150" max="-2" attributes="0"/>
+                      <Component id="log" min="-2" pref="150" max="-2" attributes="0"/>
                       <EmptySpace pref="50" max="32767" attributes="0"/>
-                      <Component id="buy3" min="-2" pref="150" max="-2" attributes="0"/>
+                      <Component id="endTurn" min="-2" pref="150" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2118,10 +2118,10 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="roll" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                          <Component id="upgrade" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                           <Component id="buy" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                          <Component id="buy2" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                          <Component id="buy3" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="log" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="upgrade" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="endTurn" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -2134,22 +2134,22 @@
                 <Property name="text" type="java.lang.String" value="ROLL"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="buy">
+            <Component class="javax.swing.JButton" name="log">
               <Properties>
                 <Property name="text" type="java.lang.String" value="LOG"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="upgrade">
+            <Component class="javax.swing.JButton" name="buy">
               <Properties>
                 <Property name="text" type="java.lang.String" value="BUY"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="buy2">
+            <Component class="javax.swing.JButton" name="upgrade">
               <Properties>
                 <Property name="text" type="java.lang.String" value="UPGRADE"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="buy3">
+            <Component class="javax.swing.JButton" name="endTurn">
               <Properties>
                 <Property name="text" type="java.lang.String" value="END TURN"/>
               </Properties>
