@@ -2,7 +2,7 @@
  *
  * @author ACER SWIFT3
  */
-public class MonopoliOOPUI extends javax.swing.JFrame {
+public class MonopoliOOPUI_duplicate extends javax.swing.JFrame {
 
     private String commandInput;
     private boolean isButtonClicked;
@@ -10,7 +10,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
     /**
      * Creates new form MonopoliOOPUI
      */
-    public MonopoliOOPUI() {
+    public MonopoliOOPUI_duplicate() {
         this.commandInput = "diam";
         this.isButtonClicked = false;
         initComponents();

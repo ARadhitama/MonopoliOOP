@@ -65,7 +65,7 @@ public class Main {
 			// end of fourth row
 
 		// Log Page
-		logPage.setVisible(true);
+		// logPage.setVisible(true);
 
 		// Welcome Page
 		welcomePage.setVisible(true);
