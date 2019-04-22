@@ -125,10 +125,10 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         playerUI = new javax.swing.JPanel();
         command = new javax.swing.JPanel();
         roll = new javax.swing.JButton();
+        log = new javax.swing.JButton();
         buy = new javax.swing.JButton();
         upgrade = new javax.swing.JButton();
-        buy2 = new javax.swing.JButton();
-        buy3 = new javax.swing.JButton();
+        endTurn = new javax.swing.JButton();
         player = new javax.swing.JPanel();
         player1 = new javax.swing.JPanel();
         jTextField2 = new javax.swing.JTextField();
@@ -1216,13 +1216,13 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
 
         roll.setText("ROLL");
 
-        buy.setText("LOG");
+        log.setText("LOG");
 
-        upgrade.setText("BUY");
+        buy.setText("BUY");
 
-        buy2.setText("UPGRADE");
+        upgrade.setText("UPGRADE");
 
-        buy3.setText("END TURN");
+        endTurn.setText("END TURN");
 
         javax.swing.GroupLayout commandLayout = new javax.swing.GroupLayout(command);
         command.setLayout(commandLayout);
@@ -1231,13 +1231,13 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, commandLayout.createSequentialGroup()
                 .addComponent(roll, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(buy, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(upgrade, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buy2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buy, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(log, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                .addComponent(buy3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(endTurn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         commandLayout.setVerticalGroup(
             commandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1245,10 +1245,10 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(commandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(roll, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(upgrade, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buy, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buy2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buy3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(log, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(upgrade, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(endTurn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -1721,11 +1721,11 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
     }
 
     public void setBuyButtonEnabled(boolean state) {
-        this.buy.setEnabled(state);
+        this.log.setEnabled(state);
     }
 
     public void setUpgradeButtonEnabled(boolean state) {
-        this.upgrade.setEnabled(state);
+        this.buy.setEnabled(state);
     }
 
     public void setEndTurnButtonEnabled(boolean state) {
@@ -1837,8 +1837,6 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
     private javax.swing.JPanel bantenT;
     private javax.swing.JPanel board;
     private javax.swing.JButton buy;
-    private javax.swing.JButton buy2;
-    private javax.swing.JButton buy3;
     private javax.swing.JPanel chanceT1;
     private javax.swing.JPanel chestT1;
     private javax.swing.JPanel command;
@@ -1854,6 +1852,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
     private javax.swing.JLabel dice24;
     private javax.swing.JLabel dice25;
     private javax.swing.JLabel dice26;
+    private javax.swing.JButton endTurn;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1962,6 +1961,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JButton log;
     private javax.swing.JPanel player;
     private javax.swing.JPanel player1;
     private javax.swing.JPanel player2;
