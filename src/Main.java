@@ -108,8 +108,8 @@ public class Main {
         turn.start();
 
         // Dadu
-        Dice dice1 = new Dice();
-        Dice dice2 = new Dice();
+        Dice dice1 = new Dice(1, mainPage);
+        Dice dice2 = new Dice(2, mainPage);
 
         logPage.appendLog("Giliran " + players.get(turn.getPlayer()).getName() + " bermain!");
 
@@ -342,9 +342,13 @@ public class Main {
 
         	// Quit
         	if (turn.getCommand().equals("quit")) {
-        		play = false;
+				play = false;
+				mainPage.setVisible(false);
         	}			
         }
+
+
+		endPage.setVisible(true);
 
         logPage.appendLog("");
         logPage.appendLog("==================== Selesai ====================");
