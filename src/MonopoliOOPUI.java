@@ -1457,6 +1457,39 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
     public void setVisibleDice11(boolean state) {
         this.dice11.setVisible(state);
     }
+    public void setVisibleDice12(boolean state) {
+        this.dice12.setVisible(state);
+    }
+    public void setVisibleDice13(boolean state) {
+        this.dice13.setVisible(state);
+    }
+    public void setVisibleDice14(boolean state) {
+        this.dice14.setVisible(state);
+    }
+    public void setVisibleDice15(boolean state) {
+        this.dice15.setVisible(state);
+    }
+    public void setVisibleDice16(boolean state) {
+        this.dice16.setVisible(state);
+    }
+    public void setVisibleDice21(boolean state) {
+        this.dice21.setVisible(state);
+    }
+    public void setVisibleDice22(boolean state) {
+        this.dice22.setVisible(state);
+    }
+    public void setVisibleDice23(boolean state) {
+        this.dice23.setVisible(state);
+    }
+    public void setVisibleDice24(boolean state) {
+        this.dice24.setVisible(state);
+    }
+    public void setVisibleDice25(boolean state) {
+        this.dice25.setVisible(state);
+    }
+    public void setVisibleDice26(boolean state) {
+        this.dice26.setVisible(state);
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
