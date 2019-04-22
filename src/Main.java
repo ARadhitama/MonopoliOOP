@@ -16,6 +16,7 @@ public class Main {
 		LogPage logPage = new LogPage();
 		NewGameUI welcomePage = new NewGameUI();
 		MonopoliOOPUI mainPage = new MonopoliOOPUI();
+		mainPage.setLogPage(logPage);
 		WinnerPage endPage = new WinnerPage();
 
     	// Adding map of the game (Total: 40 tiles)

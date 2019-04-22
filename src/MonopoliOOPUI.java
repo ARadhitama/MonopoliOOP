@@ -6,6 +6,7 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
 
     private String commandInput;
     private boolean isButtonClicked;
+    private LogPage logPage;
 
     /**
      * Creates new form MonopoliOOPUI
@@ -1393,6 +1394,10 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
         this.commandInput = cmd;
     }
 
+    public void setLogPage(LogPage logPage) {
+        this.logPage = logPage;
+    }
+
     public void setIsButtonClicked(boolean state) {
         this.isButtonClicked = state;
     }
@@ -1439,13 +1444,20 @@ public class MonopoliOOPUI extends javax.swing.JFrame {
 
     private void logActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logActionPerformed
         // TODO add your handling code here:
-        this.log.setVisible(!this.log.isVisible());
-        this.setIsButtonClicked(true);
+        this.logPage.setVisible(!this.logPage.isVisible());
     }//GEN-LAST:event_logActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+
+
+    // Set visible dice
+    public void setVisibleDice11(boolean state) {
+        this.dice11.setVisible(state);
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField FreePark;
