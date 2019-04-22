@@ -51,24 +51,29 @@ public class Input
         Timer timer = new Timer();
         timer.schedule(task, 30 * 1000);
 
-        if (!kind.equals("Space")) {
-            if (!isOwner) {
-                this.logPage.appendLog("Masukkan commandmu dalam 30 detik (Beli | Diam)");
-                this.mainPage.setRollButtonEnabled(true);
-                this.mainPage.setBuyButtonEnabled(true);
-            } else {
-                this.logPage.appendLog("Mau beli rumah? (Beli | Diam)");
-                this.mainPage.setRollButtonEnabled(true);
-                this.mainPage.setUpgradeButtonEnabled(true);
-            }
-        } else {
+        if (kind.equals("roll")) {
+            this.logPage.appendLog("Go roll!");
+            this.mainPage.setRollButtonEnabled(true);
+            this.mainPage.setBuyButtonEnabled(false);
+            this.mainPage.setUpgradeButtonEnabled(false);
+            this.mainPage.setEndTurnButtonEnabled(false);
+        } else if (kind.equals("Space")) {
             if (tileName.equals("Free Parking")) {
                 this.logPage.appendLog("Mendarat di Free Parking");
                 // Bikin textfield untuk input mau mendarat di berapa
             } else {
-                this.logPage.appendLog("Mendarat di Space, hanya bisa roll");
-                this.mainPage.setRollButtonEnabled(true);
+                this.logPage.appendLog("Mendarat di Space, hanya bisa end turn");
             }
+            this.mainPage.setEndTurnButtonEnabled(true);
+        } else {
+            if (!isOwner) {
+                this.logPage.appendLog("Masukkan commandmu dalam 30 detik (Beli | Diam)");
+                this.mainPage.setBuyButtonEnabled(true);
+            } else {
+                this.logPage.appendLog("Mau beli rumah? (Beli | Diam)");
+                this.mainPage.setUpgradeButtonEnabled(true);
+            }
+            this.mainPage.setEndTurnButtonEnabled(true);
         }
 
         while (!this.mainPage.getIsButtonClicked() && !this.empty) {
@@ -89,6 +94,7 @@ public class Input
         this.mainPage.setRollButtonEnabled(false);
         this.mainPage.setBuyButtonEnabled(false);
         this.mainPage.setUpgradeButtonEnabled(false);
+        this.mainPage.setEndTurnButtonEnabled(false);
 
         if (this.empty) {
             return "diam";                       // gayakin
